@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp"
+    android:gravity="center"
+    tools:context=".ui.fragments.registroAcademia.RegistroAcademiaFragment">
+
+    <!-- titulo -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/registro_de_academia"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul4"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!-- contenedor formulario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+
+            <!-- nombre usuario -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelNomUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/nombre_de_usuario"
+                    android:textSize="15sp"
+                    android:textColor="@color/azul4"/>
+                <EditText
+                    android:id="@+id/campoNomUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="text"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    android:tooltipText="Campo nombre de usuario"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+            </LinearLayout>
+
+            <!-- contraseña -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/contrase_a"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/campoContrasena"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/azul1"
+                        android:backgroundTint="@color/azul1"
+                        android:backgroundTintMode="multiply"
+                        android:inputType="textPassword"
+                        android:minHeight="35dp"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:tooltipText="Campo contraseña"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+
+                    <ImageButton
+                        android:id="@+id/btnTogglePassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/toggle_password_button_description"
+                        android:src="@drawable/baseline_arrow_drop_up_24"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- contraseña confirmar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelContrasenaConfirmar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/confirmar_contrase_a"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/campoContrasenaConfirmar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/azul1"
+                        android:backgroundTint="@color/azul1"
+                        android:backgroundTintMode="multiply"
+                        android:inputType="textPassword"
+                        android:minHeight="35dp"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:tooltipText="Campo contraseña"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+
+                    <ImageButton
+                        android:id="@+id/btnTogglePasswordConfirmar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:contentDescription="@string/toggle_password_button_description"
+                        android:src="@drawable/baseline_arrow_drop_up_24"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/email"
+                    android:textSize="15sp"
+                    android:textColor="@color/azul4"/>
+                <EditText
+                    android:id="@+id/campoEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    android:tooltipText="Campo email"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+            </LinearLayout>
+
+
+
+            <!-- nombre -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/lbl_nombre"
+                    android:textSize="15sp"
+                    android:textColor="@color/azul4"/>
+                <EditText
+                    android:id="@+id/campoNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="text"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    android:tooltipText="Campo nombre de academia"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+            </LinearLayout>
+
+            <!-- direccion -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/direcci_n"
+                    android:textSize="15sp"
+                    android:textColor="@color/azul4"/>
+
+                <EditText
+                    android:id="@+id/campoDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="text"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    android:tooltipText="Campo dirección"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+            </LinearLayout>
+
+            <!-- telefono -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/tel_fono"
+                    android:textSize="15sp"
+                    android:textColor="@color/azul4"/>
+                <EditText
+                    android:id="@+id/campoTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="phone|number"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    android:tooltipText="Campo teléfono"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Boton validar form -->
+    <Button
+        android:id="@+id/btn_registrarse"
+        app:cornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:background="@null"
+        android:backgroundTint="@color/azul4"
+        android:drawableTint="@color/white"
+        android:text="@string/registrarme"
+        android:textColor="@color/white"
+        android:textAllCaps="true" />
+
+    <!-- contenedor de mensajes de error -->
+    <LinearLayout
+        android:id="@+id/containerErroresFormRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- mostrar solo los resultados de validar los campos tras darle al botón -->
+        <TextView
+            android:id="@+id/textoErrorForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:textColor="@color/rojoOscuro1"
+            tools:ignore="SpeakableTextPresentCheck,TextViewEdits,TouchTargetSizeCheck"/>
+    </LinearLayout>
+
+</LinearLayout>

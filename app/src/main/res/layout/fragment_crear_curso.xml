@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".ui.fragments.crearCurso.CrearCursoFragment"
+    android:gravity="center">
+
+    <!-- titulo -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/title_crearCurso"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/azul4"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp">
+        <!-- contenedor formulario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- nombre -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/lbl_nombre"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <EditText
+                    android:id="@+id/campoNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="text"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- fecha inicio -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelFechaInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/lbl_fechaInicioCurso"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <EditText
+                    android:id="@+id/campoFechaInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="datetime"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- fecha fin -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelFechaFin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/lbl_fechaFinCurso"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <EditText
+                    android:id="@+id/campoFechaFin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="datetime"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- precio -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelPrecio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/lbl_precio"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <EditText
+                    android:id="@+id/campoPrecio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="numberDecimal"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- tipo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/lbl_tipo"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <Spinner
+                    android:id="@+id/campoTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:minHeight="35dp"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <!-- descripcion -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/labelDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="@string/lbl_descripcion"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/azul4"/>
+
+                <EditText
+                    android:id="@+id/campoDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@color/azul1"
+                    android:backgroundTint="@color/azul1"
+                    android:backgroundTintMode="multiply"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Boton crear curso -->
+    <Button
+        android:id="@+id/btn_crearCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:backgroundTint="@color/verdeClaro1"
+        android:drawableTint="@color/white"
+        android:text="@string/txt_btn_crearCurso"
+        android:textAllCaps="true"
+        app:cornerRadius="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

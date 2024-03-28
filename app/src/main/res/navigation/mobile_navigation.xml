@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_buscar">
+
+    <fragment
+        android:id="@+id/navigation_buscar"
+        android:name="com.example.appacademia.ui.fragments.buscar.BuscarFragment"
+        android:label="@string/title_buscar"
+        tools:layout="@layout/fragment_buscar" />
+
+    <fragment
+        android:id="@+id/navigation_cursos"
+        android:name="com.example.appacademia.ui.fragments.cursos.CursosFragment"
+        android:label="@string/title_cursos"
+        tools:layout="@layout/fragment_cursos" />
+
+    <fragment
+        android:id="@+id/navigation_favoritos"
+        android:name="com.example.appacademia.ui.fragments.favoritos.FavoritosFragment"
+        android:label="@string/title_favoritos"
+        tools:layout="@layout/fragment_favoritos" />
+
+    <fragment
+        android:id="@+id/mapaFragment"
+        android:name="com.example.appacademia.fragment_mapa"
+        android:label="@string/fragment_mapa"
+        tools:layout="@layout/fragment_mapa"/>
+
+    <fragment
+        android:id="@+id/navigation_perfil"
+        android:name="com.example.appacademia.ui.fragments.perfil.PerfilFragment"
+        android:label="@string/title_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.appacademia.ui.fragments.login.LoginFragment"
+        android:label="@string/lbl_inicioSesion"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/navigation_registroUsuario"
+        android:name="com.example.appacademia.ui.fragments.registroUsuario.RegistroUsuarioFragment"
+        android:label="@string/lbl_registroUsuario"
+        tools:layout="@layout/fragment_registro_usuario" />
+
+    <fragment
+        android:id="@+id/navigation_registroAcademia"
+        android:name="com.example.appacademia.ui.fragments.registroAcademia.RegistroAcademiaFragment"
+        android:label="@string/lbl_registroAcademia"
+        tools:layout="@layout/fragment_registro_academia" />
+
+    <fragment
+        android:id="@+id/navigation_forgotPassword"
+        android:name="com.example.appacademia.ui.fragments.forgotPassword.ForgotPasswordFragment"
+        android:label="@string/lbl_forgotPassword"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/navigation_ajustes"
+        android:name="com.example.appacademia.ui.fragments.ajustes.AjustesFragment"
+        android:label="@string/title_ajustes"
+        tools:layout="@layout/fragment_ajustes" />
+
+    <fragment
+        android:id="@+id/navigation_infoCursos"
+        android:name="com.example.appacademia.ui.fragments.infoCurso.InfoCursoFragment"
+        android:label="@string/title_cursos"
+        tools:layout="@layout/fragment_info_curso" />
+
+    <fragment
+        android:id="@+id/navigation_infoAcademias"
+        android:name="com.example.appacademia.InfoAcademiaFragment"
+        android:label="@string/title_cursos"
+        tools:layout="@layout/fragment_info_academia" />
+
+    <fragment
+        android:id="@+id/navigation_crearCurso"
+        android:name="com.example.appacademia.ui.fragments.crearCurso.CrearCursoFragment"
+        android:label="@string/title_crearCurso"
+        tools:layout="@layout/fragment_crear_curso" />
+
+</navigation>

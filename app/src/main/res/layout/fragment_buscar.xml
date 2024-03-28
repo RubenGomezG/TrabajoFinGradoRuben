@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.buscar.BuscarFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/cuerpoPagina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/buscador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/buscar"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="@color/azul4"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/labelFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:textSize="18sp"
+                android:text="@string/fecha"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/grisOscuro2"/>
+
+            <TextView
+                android:id="@+id/textoFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/selectFecha"
+                android:importantForAutofill="no"
+                android:textSize="18sp"
+                android:inputType="date"
+                android:textStyle="italic"
+                android:textColor="@color/grisClaro3"
+                tools:ignore="TextViewEdits,TouchTargetSizeCheck"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buscar_porMapa"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:backgroundTint="@color/azul4"
+            android:drawableEnd="@drawable/baseline_map_24"
+            android:drawableTint="@color/white"
+            android:keepScreenOn="false"
+            android:text="@string/academias_Cerca"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="5dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+            <!-- contenedor botones filtros -->
+            <LinearLayout
+                android:id="@+id/contenedorBotonesFiltros"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:weightSum="2"
+                tools:ignore="NestedWeights">
+
+                <Spinner
+                    android:id="@+id/botonFiltros"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/azul4"
+                    android:textColor="@color/azul1"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp,TouchTargetSizeCheck" />
+
+                <Spinner
+                    android:id="@+id/botonOrdenar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/azul4"
+                    android:textColor="@color/azul1"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp,TouchTargetSizeCheck"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/botonLupa"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/azul4"
+                app:icon="@drawable/baseline_search_24"
+                app:iconTint="@color/azul1"
+                android:onClick="buscar"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- A partir de aquí, van los elementos(cursos), deberían ser ViewHolder-->
+
+    <!-- Contenedor lista de resultados -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listado_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.perfil.PerfilFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_tituloPerfil"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_margin="20dp"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:contentDescription="@string/desc_fotoPerfil"
+                    android:cropToPadding="true"
+                    android:scaleType="fitCenter"
+                    android:paddingVertical="10dp"
+                    android:src="@drawable/baseline_account_circle_24" />
+            </FrameLayout>
+
+            <!-- contenedor campos info usuario -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <!-- nombre usuario -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/labelNomUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="@string/lbl_usuario"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/azul4"/>
+
+                    <EditText
+                        android:id="@+id/campoNomUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/azul1"
+                        android:backgroundTint="@color/azul1"
+                        android:backgroundTintMode="multiply"
+                        android:inputType="text"
+                        android:minHeight="35dp"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:tooltipText="Campo nombre de usuario"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute"
+                        android:enabled="false"/>
+                </LinearLayout>
+
+                <!-- email -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/labelEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="@string/lbl_email"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/azul4"/>
+
+                    <EditText
+                        android:id="@+id/campoEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/azul1"
+                        android:backgroundTint="@color/azul1"
+                        android:backgroundTintMode="multiply"
+                        android:inputType="textEmailAddress"
+                        android:minHeight="35dp"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:tooltipText="Campo email"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+                </LinearLayout>
+
+                <!-- contraseña -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/labelContrasena"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text="@string/lbl_contrasena"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/azul4"/>
+
+                    <EditText
+                        android:id="@+id/campoContrasena"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/azul1"
+                        android:backgroundTint="@color/azul1"
+                        android:backgroundTintMode="multiply"
+                        android:inputType="textPassword"
+                        android:minHeight="35dp"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="italic"
+                        android:tooltipText="Campo contraseña"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute"
+
+                        />
+                </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contenedorInfoDesplegable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                    <!-- Contenedor campos adicionales -->
+                    <LinearLayout
+                        android:id="@+id/containerCamposExtra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+
+                        android:visibility="gone">
+
+                        <!-- Meter aquí campos adicionales -->
+
+                        <!-- telefono comun-->
+                        <LinearLayout
+                            android:id="@+id/containerTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/labelTelefono"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="@string/tel_fono"
+                                android:layout_marginStart="10dp"
+                                android:textColor="@color/azul4"/>
+
+                            <EditText
+                                android:id="@+id/campoTelefono"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/azul1"
+                                android:backgroundTint="@color/azul1"
+                                android:backgroundTintMode="multiply"
+                                android:inputType="phone|number"
+                                android:minHeight="35dp"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:textStyle="italic"
+                                android:tooltipText="Campo teléfono"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+                        </LinearLayout>
+
+                        <!-- direccion academia -->
+                        <LinearLayout
+                            android:id="@+id/containerDireccAcademia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:id="@+id/labelDireccion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/direcci_n"
+                                android:textSize="15sp"
+                                android:textColor="@color/azul4"/>
+
+                            <EditText
+                                android:id="@+id/campoDireccion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/azul1"
+                                android:backgroundTint="@color/azul1"
+                                android:backgroundTintMode="multiply"
+                                android:inputType="text"
+                                android:minHeight="35dp"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:textStyle="italic"
+                                android:tooltipText="Campo dirección"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+                        </LinearLayout>
+
+                        <!-- nombre usuario -->
+                        <LinearLayout
+                            android:id="@+id/containerNombreUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+                            <TextView
+                                android:id="@+id/labelNombre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="@string/lbl_nombre"
+                                android:layout_marginStart="10dp"
+                                android:textColor="@color/azul4"/>
+
+                            <EditText
+                                android:id="@+id/campoNombre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/azul1"
+                                android:backgroundTint="@color/azul1"
+                                android:backgroundTintMode="multiply"
+                                android:inputType="text"
+                                android:minHeight="35dp"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:textStyle="italic"
+                                android:tooltipText="Campo nombre de usuario"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+                        </LinearLayout>
+
+                        <!-- apellidos usuario -->
+                        <LinearLayout
+                            android:id="@+id/containerApellidosUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+                            <TextView
+                                android:id="@+id/labelApellidos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="@string/apellidos"
+                                android:layout_marginStart="10dp"
+                                android:textColor="@color/azul4"/>
+
+                            <EditText
+                                android:id="@+id/campoApellidos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/azul1"
+                                android:backgroundTint="@color/azul1"
+                                android:backgroundTintMode="multiply"
+                                android:inputType="text"
+                                android:minHeight="35dp"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:textStyle="italic"
+                                android:tooltipText="Campo nombre de usuario"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+                        </LinearLayout>
+
+                        <!-- edad usuario -->
+                        <LinearLayout
+                            android:id="@+id/containerEdadUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+                            <TextView
+                                android:id="@+id/labelEdad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="@string/edad"
+                                android:layout_marginStart="10dp"
+                                android:textColor="@color/azul4"/>
+
+                            <EditText
+                                android:id="@+id/campoEdad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/azul1"
+                                android:backgroundTint="@color/azul1"
+                                android:backgroundTintMode="multiply"
+                                android:inputType="text"
+                                android:minHeight="35dp"
+                                android:padding="5dp"
+                                android:textSize="15sp"
+                                android:textStyle="italic"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,UnusedAttribute" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- contenedor general abrir desplegable -->
+                <LinearLayout
+                    android:id="@+id/contenedorAbrirDesplegable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/azul4" />
+
+                    <LinearLayout
+                        android:id="@+id/pulsarVerMas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        tools:ignore="TouchTargetSizeCheck">
+
+                        <ImageView
+                            android:id="@+id/arrowIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/flecha_de_expansi_n"
+                            android:src="@drawable/baseline_keyboard_arrow_down_24" />
+
+                        <TextView
+                            android:id="@+id/textoVerMas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ver_m_s" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- Boton editar perfil -->
+            <Button
+                android:id="@+id/btn_editarInfoPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:backgroundTint="@color/azul4"
+                android:drawableTint="@color/white"
+                android:text="@string/lbl_btn_editarInfoPerfil"
+                android:textAllCaps="true"
+                app:cornerRadius="10dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="100dp" />
+            <Button
+                android:id="@+id/btn_anadirCurso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:backgroundTint="@color/azul4"
+                android:drawableTint="@color/white"
+                android:text="@string/lbl_btn_anadirCurso"
+                android:textAllCaps="true"
+                app:cornerRadius="10dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="100dp"
+                android:visibility="gone"
+                android:onClick="anadirCurso"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

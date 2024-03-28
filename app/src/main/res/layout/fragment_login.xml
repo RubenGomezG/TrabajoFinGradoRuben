@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.login.LoginFragment"
+    android:padding="40dp"
+    android:gravity="center">
+
+    <!-- titulo -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_inicioSesion"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:textColor="@color/azul4"/>
+
+    <!-- contenedor formulario -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:id="@+id/campoUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_nombreUsuario"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/campoContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_contrasena"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <CheckBox
+            android:id="@+id/check_recordarme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/lbl_mantenerSesionIniciada"
+            android:textColor="@color/grisOscuro1"/>
+
+        <Button
+            android:id="@+id/btn_iniciarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:backgroundTint="@color/azul4"
+            android:drawableEnd="@drawable/baseline_login_24"
+            android:drawableTint="@color/white"
+            android:text="@string/txt_btn_inciarSesion"
+            android:textAllCaps="true"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+
+
+    <!-- contenedor enlaces registrarse y seguir sin sesion o iniciar con google -->
+    <LinearLayout
+        android:id="@+id/contenedorEnlaces"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:layout_margin="20dp">
+
+        <!-- restablecer contraseña -->
+        <TextView
+            android:id="@+id/txt_restablecerContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:text="@string/lbl_forgotPassword"
+            android:textAlignment="center"
+            android:textColor="@color/azulLinks1"
+            tools:ignore="TouchTargetSizeCheck"
+            android:textSize="16sp"/>
+
+        <!-- ir a registro usuario-->
+        <TextView
+            android:id="@+id/txt_registroUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:text="@string/lbl_registroUsuario"
+            android:textAlignment="center"
+            android:textColor="@color/azulLinks1"
+            tools:ignore="TouchTargetSizeCheck"
+            android:textSize="16sp"/>
+
+        <!-- ir a registro academia -->
+        <TextView
+            android:id="@+id/txt_registroAcademia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lbl_registroAcademia"
+            android:textAlignment="center"
+            android:textColor="@color/azulLinks1"
+            tools:ignore="TouchTargetSizeCheck"
+            android:textSize="16sp"/>
+
+        <!--  boton iniciar con google -->
+        <Button
+            android:id="@+id/btn_continuarConGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:background="@null"
+            android:backgroundTint="@color/rojoOscuro1"
+            app:cornerRadius="10dp"
+            android:drawableEnd="@android:drawable/ic_menu_myplaces"
+            android:drawableTint="@color/white"
+            android:text="@string/lbl_continuarConGoogle"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
+            android:onClick="IniciarSesionGoogle"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top_mobile_navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/top_navigation_perfil">
+
+    <fragment
+        android:id="@+id/top_navigation_perfil"
+        android:name="com.example.appacademia.ui.fragments.perfil.PerfilFragment"
+        android:label="@string/title_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/top_navigation_notif"
+        android:name="com.example.appacademia.ui.fragments.notificaciones.NotificacionesFragment"
+        android:label="@string/title_notif"
+        tools:layout="@layout/fragment_notificaciones" />
+
+    <fragment
+        android:id="@+id/top_navigation_ajustes"
+        android:name="com.example.appacademia.ui.fragments.ajustes.AjustesFragment"
+        android:label="@string/title_ajustes"
+        tools:layout="@layout/fragment_ajustes" />
+
+
+
+
+</navigation>

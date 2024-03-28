@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.cursos.CursosFragment"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!-- Agrega el LinearLayout como contenedor del TextView -->
+    <LinearLayout
+        android:id="@+id/contenedorTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textoCentrado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Inicia sesión para ver los cursos en los que te has inscrito!"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!-- Boton anadir curso -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaCardsCursos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

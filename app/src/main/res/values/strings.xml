@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">appAcademia</string>
+    <string name="title_buscar">Buscar</string>
+    <string name="title_cursos">Cursos</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_perfil">Perfil</string>
+    <string name="title_ajustes">Ajustes</string>
+    <string name="title_notif">Notificaciones</string>
+
+    <string name="edad_5_8">5-8</string>
+    <string name="edad_9_12">9-12</string>
+    <string name="edad_13_16">13-16</string>
+    <string name="adultos">Adultos</string>
+    <string name="buscar">Buscar...</string>
+    <string name="selectFecha">Seleccione una fecha...</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="ordenar_por">Ordenar por</string>
+    <string name="title_favoritos">Favoritos</string>
+    <string name="academias_Cerca">Buscar academias cercanas</string>
+
+    <string name="desc_fotoPerfil">Foto de perfil</string>
+    <string name="lbl_inicioSesion">Inicio de sesión</string>
+    <string name="hint_nombreUsuario">Nombre de usuario...</string>
+    <string name="hint_contrasena">Contraseña...</string>
+    <string name="lbl_mantenerSesionIniciada">Mantener sesión iniciada</string>
+    <string name="lbl_continuarConGoogle">Continuar con Google</string>
+    <string name="lbl_registroAcademia">Registrarme como academia</string>
+    <string name="lbl_registroUsuario">Registrarme como usuario</string>
+    <string name="lbl_forgotPassword">He olvidado mi contraseña</string>
+    <string name="txt_btn_inciarSesion">Iniciar sesión</string>
+    <string name="lbl_btn_editarInfoPerfil">Editar perfil</string>
+    <string name="lbl_usuario">Usuario:</string>
+    <string name="lbl_email">Email:</string>
+    <string name="lbl_contrasena">Contraseña:</string>
+    <string name="lbl_tituloPerfil">Perfil</string>
+    <string name="lbl_nombre">Nombre:</string>
+    <string name="fragment_mapa">Mapa</string>
+    <string name="title_crearCurso">Crear curso</string>
+    <string name="lbl_fechaInicioCurso">Fecha de inicio:</string>
+    <string name="lbl_fechaFinCurso">Fecha de fin:</string>
+    <string name="lbl_precio">Precio:</string>
+    <string name="lbl_descripcion">Descripción:</string>
+    <string name="lbl_tipo">Tipo de curso:</string>
+    <string name="txt_btn_crearCurso">Crear</string>
+    <string name="txt_btn_inscribirme">Inscribirme</string>
+    <string name="txt_btn_abandonarCurso">Abandonar curso</string>
+    <string name="fecha">Fecha:</string>
+    <string name="restablecer_contrase_a">Restablecer contraseña</string>
+    <string name="le_enviaremos_un_correo_electr_nico_con_un_enlace_para_restablecer_su_contrase_a">Le enviaremos un correo electrónico con un enlace para restablecer su contraseña.</string>
+    <string name="email">Email:</string>
+    <string name="enviar_correo">Enviar correo</string>
+    <string name="nombre_curso">Nombre Curso</string>
+    <string name="imagen_de_presentaci_n_de_la_academia">Imagen de presentación de la academia</string>
+    <string name="empieza_nacaba">Empieza:\nAcaba:</string>
+    <string name="precio">precio €</string>
+    <string name="descripcion">Descripcion...</string>
+    <string name="inscribirse">Inscribirse</string>
+    <string name="perfil">Perfil</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="tel_fono">Teléfono:</string>
+    <string name="direcci_n">Dirección:</string>
+    <string name="apellidos">Apellidos:</string>
+    <string name="flecha_de_expansi_n">Flecha de expansión</string>
+    <string name="ver_m_s">Ver más</string>
+    <string name="registro_de_academia">Registro de academia</string>
+    <string name="nombre_de_usuario">Nombre de usuario:</string>
+    <string name="contrase_a">Contraseña:</string>
+    <string name="confirmar_contrase_a">Confirmar contraseña:</string>
+    <string name="registrarme">Registrarme</string>
+    <string name="registro_de_usuario">Registro de usuario</string>
+    <string name="edad">Edad:</string>
+    <string name="tipo_de_curso">tipo de curso</string>
+    <string name="descripci_n_del_curso">Descripción del curso .......</string>
+    <string name="toggle_password_button_description">Mostrar contraseña\n</string>
+    <string name="nombre_academia">Nombre Academia</string>
+    <string name="lbl_btn_anadirCurso">Añadir curso</string>
+
+    <string-array name="filtros">
+        <item>Filtrar por</item>
+        <item>Académico</item>
+        <item>Otros</item>
+        <!-- Agrega más elementos según sea necesario -->
+    </string-array>
+
+    <string-array name="orden">
+        <item>Ordenar por</item>
+        <item>Fecha 🔼</item>
+        <item>Precio</item>
+        <item>Valoración</item>
+        <!-- Agrega más elementos según sea necesario -->
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+</resources>
