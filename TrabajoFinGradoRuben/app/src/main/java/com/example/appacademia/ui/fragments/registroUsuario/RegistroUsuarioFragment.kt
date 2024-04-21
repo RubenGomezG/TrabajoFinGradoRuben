@@ -183,7 +183,7 @@ class RegistroUsuarioFragment : Fragment() {
                                 }
                                 return@launch
                             }
-                            usuarioDAO.anadirUsuario(requireContext(), persona)
+                            usuarioDAO.anadirUsuario(persona)
                             withContext(Dispatchers.Main) {
                                 if (!(activity as MainActivity).loggedIn){
                                     val intent = Intent(activity as MainActivity, MainActivity::class.java)

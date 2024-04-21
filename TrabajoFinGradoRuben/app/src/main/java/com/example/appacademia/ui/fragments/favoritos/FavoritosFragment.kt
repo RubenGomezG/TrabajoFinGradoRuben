@@ -123,7 +123,7 @@ class FavoritosFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.IO) {
             val favoritoDAO = FavoritoDAO()
             val cursosDAO = CursoDAO()
-            val listaFavoritos = favoritoDAO.listaFavoritos(requireContext(),(activity as MainActivity).username)
+            val listaFavoritos = favoritoDAO.listaFavoritos((activity as MainActivity).username)
 
 
             val listaDeCursos = listaFavoritos.map { favorito ->

@@ -301,7 +301,7 @@ class PerfilFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.IO) {
             val usuariodao = UsuarioDAO()
             val usernameLogueado = (activity as MainActivity).username
-            val usuario = usuariodao.consultarUsuario(requireContext(), usernameLogueado)
+            val usuario = usuariodao.consultarUsuario(usernameLogueado)
             withContext(Dispatchers.Main) {
                 if (usuario.username.isNullOrEmpty()) {
                     binding.containerApellidosUsuario.visibility = View.GONE
@@ -329,7 +329,7 @@ class PerfilFragment : Fragment() {
             val usernameLogueado = (activity as MainActivity).username
 
             if (!usernameLogueado.isNullOrEmpty()) {
-                val usuario = usuariodao.consultarUsuario(requireContext(), usernameLogueado)
+                val usuario = usuariodao.consultarUsuario(usernameLogueado)
                 val academia = academiadao.consultarAcademia(usernameLogueado)
                 if(!usuario.username.isNullOrEmpty()){
 
