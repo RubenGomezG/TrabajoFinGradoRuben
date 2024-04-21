@@ -63,6 +63,15 @@ create table Favoritos(
     constraint usuarioFavoritos_fk foreign key(usuario) references usuarios(usuario) on update cascade on delete cascade
 );
 
+drop table if exists Chat;
+create table Chat(
+    cod_mensaje integer not null,
+    senderId varchar(50) not null,
+    contenido varchar(500) not null,
+    timestamp datetime not null
+    constraint sender_fk foreign key(senderId) references usuarios(usuario) on update cascade on delete cascade
+)
+
 
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Mikel', 'Mikel', 'mjorgesote@educacion.navarra.es', 'Mikel Aingeru', 'Jorge Soteras', 123456789);
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('LuisDorado', 'LuisDorado', 'ldoradogar@educacion.navarra.es', 'Luis', 'Dorado Garcés', 234567891);
