@@ -6,9 +6,15 @@
         xmlns:local="clr-namespace:InterfazEscritorio"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResizeWithGrip"
-        Title="Business+" MinHeight="450" Height="600" MaxHeight="1080" MinWidth="800" Width="1000" MaxWidth="1920">
-    <Grid>
-        
-    </Grid>
+        ResizeMode="NoResize"
+        Title="Business+" MinHeight="150" Height="400" MaxHeight="400" MinWidth="300" Width="400" MaxWidth="600">
+    <Canvas>
+        <Label Content="Usuario" Canvas.Left="40" Canvas.Top="75" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" FontWeight="Bold"/>
+        <TextBox Canvas.Left="40" TextWrapping="Wrap" Text="Usuario" Canvas.Top="106" Width="318" HorizontalAlignment="Left" Height="34" VerticalAlignment="Center"/>
+        <Label Content="Contraseña" Canvas.Left="40" Canvas.Top="158" Width="144" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox Canvas.Left="40" TextWrapping="Wrap" Text="Contraseña" Canvas.Top="192" Width="318" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top"/>
+        <TextBlock Canvas.Left="93" TextWrapping="Wrap" Text="Registrarse como Academia" Canvas.Top="246" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Width="212"/>
+        <TextBlock Canvas.Left="93" TextWrapping="Wrap" Text="¿Olvidó su contraseña?" Canvas.Top="277" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Width="212" Foreground="Blue" TextDecorations="Underline" FontWeight="Bold"/>
+        <Button Content="Iniciar Sesión" Canvas.Left="94" Canvas.Top="310" HorizontalAlignment="Left" VerticalAlignment="Top" Width="212" Height="42" Background="LawnGreen" FontWeight="Bold"/>
+    </Canvas>
 </Window>
