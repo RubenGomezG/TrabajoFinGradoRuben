@@ -9,6 +9,16 @@
         ResizeMode="CanResizeWithGrip"
         Title="Dashboard" MinHeight="450" Height="600" MaxHeight="1080" MinWidth="800" Width="1000" MaxWidth="1920">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Cursos" FontWeight="Bold" Grid.ColumnSpan="2">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Clientes" FontWeight="Bold" >
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Perfil" FontWeight="Bold">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

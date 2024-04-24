@@ -24,5 +24,26 @@ namespace InterfazEscritorio
         {
             InitializeComponent();
         }
+
+        private void Registrarse(object sender, RoutedEventArgs e)
+        {
+            Registro register = new Registro();
+            this.Close();
+            register.Show();
+        }
+
+        private void Forgot_Password(object sender, RoutedEventArgs e)
+        {
+            ForgotPassword forgotPassword = new ForgotPassword();
+            this.Close();
+            forgotPassword.Show();
+        }
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            this.Close();
+            dashboard.Show();
+        }
     }
 }

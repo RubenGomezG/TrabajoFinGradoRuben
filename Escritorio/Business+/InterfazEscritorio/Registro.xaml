@@ -7,8 +7,160 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip"
-        Title="Registro" MinHeight="450" Height="600" MaxHeight="1080" MinWidth="800" Width="1000" MaxWidth="1920">
-    <Grid>
-        
-    </Grid>
+        Title="Registro" MinHeight="450" Height="900" MaxHeight="1080" MinWidth="800" Width="800" MaxWidth="1920">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Margin="225,10,0,0" FontSize="20">
+                    <TextBlock.Text>Introducción de Datos de Empleados</TextBlock.Text>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>Nombre*</Bold>
+                </Label>
+                <TextBox x:Name="nombre" AcceptsReturn="False" MinWidth="300" Margin="5,5,0,5" Width="361"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>Apellidos*</Bold>
+                </Label>
+                <TextBox x:Name="apellidos" AcceptsReturn="False" MinWidth="300" Margin="5,5,0,5" Width="355"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>E-mail*</Bold>
+                </Label>
+                <TextBox x:Name="email" AcceptsReturn="False" Width="372" Margin="5,5,0,5" HorizontalAlignment="Center"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="5" Margin="15,10,0,0" Orientation="Horizontal" Width="435" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>Teléfono*</Bold>
+                </Label>
+                <TextBox x:Name="telefono" AcceptsReturn="False" Margin="5,5,0,5" Width="247"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Margin="15,10,0,0" Orientation="Horizontal" MinWidth="435" HorizontalAlignment="Left" Width="429">
+                <Label VerticalAlignment="Center">
+                    <Bold>Fecha de nacimiento</Bold>
+                </Label>
+                <DatePicker Width="298" Margin="5,5,0,5"></DatePicker>
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>DNI</Bold>
+                </Label>
+                <TextBox x:Name="dni" AcceptsReturn="False" Margin="5,5,0,5" Width="140"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left" Height="96">
+                <Label VerticalAlignment="Center" >
+                    <Bold>Adjuntar Fotografía</Bold>
+                </Label>
+                <Button Grid.Row="8"
+                Content="Abrir Archivo"
+                Click="AbrirArchivo_Click"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="100" Height="40" 
+                Margin="20"/>
+                <Image x:Name="imagenSalida" Height="95" VerticalAlignment="Top" Width="168"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Margin="15,10,0,0" Orientation="Horizontal" MinWidth="770" HorizontalAlignment="Left">
+                <DockPanel Width="770">
+                    <Image Source="Images/logo.png" DockPanel.Dock="Right" Height="100" Width="250" Margin="0,10,80,10"></Image>
+                    <Label VerticalAlignment="Top" DockPanel.Dock="Left">
+                        <Bold>Dirección</Bold>
+                    </Label>
+
+                    <TextBox x:Name="calle" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Dirección" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
+                    <TextBox x:Name="ciudad" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Ciudad" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
+                    <TextBox x:Name="provincia" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Provincia" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
+                    <TextBox x:Name="codigoPostal" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Código Postal" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
+                    <TextBox x:Name="pais" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="País" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
+                </DockPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="10" Margin="15,10,0,0" Orientation="Horizontal" Width="770" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>Enlace a Red Social</Bold>
+                </Label>
+                <TextBox x:Name="redsocial" AcceptsReturn="False" Margin="5,5,0,5" Width="575"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="11" Margin="15,10,0,0" Orientation="Horizontal" Width="409" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>Rol Actual</Bold>
+                </Label>
+                <ComboBox Width="340" Margin="5,5,0,5" >
+                    <ComboBoxItem>
+                        <TextBlock>
+                            <TextBlock.Text>Empleado</TextBlock.Text>
+                        </TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>
+                            <TextBlock.Text>Administrador</TextBlock.Text>
+                        </TextBlock>
+                    </ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="12" Margin="15,10,0,0" Orientation="Horizontal" MinWidth="770" HorizontalAlignment="Left">
+                <DockPanel Width="770">
+                    <Label VerticalAlignment="Top" DockPanel.Dock="Top">
+                        <Bold>Descripción del puesto de trabajo actual:</Bold>
+                    </Label>
+                    <TextBox x:Name="descripcion" AcceptsReturn="True" Margin="5,5,0,5" Width="700" HorizontalAlignment="Left" DockPanel.Dock="Bottom" Height="75"></TextBox>
+                </DockPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="13" Margin="15,10,0,5" Orientation="Horizontal" Width="300" HorizontalAlignment="Center">
+                <Button
+                Content="Guardar"
+                Click="Guardar_Click"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="100" Height="40" 
+                Margin="20">
+                </Button>
+
+                <Button
+                Content="Cancelar"
+                Click="Cancelar_Click"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="100" Height="40" 
+                Margin="20">
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="14" Margin="15,10,0,0" Orientation="Horizontal" Width="770" HorizontalAlignment="Left">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <DataGrid Name="datosEmpleados" Width="770" AutoGenerateColumns="True"/>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>
