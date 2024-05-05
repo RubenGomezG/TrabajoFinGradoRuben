@@ -68,6 +68,9 @@
     <Compile Include="UserControls\CursosUserControl.xaml.cs">
       <DependentUpon>CursosUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UsuariosUserControl.xaml.cs">
+      <DependentUpon>UsuariosUserControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CursosUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UsuariosUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

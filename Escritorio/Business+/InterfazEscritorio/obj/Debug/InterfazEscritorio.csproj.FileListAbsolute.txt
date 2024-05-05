@@ -24,3 +24,5 @@ D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\Curso
 D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\ChatUserControl.g.cs
 D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\ChatUserControl.baml
+D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\UsuariosUserControl.g.cs
+D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\UsuariosUserControl.baml

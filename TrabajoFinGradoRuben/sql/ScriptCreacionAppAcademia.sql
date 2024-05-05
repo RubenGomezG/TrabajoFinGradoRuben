@@ -1,4 +1,4 @@
--- Nombre alumnos/as: Rubén Gómez García, Cristina López Lusarreta, Rubén Lopez-Davalillo Ledesma, Endika Eguino Garbayo
+-- Nombre alumnos/as: Rubén Gómez García
 
 set global log_bin_trust_function_creators = 1;
 drop database if exists xj5trgrj_appacademia;
@@ -63,14 +63,26 @@ create table Favoritos(
     constraint usuarioFavoritos_fk foreign key(usuario) references usuarios(usuario) on update cascade on delete cascade
 );
 
-drop table if exists Chat;
-create table Chat(
+drop table if exists Conversaciones
+create table Conversaciones (
+    cod_conversacion INT AUTO_INCREMENT PRIMARY KEY,
+    usuario1_id INT not null,
+    usuario2_id INT not null,
+    foreign key (usuario_1_id) references usuarios(usuario) on update cascade on delete cascade,
+    foreign key (usuario_2_id) references usuarios(usuario) on update cascade on delete cascade,
+    constraint unica_conversacion unique (usuario1_id, usuario2_id)
+);
+
+drop table if exists Mensaje;
+create table Mensaje(
     cod_mensaje integer not null,
+    cod_conversacion integer not null,
     senderId varchar(50) not null,
     contenido varchar(500) not null,
-    timestamp datetime not null
-    constraint sender_fk foreign key(senderId) references usuarios(usuario) on update cascade on delete cascade
-)
+    timestamp datetime not null,
+	foreign key (senderId) references usuarios(usuario),
+    constraint conversacion_fk foreign key(cod_conversacion) references conversaciones(cod_conversacion) on update cascade on delete cascade
+);
 
 
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Mikel', 'Mikel', 'mjorgesote@educacion.navarra.es', 'Mikel Aingeru', 'Jorge Soteras', 123456789);

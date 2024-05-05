@@ -36,7 +36,7 @@
         
         <!-- Grid.Column = 1 -->
 
-        <Label Grid.Column="1" Grid.Row="0" Margin="5,10,0,0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">Buscar:</Label>
+        <Label Grid.Column="1" Grid.Row="0" Margin="5,10,0,0" FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center">Buscar Cursos:</Label>
         <Label Grid.Column="1" Grid.Row="1" Margin="5,0,0,0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">Nombre:</Label>
         <Label Grid.Column="1" Grid.Row="2" Margin="5,0,0,0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">Precio:</Label>
         <Label Grid.Column="1" Grid.Row="3" Margin="5,0,0,0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">Fecha Inicio:</Label>
@@ -46,8 +46,8 @@
         
         <!-- Grid.Column = 2 -->
 
-        <TextBox x:Name="txtBuscar" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3" Margin="5,20,20,0" BorderThickness="2" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
-        <TextBox x:Name="txtNombre" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="5,10,10,5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
+        <TextBox x:Name="txtBuscarCursos" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3" Margin="5,20,20,0" BorderThickness="2" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
+        <TextBox x:Name="txtNombreCurso" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="5,10,10,5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
         <TextBox x:Name="txtPrecio" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="5,10,10,5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
         <!-- <TextBox x:Name="txtFechaInicio" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Grid.IsSharedSizeScope="True" Margin="5,5,10,5" BorderThickness="1" BorderBrush="Black"></TextBox> -->
         <DatePicker Name="dateFechaInicio" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="5,5,10,5" BorderThickness="1" BorderBrush="Black" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center">
@@ -93,7 +93,7 @@
         <Image x:Name="imgCurso" Source="/Images/logo.png" Grid.Column="4" Grid.Row="3" Grid.RowSpan="4" Margin="20,20,20,35"></Image>
         
         <!-- Grid.Column = 5 -->
-        <Label Grid.Column="5" Grid.Row="0" Margin="5,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="bold" FontSize="20">Clientes del Curso</Label>
+        <Label Grid.Column="5" Grid.Row="0" Margin="5,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="bold" FontSize="16">Usuarios inscritos al curso</Label>
         <ListBox x:Name="listaClientes" Grid.Column="5" Grid.Row="1" Grid.RowSpan="6" Margin="20,5,20,0"></ListBox>
         
         <!-- DataGrid -->

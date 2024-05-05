@@ -17,7 +17,7 @@
             </TabItem>
             <TabItem Header="Clientes" FontWeight="Bold" >
                 <Grid Background="#FFE5E5E5">
-                    
+                    <local:UsuariosUserControl></local:UsuariosUserControl>
                 </Grid>
             </TabItem>
             <TabItem Header="Chat" FontWeight="Bold">
