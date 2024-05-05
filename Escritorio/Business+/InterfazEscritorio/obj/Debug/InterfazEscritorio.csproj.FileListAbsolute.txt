@@ -19,3 +19,8 @@ D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\InterfazEscritorio
 D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\InterfazEscritorio.csproj.CoreCompileInputs.cache
 D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\InterfazEscritorio.exe
 D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\InterfazEscritorio.pdb
+D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\CursosUserControl.g.cs
+D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\CursosUserControl.baml
+D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\ChatUserControl.g.cs
+D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\UserControls\ChatUserControl.baml

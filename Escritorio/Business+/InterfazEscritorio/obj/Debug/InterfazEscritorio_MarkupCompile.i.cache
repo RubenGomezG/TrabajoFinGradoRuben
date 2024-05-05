@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\App.xaml
-4-783957984
+61462532563
 
-9-214126288
+12-727463424
 13-1310406943
-Dashboard.xaml;ForgotPassword.xaml;MainWindow.xaml;Registro.xaml;
+Dashboard.xaml;ForgotPassword.xaml;MainWindow.xaml;Registro.xaml;UserControls\ChatUserControl.xaml;UserControls\CursosUserControl.xaml;
 
-False
+True
 
