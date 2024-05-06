@@ -13,4 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-/Escritorio/Business+/.vs/Business+/FileContentIndex/4433bd3a-fda6-49fc-98d9-638f89f66826.vsidx
+*.vs
