@@ -68,6 +68,9 @@
     <Compile Include="UserControls\CursosUserControl.xaml.cs">
       <DependentUpon>CursosUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\PerfilUserControl.xaml.cs">
+      <DependentUpon>PerfilUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UsuariosUserControl.xaml.cs">
       <DependentUpon>UsuariosUserControl.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\CursosUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PerfilUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

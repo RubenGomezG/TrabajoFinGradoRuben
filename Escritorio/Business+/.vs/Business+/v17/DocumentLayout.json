@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|d:\\dam2\\tfg\\escritorio\\business\u002B\\interfazescritorio\\usercontrols\\chatusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\usercontrols\\chatusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|d:\\dam2\\tfg\\escritorio\\business\u002B\\interfazescritorio\\usercontrols\\perfilusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\usercontrols\\perfilusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\interfazescritorio\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|d:\\dam2\\tfg\\escritorio\\business\u002B\\interfazescritorio\\registro.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\registro.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|d:\\dam2\\tfg\\escritorio\\business\u002B\\interfazescritorio\\usercontrols\\perfilusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\usercontrols\\perfilusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\interfazescritorio\\registro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\registro.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\interfazescritorio\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\interfazescritorio\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|d:\\dam2\\tfg\\escritorio\\business\u002B\\interfazescritorio\\usercontrols\\usuariosusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\usercontrols\\usuariosusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|d:\\dam2\\tfg\\escritorio\\business\u002B\\interfazescritorio\\usercontrols\\chatusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F66967AC-C4D9-46E0-A381-BAE5788E3834}|InterfazEscritorio\\InterfazEscritorio.csproj|solutionrelative:interfazescritorio\\usercontrols\\chatusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +38,61 @@
       "DocumentGroups": [
         {
           "DockedHeight": 780,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PerfilUserControl.xaml.cs",
+              "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\UserControls\\PerfilUserControl.xaml.cs",
+              "RelativeDocumentMoniker": "InterfazEscritorio\\UserControls\\PerfilUserControl.xaml.cs",
+              "ToolTip": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\UserControls\\PerfilUserControl.xaml.cs",
+              "RelativeToolTip": "InterfazEscritorio\\UserControls\\PerfilUserControl.xaml.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAYwGAAAACcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T18:10:44.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Registro.xaml.cs",
+              "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\Registro.xaml.cs",
+              "RelativeDocumentMoniker": "InterfazEscritorio\\Registro.xaml.cs",
+              "ToolTip": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\Registro.xaml.cs",
+              "RelativeToolTip": "InterfazEscritorio\\Registro.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T18:10:21.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuariosUserControl.xaml",
+              "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\UserControls\\UsuariosUserControl.xaml",
+              "RelativeDocumentMoniker": "InterfazEscritorio\\UserControls\\UsuariosUserControl.xaml",
+              "ToolTip": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\UserControls\\UsuariosUserControl.xaml",
+              "RelativeToolTip": "InterfazEscritorio\\UserControls\\UsuariosUserControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-06T17:44:32.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PerfilUserControl.xaml",
+              "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\UserControls\\PerfilUserControl.xaml",
+              "RelativeDocumentMoniker": "InterfazEscritorio\\UserControls\\PerfilUserControl.xaml",
+              "ToolTip": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\UserControls\\PerfilUserControl.xaml",
+              "RelativeToolTip": "InterfazEscritorio\\UserControls\\PerfilUserControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-06T17:44:13.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ChatUserControl.xaml",
               "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\UserControls\\ChatUserControl.xaml",
               "RelativeDocumentMoniker": "InterfazEscritorio\\UserControls\\ChatUserControl.xaml",
@@ -58,31 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dashboard.xaml",
-              "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\Dashboard.xaml",
-              "RelativeDocumentMoniker": "InterfazEscritorio\\Dashboard.xaml",
-              "ToolTip": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\Dashboard.xaml",
-              "RelativeToolTip": "InterfazEscritorio\\Dashboard.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-02T18:26:22.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "InterfazEscritorio\\MainWindow.xaml",
-              "ToolTip": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\MainWindow.xaml",
-              "RelativeToolTip": "InterfazEscritorio\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-24T18:18:08.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Registro.xaml",
               "DocumentMoniker": "D:\\DAM2\\TFG\\Escritorio\\Business\u002B\\InterfazEscritorio\\Registro.xaml",
               "RelativeDocumentMoniker": "InterfazEscritorio\\Registro.xaml",
