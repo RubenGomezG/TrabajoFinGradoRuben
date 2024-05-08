@@ -22,12 +22,12 @@
             </TabItem>
             <TabItem Header="Chat" FontWeight="Bold">
                 <Grid Background="#FFE5E5E5">
-                    <local:ChatUserControl/>
+                    <local:ConversacionesUserControl></local:ConversacionesUserControl>
                 </Grid>
             </TabItem>
             <TabItem Header="Perfil" FontWeight="Bold">
                 <Grid Background="#FFE5E5E5">
-                    
+                    <local:PerfilUserControl></local:PerfilUserControl>
                 </Grid>
             </TabItem>
             <TabItem Header="Cerrar Sesión" FontWeight="Bold">

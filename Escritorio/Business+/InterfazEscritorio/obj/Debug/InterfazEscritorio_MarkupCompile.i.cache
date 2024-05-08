@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\obj\Debug\
+D:\DAM2\TrabajoFinGradoRuben\Escritorio\Business+\InterfazEscritorio\obj\Debug\
 InterfazEscritorio
 none
 false
 DEBUG;TRACE
-D:\DAM2\TFG\Escritorio\Business+\InterfazEscritorio\App.xaml
-81223230168
+D:\DAM2\TrabajoFinGradoRuben\Escritorio\Business+\InterfazEscritorio\App.xaml
+9-2137069843
 
-14538409119
+152129526610
 13-1310406943
-Dashboard.xaml;ForgotPassword.xaml;MainWindow.xaml;Registro.xaml;UserControls\ChatUserControl.xaml;UserControls\CursosUserControl.xaml;UserControls\PerfilUserControl.xaml;UserControls\UsuariosUserControl.xaml;
+Dashboard.xaml;ForgotPassword.xaml;MainWindow.xaml;Registro.xaml;UserControls\ChatUserControl.xaml;UserControls\ConversacionesUserControl.xaml;UserControls\CursosUserControl.xaml;UserControls\PerfilUserControl.xaml;UserControls\UsuariosUserControl.xaml;
 
 True
 
