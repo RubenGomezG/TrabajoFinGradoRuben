@@ -1,0 +1,6 @@
+@BusinessPlusData_HostAddress = http://localhost:5208
+
+GET {{BusinessPlusData_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

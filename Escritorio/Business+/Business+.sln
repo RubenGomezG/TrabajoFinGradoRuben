@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfazEscritorio", "InterfazEscritorio\InterfazEscritorio.csproj", "{F66967AC-C4D9-46E0-A381-BAE5788E3834}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D9A476E1-2B36-4F8A-9BD2-6F98DB054CE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessPlusData", "BusinessPlusData\BusinessPlusData.csproj", "{4F960AE7-6F95-45B0-80FE-2FF08619D273}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{F66967AC-C4D9-46E0-A381-BAE5788E3834}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F66967AC-C4D9-46E0-A381-BAE5788E3834}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F66967AC-C4D9-46E0-A381-BAE5788E3834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F960AE7-6F95-45B0-80FE-2FF08619D273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F960AE7-6F95-45B0-80FE-2FF08619D273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F960AE7-6F95-45B0-80FE-2FF08619D273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F960AE7-6F95-45B0-80FE-2FF08619D273}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F960AE7-6F95-45B0-80FE-2FF08619D273} = {D9A476E1-2B36-4F8A-9BD2-6F98DB054CE2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AAA6B954-4680-422F-9DA1-71DF7ABA3A28}
