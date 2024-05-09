@@ -227,15 +227,13 @@ class AcademiaDAO : InterfaceDAO(){
         var academia = Academia()
         if (academiaABuscar == 0) {
             Log.e("AcademiaDAO.consultarAcademiaConCodigo", "No hay codigo introducido")
-//            Toast.makeText(context,
-//                "Introduzca su código", Toast.LENGTH_SHORT).show()
             return academia
         }
 
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
 
-            val sql = "SELECT * FROM academias WHERE cod_academia LIKE '$academiaABuscar';"
+            val sql = "SELECT * FROM Academias WHERE cod_academia = $academiaABuscar;"
             sentencia = conexion!!.createStatement()
             resultado = sentencia.executeQuery(sql)
 
@@ -243,30 +241,22 @@ class AcademiaDAO : InterfaceDAO(){
                 academia = getAcademia(resultado)
             }
             conexion!!.commit() // para hacer transacción a la vez
-        } catch (syntax: SQLSyntaxErrorException) {
-//            Toast.makeText(context,
-//                "Introduzca un usuario válido", Toast.LENGTH_SHORT).show()
+        }
+        catch (syntax: SQLSyntaxErrorException) {
             return Academia()
-        } catch (e: NullPointerException) {
-//            Toast.makeText(context,
-//                "El usuario introducido no existe", Toast.LENGTH_SHORT).show()
-        } catch (e: SQLException) {
-//            Toast.makeText(context,
-//                "El usuario o contraseña no son correctos", Toast.LENGTH_SHORT).show()
-            // para hacer transacción a la vez:
+        }
+        catch (_: NullPointerException) {}
+          catch (e: SQLException) {
             try {
                 conexion!!.rollback() // si al ejecutar da error, hacemos rollback
-            } catch (e1: SQLException) {
-//                Toast.makeText(context,
-//                    "Error de conexión", Toast.LENGTH_SHORT).show()
             }
+            catch (_: SQLException) {}
         } finally {
             try {
                 sentencia?.close()
                 resultado?.close()
-            } catch (_: SQLException) {
-
             }
+            catch (_: SQLException) {}
             desconectar()
         }
         return academia
@@ -285,12 +275,11 @@ class AcademiaDAO : InterfaceDAO(){
         val nombreAcademia = resultado.getString("nombre")
         val telefonoAcademia = resultado.getLong("telefono")
         val direccionAcademia = resultado.getString("direccion")
-        var imgAcademia = resultado.getString("img_perfil")
+        val imgAcademia = resultado.getString("img_perfil")
         val latitud = resultado.getDouble("latitud")
         val longitud = resultado.getDouble("longitud")
 
-        return Academia(codAcademia,username,contrasenaAcademia, emailAcademia,nombreAcademia, telefonoAcademia, direccionAcademia, imgAcademia,latitud,longitud)
-        //return Academia(codAcademia,username,contrasenaAcademia, emailAcademia,nombreAcademia, telefonoAcademia, direccionAcademia,ByteArray(7))
+        return Academia(codAcademia,username,contrasenaAcademia, emailAcademia,nombreAcademia, telefonoAcademia, direccionAcademia, imgAcademia,longitud,latitud)
     }
 
     /**

@@ -1,9 +1,5 @@
 package com.example.appacademia.ui.fragments.login
 
-import android.content.ContentValues.TAG
-import android.content.Context
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,29 +11,20 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import com.example.appacademia.R
-import com.example.appacademia.dao.firebase.FirebaseDAO
 import com.example.appacademia.dao.local.dao.UsuarioDao
 import com.example.appacademia.dao.local.database.LocalDatabase
 import com.example.appacademia.dao.servidorSQL.AcademiaDAO
-import com.example.appacademia.dao.servidorSQL.CursoDAO
 import com.example.appacademia.dao.servidorSQL.HashUtils
 import com.example.appacademia.dao.servidorSQL.UsuarioDAO
 import com.example.appacademia.databinding.FragmentLoginBinding
 import com.example.appacademia.model.Academia
 import com.example.appacademia.model.Usuario
 import com.example.appacademia.ui.activities.MainActivity
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -49,7 +36,6 @@ class LoginFragment : Fragment() {
     private lateinit var txtForgotPass: TextView
     private lateinit var txtSignUpUsuario: TextView
     private lateinit var txtSignUpAcademia: TextView
-    private lateinit var btnLoginGoogle: Button
     private lateinit var editUsername: EditText
     private lateinit var editPassword: EditText
     private lateinit var recordarme: CheckBox
@@ -94,10 +80,6 @@ class LoginFragment : Fragment() {
             gotoRegistroAcademia()
         }
 
-        btnLoginGoogle = binding.btnContinuarConGoogle
-        btnLoginGoogle.setOnClickListener {
-            //signInWithGoogle()
-        }
         editUsername = binding.campoUsername
         editPassword = binding.campoContrasena
 

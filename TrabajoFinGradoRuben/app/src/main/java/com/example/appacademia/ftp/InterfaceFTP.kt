@@ -33,9 +33,9 @@ import java.net.InetAddress
  class InterfaceFTP : AppCompatActivity() {
 
     companion object {
-        const val HOST = "81.88.53.117"
-        const val USUARIO = "admin_images@appacademia.es"
-        const val CONTRASENA = "Velasco9!Velasco9!"
+        const val HOST = "81.88.53.129"
+        const val USUARIO = "admin_images@businesstfg.info"
+        const val CONTRASENA = "Clash1ng;"
     }
 
     protected lateinit var binding: ActivityMainBinding
@@ -196,11 +196,11 @@ import java.net.InetAddress
 
         try {
             ftpClient = FTPClient()
-            ftpClient.connect(InetAddress.getByName("81.88.53.117"))
+            ftpClient.connect(InetAddress.getByName(HOST))
             if (ftpClient.isConnected) {
                 //showToast("¡Conectado exitosamente!")
                 Log.i("conexion ftp", "¡Conectado exitosamente!")
-                ftpClient.login("admin_images@appacademia.es", "Velasco9!Velasco9!")
+                ftpClient.login(USUARIO, CONTRASENA)
                 ftpClient.setFileType(FTP.BINARY_FILE_TYPE)
 
                 ftpClient.enterLocalPassiveMode()

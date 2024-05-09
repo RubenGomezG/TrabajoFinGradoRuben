@@ -260,7 +260,7 @@ class BuscarFragment : Fragment() {
             val cursosDAO = CursoDAO()
             val listaDeCursos = cursosDAO.obtenerCursosConFiltros(edbuscador.text.toString(), spinnerFiltros.selectedItem.toString(), spinnerOrdenar.selectedItem.toString())
 
-            Log.i("BuscarFragment", "Cantidad de cursos: ${listaDeCursos.size}")
+            Log.i("BuscarFragment", "Cantidad de cursos: ${listaDeCursos.size} ${listaDeCursos[0]}")
 
             withContext(Dispatchers.Main) {
                 val adaptador = RecyclerBuscar(listaDeCursos,requireActivity() as RecyclerBuscar.OnItemClickListener, requireActivity() as RecyclerBuscar.OnItemCheckedChangeListener,(activity as MainActivity).username)

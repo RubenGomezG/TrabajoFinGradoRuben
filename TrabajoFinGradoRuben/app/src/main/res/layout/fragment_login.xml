@@ -116,21 +116,6 @@
             tools:ignore="TouchTargetSizeCheck"
             android:textSize="16sp"/>
 
-        <!--  boton iniciar con google -->
-        <Button
-            android:id="@+id/btn_continuarConGoogle"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
-            android:background="@null"
-            android:backgroundTint="@color/rojoOscuro1"
-            app:cornerRadius="10dp"
-            android:drawableEnd="@android:drawable/ic_menu_myplaces"
-            android:drawableTint="@color/white"
-            android:text="@string/lbl_continuarConGoogle"
-            android:textAllCaps="false"
-            android:layout_marginTop="20dp"
-            android:onClick="IniciarSesionGoogle"/>
     </LinearLayout>
 
 </LinearLayout>

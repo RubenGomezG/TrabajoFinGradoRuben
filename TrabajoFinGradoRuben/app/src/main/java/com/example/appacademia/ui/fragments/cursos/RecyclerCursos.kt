@@ -112,7 +112,6 @@ class RecyclerCursos(private val cursos: List<Curso>, private val listener : OnI
             titleTextView.text = curso.nombre
             valoraAcademia.progress = (curso.valoracion * 10).toInt()
 
-
             GlobalScope.launch {
 
                 val academiadao = AcademiaDAO()

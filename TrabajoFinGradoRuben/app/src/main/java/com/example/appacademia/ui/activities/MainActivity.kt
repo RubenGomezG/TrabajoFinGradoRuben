@@ -27,7 +27,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.appacademia.R
 import com.example.appacademia.RecyclerCursosAcademia
-import com.example.appacademia.dao.firebase.FirebaseDAO
 import com.example.appacademia.dao.local.database.LocalDatabase
 import com.example.appacademia.dao.servidorSQL.FavoritoDAO
 import com.example.appacademia.dao.servidorSQL.InscripcionesDAO
@@ -60,7 +59,6 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
     var loggedIn: Boolean = false
     var username: String = ""
     var cursoActual: Int = 0
-    private var auth: FirebaseAuth = FirebaseDAO.getInstanceFirebase()
 
     /***
      * Una vez creada la actividad, enlazar todos sus elementos con las
@@ -413,16 +411,10 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
      */
     fun cerrarSesion(view: View) {
         if (loggedIn) {
-            Log.i("huevos", auth.currentUser.toString())
-            if (auth.currentUser != null) {
-                auth.currentUser!!.delete()
-            }
-
             lifecycleScope.launch(Dispatchers.IO) {
                 val userDao = LocalDatabase.getInstance(this@MainActivity).userDao()
                 userDao.deleteAllUsers()
             }
-
             loggedIn = false
             username = ""
             val intent = Intent(this, MainActivity::class.java)

@@ -25,7 +25,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import com.example.appacademia.R
-import com.example.appacademia.dao.firebase.FirebaseDAO
 import com.example.appacademia.dao.local.database.LocalDatabase
 import com.example.appacademia.dao.servidorSQL.AcademiaDAO
 import com.example.appacademia.dao.servidorSQL.HashUtils
@@ -36,12 +35,6 @@ import com.example.appacademia.ftp.InterfaceFTP
 import com.example.appacademia.model.Academia
 import com.example.appacademia.model.Usuario
 import com.example.appacademia.ui.activities.MainActivity
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -54,7 +47,6 @@ class PerfilFragment : Fragment() {
     private lateinit var txtForgotPass: TextView
     private lateinit var txtSignUpUsuario: TextView
     private lateinit var txtSignUpAcademia: TextView
-    private lateinit var btnLoginGoogle: Button
     private lateinit var editUsername: EditText
     private lateinit var editPassword: EditText
     private lateinit var imgPerfil: ImageView
@@ -78,7 +70,6 @@ class PerfilFragment : Fragment() {
     private var _binding2: FragmentLoginBinding? = null
     private val binding2 get() = _binding2!!
 
-    private val RC_SIGN_IN = 9001
 
     private var esEditable: Boolean = false
 
@@ -256,10 +247,6 @@ class PerfilFragment : Fragment() {
                 gotoRegistroAcademia()
             }
 
-            btnLoginGoogle = binding2.btnContinuarConGoogle
-            btnLoginGoogle.setOnClickListener {
-                IniciarSesionGoogle(requireView())
-            }
             editUsername = binding2.campoUsername
             editPassword = binding2.campoContrasena
 
@@ -453,111 +440,8 @@ class PerfilFragment : Fragment() {
         navController.navigate(R.id.navigation_crearCurso)
     }
 
-    /**
-     * Intentar iniciar con Google, mostrar mensaje de error si falla
-     */
-    fun IniciarSesionGoogle(view: View) {
-        try {
-            signInWithGoogle()
-        } catch (e: Exception) {
-            Toast.makeText(
-                activity,
-                "Error durante el inicio de sesión con Google",
-                Toast.LENGTH_SHORT
-            )
-                .show()
-        }
-    }
 
-    /**
-     * Configuración de inicio de sesión con Google
-     */
-    private fun signInWithGoogle() {
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("61763895953-0btairr49dcgc12tpvke69uatr7u8oet.apps.googleusercontent.com")
-            .requestEmail().build()
 
-        val googleSignInClient = GoogleSignIn.getClient(activity as MainActivity, gso)
-        val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
-
-    /**
-     *  Verificar si el código de solicitud coincide
-     *  con el código de inicio de sesión con Google
-     *
-     *  @param requestCode
-     *  @param resultCode
-     *  @param data
-     */
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleGoogleSignInResult(task)
-        }
-    }
-
-    /**
-     * Autenticar con Firebase usando la cuenta de Google
-     *
-     * @param task
-     */
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun handleGoogleSignInResult(task: Task<GoogleSignInAccount>) {
-        try {
-            // Obtener la cuenta de Google desde el resultado de la tarea
-            val account = task.getResult(ApiException::class.java)
-            // Autenticar con Firebase usando la cuenta de Google
-            firebaseAuthWithGoogle(account)
-        } catch (e: ApiException) {
-            // Manejar el fallo en el inicio de sesión con Google
-            Log.w(ContentValues.TAG, "Fallo en el inicio de sesión con Google", e)
-            Toast.makeText(
-                activity,
-                "Fallo en el inicio de sesión con Google",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-    }
-
-    /***
-     * Autenticar el inicio de sesión con Google
-     *
-     * @param account - cuenta con la que se ha iniciado
-     */
-    @RequiresApi(Build.VERSION_CODES.O)
-    private fun firebaseAuthWithGoogle(account: GoogleSignInAccount?) {
-
-        // Obtener credenciales de autenticación de Google
-        val credential = GoogleAuthProvider.getCredential(account?.idToken, null)
-        // Autenticar con Firebase usando las credenciales de Google
-        FirebaseDAO.getInstanceFirebase().signInWithCredential(credential)
-            .addOnCompleteListener(activity as MainActivity) { task ->
-                if (task.isSuccessful) {
-                    // Obtener la cuenta de usuario de Firebase
-                    val intent = Intent(activity as MainActivity, MainActivity::class.java)
-                    intent.putExtra("username", account?.email)
-                    startActivity(intent)
-                }
-                else {
-                    val intent = Intent(activity as MainActivity, MainActivity::class.java)
-                    intent.putExtra("username", account?.email)
-                    startActivity(intent)
-                }
-            }
-    }
-
-    /***
-     * Comprobar si se ha iniciado sesión,
-     * ya sea como usuario o academia
-     *
-     * @param view - vista actual
-     *
-     * @return devuelve true si está iniciado y false si no lo está
-     */
     fun iniciarSesion(view: View) : Boolean {
         //al hacer click en iniciar, regresar a buscar
         var usuario: Usuario? = null

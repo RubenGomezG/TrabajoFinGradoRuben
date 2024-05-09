@@ -1,11 +1,6 @@
 -- Nombre alumnos/as: Rubén Gómez García
+use bu5x9cts_businessplus;
 
-set global log_bin_trust_function_creators = 1;
-drop database if exists xj5trgrj_appacademia;
-create database xj5trgrj_appacademia;
-use xj5trgrj_appacademia;
-
-drop table if exists Usuarios;
 create table Usuarios(
 	usuario varchar(50) primary key,
     contrasena text not null,
@@ -13,11 +8,10 @@ create table Usuarios(
     nombre varchar(20) not null,
     apellidos varchar(40) not null,
     telefono integer(15) not null,
-    img_perfil blob,
+    img_perfil varchar(100),
     edad integer(3)
 );
 
-drop table if exists Academias;
 create table Academias(
 	cod_academia integer primary key auto_increment,
 	usuario varchar(50) not null,
@@ -26,10 +20,11 @@ create table Academias(
     nombre varchar(20) not null,
     telefono integer(15) not null,
     direccion text not null,
-    img_perfil blob
+    latitud double not null,
+    longitud double not null,
+    img_perfil varchar(100)
 );
 
-drop table if exists Cursos;
 create table Cursos(
 	cod_curso integer auto_increment primary key,
     nombre_curso varchar(50) not null,
@@ -40,48 +35,44 @@ create table Cursos(
     descripcion text,
     tipo enum('Académico', 'Otros') not null,
     cod_academia integer not null,
-    constraint academia_fk foreign key(cod_academia) references academias(cod_academia) on update cascade on delete cascade,
+    constraint academia_fk foreign key(cod_academia) references Academias(cod_academia) on update cascade on delete cascade,
     constraint chk_Fechas check (fecha_fin_curso > fecha_inicio_curso)
 );
 
-drop table if exists Inscripciones;
 create table Inscripciones(
 	cod_curso integer not null,
     usuario varchar(50) not null,
     fecha_MiInicio_curso datetime not null,
     fecha_MiFin_curso datetime not null,
-    constraint curso_fk foreign key(cod_curso) references cursos(cod_curso) on update cascade on delete cascade,
-    constraint usuario_fk foreign key(usuario) references usuarios(usuario) on update cascade on delete cascade,
+    constraint curso_fk foreign key(cod_curso) references Cursos(cod_curso) on update cascade on delete cascade,
+    constraint usuario_fk foreign key(usuario) references Usuarios(usuario) on update cascade on delete cascade,
     constraint chk_Fechas_Inscripciones check (fecha_MiFin_curso > fecha_MiInicio_curso)
 );
 
-drop table if exists Favoritos;
 create table Favoritos(
 	cod_curso integer not null,
     usuario varchar(50) not null,
-    constraint cursoFavoritos_fk foreign key(cod_curso) references cursos(cod_curso) on update cascade on delete cascade,
-    constraint usuarioFavoritos_fk foreign key(usuario) references usuarios(usuario) on update cascade on delete cascade
+    constraint cursoFavoritos_fk foreign key(cod_curso) references Cursos(cod_curso) on update cascade on delete cascade,
+    constraint usuarioFavoritos_fk foreign key(usuario) references Usuarios(usuario) on update cascade on delete cascade
 );
 
-drop table if exists Conversaciones
 create table Conversaciones (
     cod_conversacion INT AUTO_INCREMENT PRIMARY KEY,
-    usuario1_id INT not null,
-    usuario2_id INT not null,
-    foreign key (usuario_1_id) references usuarios(usuario) on update cascade on delete cascade,
-    foreign key (usuario_2_id) references usuarios(usuario) on update cascade on delete cascade,
+    usuario1_id varchar(50) not null,
+    usuario2_id varchar(50) not null,
+    foreign key (usuario1_id) references Usuarios(usuario) on update cascade on delete cascade,
+    foreign key (usuario2_id) references Usuarios(usuario) on update cascade on delete cascade,
     constraint unica_conversacion unique (usuario1_id, usuario2_id)
 );
 
-drop table if exists Mensaje;
 create table Mensaje(
     cod_mensaje integer not null,
     cod_conversacion integer not null,
     senderId varchar(50) not null,
     contenido varchar(500) not null,
     timestamp datetime not null,
-	foreign key (senderId) references usuarios(usuario),
-    constraint conversacion_fk foreign key(cod_conversacion) references conversaciones(cod_conversacion) on update cascade on delete cascade
+	foreign key (senderId) references Usuarios(usuario),
+    constraint conversacion_fk foreign key(cod_conversacion) references Conversaciones(cod_conversacion) on update cascade on delete cascade
 );
 
 
@@ -96,16 +87,16 @@ insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values 
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Cris', 'Cris', 'clopezlusa1@educacion.navarra.es', 'Cristina', 'López Lusarreta', 912345678);
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Endika', 'Endika', 'eeguinogar@educacion.navarra.es', 'Endika', 'Eguino Garbayo', 012345678);
 
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia1', 'password1', 'academia1@example.com', 'Academia 1', 123456789, 'Calle Academia 1', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia2', 'password2', 'academia2@example.com', 'Academia 2', 234567890, 'Calle Academia 2', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia3', 'password3', 'academia3@example.com', 'Academia 3', 345678901, 'Calle Academia 3', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia4', 'password4', 'academia4@example.com', 'Academia 4', 456789012, 'Calle Academia 4', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia5', 'password5', 'academia5@example.com', 'Academia 5', 567890123, 'Calle Academia 5', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia6', 'password6', 'academia6@example.com', 'Academia 6', 678901234, 'Calle Academia 6', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia7', 'password7', 'academia7@example.com', 'Academia 7', 789012345, 'Calle Academia 7', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia8', 'password8', 'academia8@example.com', 'Academia 8', 890123456, 'Calle Academia 8', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia9', 'password9', 'academia9@example.com', 'Academia 9', 901234567, 'Calle Academia 9', NULL);
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, img_perfil) VALUES ('academia10', 'password10', 'academia10@example.com', 'Academia 10', 123456780, 'Calle Academia 10', NULL);
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia1', 'password1', 'academia1@example.com', 'Academia 1', 123456789, 'Calle Academia 1', 0.0, 0.0, "academia1.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia2', 'password2', 'academia2@example.com', 'Academia 2', 234567890, 'Calle Academia 2', 0.0, 0.0, "academia2.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia3', 'password3', 'academia3@example.com', 'Academia 3', 345678901, 'Calle Academia 3', 0.0, 0.0, "academia3.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia4', 'password4', 'academia4@example.com', 'Academia 4', 456789012, 'Calle Academia 4', 0.0, 0.0, "academia4.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia5', 'password5', 'academia5@example.com', 'Academia 5', 567890123, 'Calle Academia 5', 0.0, 0.0, "academia5.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia6', 'password6', 'academia6@example.com', 'Academia 6', 678901234, 'Calle Academia 6', 0.0, 0.0, "academia6.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia7', 'password7', 'academia7@example.com', 'Academia 7', 789012345, 'Calle Academia 7', 0.0, 0.0, "academia7.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia8', 'password8', 'academia8@example.com', 'Academia 8', 890123456, 'Calle Academia 8', 0.0, 0.0, "academia8.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia9', 'password9', 'academia9@example.com', 'Academia 9', 901234567, 'Calle Academia 9', 0.0, 0.0, "academia9.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia10', 'password10', 'academia10@example.com', 'Academia 10', 123456780, 'Calle Academia 10', 0.0, 0.0, "academia10.jpg");
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
 VALUES ('Curso 1', '2024-03-01', '2024-04-01', 100.00, 4.5, 'Descripción del curso 1','Académico', 1);
@@ -158,6 +149,3 @@ INSERT INTO Favoritos (cod_curso, usuario) VALUES (7, 'Javi');
 INSERT INTO Favoritos (cod_curso, usuario) VALUES (8, 'Pablo');
 INSERT INTO Favoritos (cod_curso, usuario) VALUES (9, 'LuisDorado');
 INSERT INTO Favoritos (cod_curso, usuario) VALUES (10, 'Mikel');
-
-
-
