@@ -11,9 +11,10 @@ import java.sql.SQLException
 import java.sql.SQLSyntaxErrorException
 import java.sql.Statement
 
-class ChatDAO : InterfaceDAO() {
+class MensajeDAO : InterfaceDAO() {
     fun anadirMensaje(mensaje: Mensaje) {
         var sentencia: PreparedStatement? = null
+        var codConversacion = mensaje.codConversacion
         var senderId = mensaje.senderId
         var content = mensaje.content
         val timestamp = mensaje.timestamp
@@ -24,11 +25,12 @@ class ChatDAO : InterfaceDAO() {
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
 
-            val sql = "INSERT INTO Mensajes (senderId, contenido, fecha_mensaje) VALUES (?,?,?)"
+            val sql = "INSERT INTO Mensajes (cod_conversacion, senderId, contenido, timestamp) VALUES (?,?,?,?)"
 
             sentencia = conexion!!.prepareStatement(sql)
 
-            sentencia.setInt(1, senderId)
+            sentencia.setInt(1, codConversacion)
+            sentencia.setInt(2, senderId)
             sentencia.setString(2, content)
             sentencia.setTimestamp(3, fechaSqlTimestamp1)
 
@@ -51,11 +53,11 @@ class ChatDAO : InterfaceDAO() {
     }
 
     /**
-     * Consulta un curso en la base de datos basado en el código del curso.
-     * @param codigoCurso - El código del curso a consultar.
-     * @return El curso encontrado.
+     * Consulta un mensaje en la base de datos basado en el código del curso.
+     * @param codigoMensaje - El código del mensaje a consultar.
+     * @return El mensaje encontrado.
      */
-    fun consultarCurso(codigoMensaje : Int): Mensaje {
+    fun consultarMensaje(codigoMensaje : Int): Mensaje {
         var sentencia: Statement? = null
         var resultado: ResultSet? = null
         conectar()
@@ -99,24 +101,25 @@ class ChatDAO : InterfaceDAO() {
     }
 
     /**
-     * Obtiene un curso a partir de un ResultSet.
+     * Obtiene un mensaje a partir de un ResultSet.
      * @param resultado - El ResultSet que contiene los datos del curso.
-     * @return El curso obtenido.
+     * @return El mensaje obtenido.
      */
     private fun getMensaje(resultado: ResultSet): Mensaje {
         val codMensaje = resultado.getInt("cod_mensaje")
+        val codConversacion = resultado.getInt("cod_conversacion")
         val senderId = resultado.getInt("senderId")
         val content = resultado.getString("contenido")
         val timestamp = resultado.getDate("timestamp")
-        return Mensaje(codMensaje,senderId,content, timestamp)
+        return Mensaje(codMensaje, codConversacion, senderId, content, timestamp)
     }
 
     /**
-     * Borra un curso de la base de datos.
+     * Borra un mensaje de la base de datos.
      * @param context - El contexto de la aplicación.
-     * @param curso - El curso a borrar.
+     * @param mensaje - El curso a borrar.
      */
-    fun borrarCurso(context: Context, mensaje: Mensaje) {
+    fun borrarMensaje(context: Context, mensaje: Mensaje) {
         var sentencia: PreparedStatement? = null
         val codCurso = mensaje.codMensaje
 
