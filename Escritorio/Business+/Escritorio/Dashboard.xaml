@@ -30,7 +30,7 @@
                     <local:PerfilUserControl></local:PerfilUserControl>
                 </Grid>
             </TabItem>
-            <TabItem Header="Cerrar Sesión" FontWeight="Bold">
+            <TabItem Header="Cerrar Sesión" FontWeight="Bold" KeyDown="CerrarSesion">
                 <Grid Background="#FFE5E5E5">
                     
                 </Grid>

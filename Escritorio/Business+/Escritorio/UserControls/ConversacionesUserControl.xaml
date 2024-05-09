@@ -13,12 +13,12 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1" Margin="5">
-                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical" MouseDown="AbrirChat">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding}" Padding="5"/>
+                                <TextBlock Text="{Binding}" Padding="5" FontWeight="Bold"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding}" Padding="5"/>
+                                <TextBlock Text="{Binding}" Padding="5" FontWeight="Normal" FontStyle="Italic"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessPlusData.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,20 @@ namespace Escritorio
         public ForgotPassword()
         {
             InitializeComponent();
+        }
+
+        private void Cambiar_Contrasena(object sender, RoutedEventArgs e)
+        {
+            Academia academia = new Academia
+            {
+                Usuario = username.Text,
+                Contrasena = password.Text,
+            };
+            Academia getAcademia = academia;
+            if (getAcademia != null && password.Text.Equals(confirmarPassword.Text))
+            {
+                
+            }
         }
     }
 }

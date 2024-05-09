@@ -133,7 +133,7 @@ namespace Escritorio.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Escritorio;V1.0.0.0;component/usercontrols/usuariosusercontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Escritorio;component/usercontrols/usuariosusercontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UserControls\UsuariosUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

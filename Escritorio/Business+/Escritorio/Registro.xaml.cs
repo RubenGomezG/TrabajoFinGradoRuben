@@ -100,7 +100,7 @@ namespace Escritorio
 
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(apellidos.Text) || string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(telefono.Text))
+            if (string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(password.Text) || string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(telefono.Text))
             {
 
                 MessageBox.Show("Los campos Nombre, Apellidos, Email y Teléfono son obligatorios.");
@@ -112,10 +112,21 @@ namespace Escritorio
             {
                 try
                 {
-                    List<User> users = new List<User>();
-                    users.Add(new User() { nombre = nombre.Text, apellidos = apellidos.Text, email = apellidos.Text, telefono = int.Parse(telefono.Text) });
-                    datosEmpleados.ItemsSource = users;
-                    new Usuario { }
+                    //List<User> users = new List<User>();
+                    //users.Add(new User() { nombre = nombre.Text, apellidos =  telefono = int.Parse(telefono.Text) });
+                    Academia academia = new Academia 
+                    {
+                        Usuario = username.Text,
+                        Contrasena = password.Text,
+                        Email = email.Text,
+                        Nombre = nombre.Text,
+                        Telefono = int.Parse(telefono.Text),
+                        Direccion = calle.Text,
+                    };
+                    if(imagenSalida.Source != new BitmapImage(new Uri("/Images/logo.png")) && imagenSalida.Source != null) 
+                    {
+                        academia.ImgPerfil = username.Text + ".jpg";
+                    }
                 }
                 catch (Exception ex)
                 {

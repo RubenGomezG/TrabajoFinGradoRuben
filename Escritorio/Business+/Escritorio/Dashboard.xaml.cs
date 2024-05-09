@@ -23,5 +23,10 @@ namespace Escritorio
         {
             InitializeComponent();
         }
+
+        private void CerrarSesion(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

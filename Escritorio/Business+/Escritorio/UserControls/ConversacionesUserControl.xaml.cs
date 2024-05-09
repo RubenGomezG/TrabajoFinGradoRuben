@@ -25,5 +25,10 @@ namespace Escritorio.UserControls
             InitializeComponent();
             DataContext = new MainViewModel();
         }
+
+        private void AbrirChat(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

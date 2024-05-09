@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using BusinessPlusData.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,6 +93,18 @@ namespace Escritorio.UserControls
             {
                 try
                 {
+                    Academia academia = new Academia
+                    {
+                        Usuario = username.Text,
+                        Nombre = nombre.Text,
+                        Email = email.Text,
+                        Telefono = int.Parse(telefono.Text),
+                        Direccion = calle.Text,
+                    };
+                    if (imagenSalida.Source != new BitmapImage(new Uri("/Images/logo.png")) && imagenSalida.Source != null)
+                    {
+                        academia.ImgPerfil = username.Text + ".jpg";
+                    }
                     //List<User> users = new List<User>();
                     //users.Add(new User() { nombre = nombre.Text, apellidos = apellidos.Text, email = apellidos.Text, telefono = int.Parse(telefono.Text) });
                 }

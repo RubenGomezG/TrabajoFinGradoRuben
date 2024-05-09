@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using BusinessPlusData.Models;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -37,6 +38,11 @@ namespace Escritorio
 
         private void Login(object sender, RoutedEventArgs e)
         {
+            Academia academia = new Academia
+            {
+                Usuario = username.Text,
+                Contrasena = password.Text,
+            };
             Dashboard dashboard = new Dashboard();
             this.Close();
             dashboard.Show();
