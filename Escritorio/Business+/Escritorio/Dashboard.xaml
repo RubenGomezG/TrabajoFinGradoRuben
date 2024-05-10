@@ -1,0 +1,40 @@
+﻿<Window x:Class="Escritorio.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Escritorio.UserControls"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
+        Title="Dashboard" MinHeight="450" Height="600" MaxHeight="1080" MinWidth="800" Width="1000" MaxWidth="1920">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Cursos" FontWeight="Bold">
+                <Grid Background="#FFE5E5E5">
+                    <local:CursosUserControl></local:CursosUserControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Clientes" FontWeight="Bold" >
+                <Grid Background="#FFE5E5E5">
+                    <local:UsuariosUserControl></local:UsuariosUserControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Chat" FontWeight="Bold">
+                <Grid Background="#FFE5E5E5">
+                    <local:ConversacionesUserControl></local:ConversacionesUserControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Perfil" FontWeight="Bold">
+                <Grid Background="#FFE5E5E5">
+                    <local:PerfilUserControl></local:PerfilUserControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Cerrar Sesión" FontWeight="Bold" KeyDown="CerrarSesion">
+                <Grid Background="#FFE5E5E5">
+                    
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
