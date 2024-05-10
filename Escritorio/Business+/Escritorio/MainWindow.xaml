@@ -13,8 +13,7 @@
         <TextBox x:Name="username" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="113" Width="320" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
         <Label Content="Contraseña" Canvas.Left="40" Canvas.Top="161" Width="144" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraBold"/>
         <TextBox x:Name="password" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="192" Width="320" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
-        <Button Canvas.Left="95" Content="Registrarse como Academia" Canvas.Top="246" HorizontalAlignment="Center" VerticalAlignment="Top" Width="210" Background="Transparent" Foreground="Red" FontWeight="Bold" FontSize="13" BorderThickness="0" Click="Registrarse"/>
-        <Button Canvas.Left="95" Canvas.Top="277" Background="Transparent" BorderThickness="0" Click="Forgot_Password">
+        <Button Canvas.Left="95" Canvas.Top="267" Background="Transparent" BorderThickness="0" Click="Forgot_Password">
             <TextBlock TextWrapping="Wrap"
                        Text="¿Olvidó su contraseña?"
                        HorizontalAlignment="Center"

@@ -24,7 +24,7 @@ namespace Escritorio.UserControls
         public ChatUserControl()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            //DataContext = new MainViewModel();
         }
     }
 }

@@ -26,6 +26,12 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Margin="225,10,0,0" FontSize="20">
                     <TextBlock.Text>Perfil De Academia</TextBlock.Text>
                 </TextBlock>
+                <Button Grid.Row="1"
+                        Content="Cerrar Sesión"
+                        Click="CerrarSesion"
+                        HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Width="100" Height="40" 
+                        Margin="275,10,0,0"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
                 <Label VerticalAlignment="Center">

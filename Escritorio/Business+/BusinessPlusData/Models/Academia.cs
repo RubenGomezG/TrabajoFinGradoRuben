@@ -26,4 +26,5 @@ public partial class Academia
     public string? ImgPerfil { get; set; }
 
     public virtual ICollection<Curso> Cursos { get; set; } = new List<Curso>();
+    
 }

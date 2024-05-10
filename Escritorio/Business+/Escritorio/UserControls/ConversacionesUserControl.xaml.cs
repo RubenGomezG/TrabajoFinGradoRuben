@@ -23,7 +23,7 @@ namespace Escritorio.UserControls
         public ConversacionesUserControl()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            //DataContext = new MainViewModel();
         }
 
         private void AbrirChat(object sender, MouseButtonEventArgs e)

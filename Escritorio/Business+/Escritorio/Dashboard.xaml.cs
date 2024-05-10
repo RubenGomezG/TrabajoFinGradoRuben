@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessPlusData.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,12 @@ namespace Escritorio
     /// </summary>
     public partial class Dashboard : Window
     {
+        private readonly Bu5x9ctsBusinessplusContext _context;
+
         public Dashboard()
         {
             InitializeComponent();
-        }
-
-        private void CerrarSesion(object sender, KeyEventArgs e)
-        {
-
+            _context = new Bu5x9ctsBusinessplusContext();
         }
     }
 }

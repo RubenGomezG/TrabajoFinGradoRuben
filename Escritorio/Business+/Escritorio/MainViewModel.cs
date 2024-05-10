@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessPlusData.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -21,8 +22,10 @@ namespace Escritorio
             }
         }
 
-        public MainViewModel()
+        private readonly Bu5x9ctsBusinessplusContext _context;
+        public MainViewModel(Bu5x9ctsBusinessplusContext context)
         {
+            _context = context;
             YourCollection = new ObservableCollection<string>();
             // Aquí puedes inicializar y agregar elementos a tu colección si es necesario
             YourCollection.Add("Elemento 1");

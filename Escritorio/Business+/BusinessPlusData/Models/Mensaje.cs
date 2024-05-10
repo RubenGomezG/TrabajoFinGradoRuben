@@ -9,7 +9,8 @@ public partial class Mensaje
 
     public int CodConversacion { get; set; }
 
-    public string SenderId { get; set; } = null!;
+    public string SenderUsername { get; set; } = null!;
+    public int SenderCodAcademia { get; set; }
 
     public string Contenido { get; set; } = null!;
 
@@ -18,4 +19,5 @@ public partial class Mensaje
     public virtual Conversacione CodConversacionNavigation { get; set; } = null!;
 
     public virtual Usuario Sender { get; set; } = null!;
+    public virtual Academia SenderAcademia { get; set; } = null!;
 }

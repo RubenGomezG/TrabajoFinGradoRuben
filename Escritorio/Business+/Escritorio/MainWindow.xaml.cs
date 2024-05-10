@@ -1,4 +1,5 @@
 ﻿using BusinessPlusData.Models;
+using BusinessPlusData.Repository;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,18 +18,15 @@ namespace Escritorio
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly AcademiaRepository _repository;
+        private readonly Bu5x9ctsBusinessplusContext _context;
         public MainWindow()
         {
             InitializeComponent();
+            _context = new Bu5x9ctsBusinessplusContext();
+            _repository = new AcademiaRepository(_context);
         }
-
-        private void Registrarse(object sender, RoutedEventArgs e)
-        {
-            Registro register = new Registro();
-            this.Close();
-            register.Show();
-        }
-
+        
         private void Forgot_Password(object sender, RoutedEventArgs e)
         {
             ForgotPassword forgotPassword = new ForgotPassword();
@@ -36,16 +34,20 @@ namespace Escritorio
             forgotPassword.Show();
         }
 
-        private void Login(object sender, RoutedEventArgs e)
+        private async void Login(object sender, RoutedEventArgs e)
         {
             Academia academia = new Academia
             {
                 Usuario = username.Text,
                 Contrasena = password.Text,
             };
-            Dashboard dashboard = new Dashboard();
-            this.Close();
-            dashboard.Show();
+            var resultado = await _repository.LoginAsync(academia);
+            if (resultado != null)
+            {
+                Dashboard dashboard = new Dashboard();
+                this.Close();
+                dashboard.Show();
+            }
         }
     }
 }

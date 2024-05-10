@@ -22,6 +22,7 @@ namespace Escritorio.UserControls
     /// </summary>
     public partial class PerfilUserControl : UserControl
     {
+        //private readonly Bu5x9ctsBusinessplusContext _context;
         public PerfilUserControl()
         {
             InitializeComponent();
@@ -113,6 +114,13 @@ namespace Escritorio.UserControls
                     MessageBox.Show(ex.StackTrace);
                 }
             }
+        }
+
+        private void CerrarSesion(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            Window.GetWindow(this).Close();
+            mainWindow.Show();
         }
     }
 }

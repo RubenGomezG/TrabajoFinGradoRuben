@@ -23,7 +23,7 @@ namespace Escritorio.UserControls
         public CursosUserControl()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            //DataContext = new MainViewModel();
         }
 
         private void CrearCurso(object sender, RoutedEventArgs e)

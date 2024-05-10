@@ -30,7 +30,14 @@ public partial class Bu5x9ctsBusinessplusContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-   
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            var connectionString = "server=lhcp3379.webapps.net;database=bu5x9cts_businessplus;uid=bu5x9cts_rubengomez;pwd=Clash1ng!";
+            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -192,16 +199,22 @@ public partial class Bu5x9ctsBusinessplusContext : DbContext
 
             entity.HasIndex(e => e.CodConversacion, "conversacion_fk");
 
-            entity.HasIndex(e => e.SenderId, "senderId");
+            entity.HasIndex(e => e.SenderUsername, "sender_username");
+            entity.HasIndex(e => e.SenderCodAcademia, "sender_cod_academia");
 
             entity.Property(e => e.CodConversacion).HasColumnName("cod_conversacion");
             entity.Property(e => e.CodMensaje).HasColumnName("cod_mensaje");
             entity.Property(e => e.Contenido)
                 .HasMaxLength(500)
                 .HasColumnName("contenido");
-            entity.Property(e => e.SenderId)
+            entity.Property(e => e.SenderUsername)
                 .HasMaxLength(50)
-                .HasColumnName("senderId");
+                .HasColumnName("sender_username")
+                .IsRequired(false);
+            entity.Property(e => e.SenderCodAcademia)
+                .HasColumnType("integer")
+                .HasColumnName("sender_cod_academia")
+                ;
             entity.Property(e => e.Timestamp)
                 .HasColumnType("datetime")
                 .HasColumnName("timestamp");
@@ -211,9 +224,13 @@ public partial class Bu5x9ctsBusinessplusContext : DbContext
                 .HasConstraintName("conversacion_fk");
 
             entity.HasOne(d => d.Sender).WithMany()
-                .HasForeignKey(d => d.SenderId)
+                .HasForeignKey(d => d.SenderUsername)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("mensaje_ibfk_1");
+            entity.HasOne(d => d.SenderAcademia).WithMany()
+                .HasForeignKey(d => d.SenderCodAcademia)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("mensaje_ibfk_2");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
