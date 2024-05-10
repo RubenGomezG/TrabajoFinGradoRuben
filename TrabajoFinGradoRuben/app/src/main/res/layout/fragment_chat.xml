@@ -44,7 +44,7 @@
             android:layout_toStartOf="@id/btnSendMessage"
             android:layout_toLeftOf="@+id/btnSendMessage"
             android:backgroundTint="@color/verdeClaro1"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <ImageButton
             android:id="@+id/btnSendMessage"

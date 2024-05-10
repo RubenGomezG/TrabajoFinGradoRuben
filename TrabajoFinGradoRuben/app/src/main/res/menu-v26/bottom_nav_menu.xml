@@ -22,4 +22,10 @@
         android:icon="@drawable/baseline_account_circle_24"
         android:title="@string/title_perfil" />
 
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@android:drawable/sym_action_chat"
+        android:iconTint="@color/black"
+        android:title="@string/title_chat" />
+
 </menu>

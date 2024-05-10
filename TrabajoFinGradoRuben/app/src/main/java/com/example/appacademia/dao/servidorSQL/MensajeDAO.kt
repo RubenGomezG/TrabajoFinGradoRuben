@@ -3,6 +3,7 @@ package com.example.appacademia.dao.servidorSQL
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.example.appacademia.model.Conversacion
 import com.example.appacademia.model.Mensaje
 import java.sql.Date
 import java.sql.PreparedStatement
@@ -185,19 +186,19 @@ class MensajeDAO : InterfaceDAO() {
 
     /**
      * Obtiene todos los cursos de una academia específica.
-     * @param codAcadenia - El código de la academia.
+     * @param codConversacion - El código de la academia.
      * @return La lista de cursos de la academia especificada.
      */
-    fun obtenerTodosLosMensajesDeUsuario( senderId : Int): ArrayList<Mensaje> {
+    fun obtenerTodosLosMensajesDeUsuario(codConversacion: Int): ArrayList<Mensaje> {
         val todosMensajesDeUsuario = ArrayList<Mensaje>()
         var sentencia: PreparedStatement? = null
         var resultado: ResultSet? = null
-        var codigo: Int = senderId
+        val codigo = codConversacion
 
         try {
             conectar()
 
-            val sql = "SELECT * FROM Mensajes WHERE senderId = ?;"
+            val sql = "SELECT * FROM Mensajes WHERE cod_conversacion = ?;"
             sentencia = conexion!!.prepareStatement(sql)
             sentencia.setInt(1,codigo)
             resultado = sentencia.executeQuery()
@@ -209,7 +210,6 @@ class MensajeDAO : InterfaceDAO() {
 
         } catch (e: SQLException) {
             e.printStackTrace()
-            Log.e("SQL_ERROR obtenercursos", "Error al ejecutar la consulta SQL: ${e.message}")
         } finally {
             try {
                 sentencia?.close()
@@ -217,7 +217,6 @@ class MensajeDAO : InterfaceDAO() {
                 desconectar()
             } catch (e: SQLException) {
                 e.printStackTrace()
-                Log.e("SQL_ERROR", "Error al cerrar los recursos: ${e.message}")
             }
         }
 

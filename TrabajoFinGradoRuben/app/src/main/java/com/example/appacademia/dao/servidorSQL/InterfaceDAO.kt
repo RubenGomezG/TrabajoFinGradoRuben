@@ -18,7 +18,7 @@ abstract class InterfaceDAO{
     companion object {
         const val URL = "jdbc:mysql://lhcp3379.webapps.net:3306/bu5x9cts_businessplus"
         const val USUARIO = "bu5x9cts_rubengomez"
-        const val CONTRASENA = "Clash1ng;"
+        const val CONTRASENA = "Clash1ng!"
     }
 
     var conexion: Connection? = null

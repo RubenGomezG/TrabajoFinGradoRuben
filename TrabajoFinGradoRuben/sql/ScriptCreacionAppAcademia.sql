@@ -2,14 +2,15 @@
 use bu5x9cts_businessplus;
 
 create table Usuarios(
-	usuario varchar(50) primary key,
+	usuario varchar(50) not null,
     contrasena text not null,
     email varchar(100) unique not null,
     nombre varchar(20) not null,
     apellidos varchar(40) not null,
     telefono integer(15) not null,
     img_perfil varchar(100),
-    edad integer(3)
+    edad integer(3),
+    constraint unico_username unique (usuario)
 );
 
 create table Academias(
@@ -58,9 +59,9 @@ create table Favoritos(
 
 create table Conversaciones (
     cod_conversacion INT AUTO_INCREMENT PRIMARY KEY,
-    usuario1_id varchar(50) not null,
+    usuario1_id integer not null,
     usuario2_id varchar(50) not null,
-    foreign key (usuario1_id) references Usuarios(usuario) on update cascade on delete cascade,
+    foreign key (usuario1_id) references Academia(cod_academia) on update cascade on delete cascade,
     foreign key (usuario2_id) references Usuarios(usuario) on update cascade on delete cascade,
     constraint unica_conversacion unique (usuario1_id, usuario2_id)
 );
@@ -68,10 +69,12 @@ create table Conversaciones (
 create table Mensaje(
     cod_mensaje integer not null,
     cod_conversacion integer not null,
-    senderId varchar(50) not null,
+    sender_username varchar(50),
+    sender_cod_academia integer,
     contenido varchar(500) not null,
     timestamp datetime not null,
-	foreign key (senderId) references Usuarios(usuario),
+	foreign key (sender_username) references Usuarios(usuario) on update cascade on delete cascade,
+	foreign key (sender_cod_academia) references Academia(cod_academia) on update cascade on delete cascade,
     constraint conversacion_fk foreign key(cod_conversacion) references Conversaciones(cod_conversacion) on update cascade on delete cascade
 );
 

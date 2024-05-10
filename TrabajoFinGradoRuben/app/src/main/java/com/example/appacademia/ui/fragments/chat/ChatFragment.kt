@@ -7,11 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appacademia.R
+import com.example.appacademia.dao.servidorSQL.MensajeDAO
 import com.example.appacademia.model.Mensaje
 import com.example.appacademia.ui.activities.MainActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ChatFragment : Fragment() {
 
@@ -51,7 +56,16 @@ class ChatFragment : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadMessages()
+    }
+
     private fun loadMessages() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val mensajeDAO = MensajeDAO()
+            //val listaDeMensajes = mensajeDAO.obtenerTodosLosMensajesDeUsuario()
+        }
         messagesList.clear()
         /*val md = MessageDatabase()
         md.loadMessagesByTime { messages ->
