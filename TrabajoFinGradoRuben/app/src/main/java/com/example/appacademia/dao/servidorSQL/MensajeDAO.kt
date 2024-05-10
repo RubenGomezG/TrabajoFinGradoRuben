@@ -16,7 +16,8 @@ class MensajeDAO : InterfaceDAO() {
     fun anadirMensaje(mensaje: Mensaje) {
         var sentencia: PreparedStatement? = null
         var codConversacion = mensaje.codConversacion
-        var senderId = mensaje.senderId
+        var senderUsername = mensaje.senderUsername
+        var senderCodAcademia = mensaje.senderCodAcademia
         var content = mensaje.content
         val timestamp = mensaje.timestamp
         val fechaUtil1: java.util.Date = java.util.Date()
@@ -26,29 +27,32 @@ class MensajeDAO : InterfaceDAO() {
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
 
-            val sql = "INSERT INTO Mensajes (cod_conversacion, senderId, contenido, timestamp) VALUES (?,?,?,?)"
+            val sql = "INSERT INTO Mensajes (cod_conversacion, sender_username, sender_cod_academia, contenido, timestamp) VALUES (?,?,?,?,?)"
 
             sentencia = conexion!!.prepareStatement(sql)
 
             sentencia.setInt(1, codConversacion)
-            sentencia.setInt(2, senderId)
-            sentencia.setString(2, content)
-            sentencia.setTimestamp(3, fechaSqlTimestamp1)
+            sentencia.setString(2, senderUsername)
+            sentencia.setInt(3, senderCodAcademia)
+            sentencia.setString(4, content)
+            sentencia.setTimestamp(5, fechaSqlTimestamp1)
 
 
             sentencia.executeUpdate()
 
             conexion!!.commit() // para hacer transacción a la vez
-        } catch (e: SQLException) {
+        }
+        catch (e: SQLException) {
             try {
                 conexion!!.rollback() // si al ejecutar da error, hacemos rollback
-            } catch (e1: SQLException) {
             }
-        } finally {
+            catch (_: SQLException) {}
+        }
+        finally {
             try {
                 sentencia?.close()
-            } catch (_: SQLException) {
             }
+            catch (_: SQLException) {}
             desconectar()
         }
     }
@@ -76,26 +80,24 @@ class MensajeDAO : InterfaceDAO() {
                 mensaje = getMensaje(resultado)
             }
             conexion!!.commit() // para hacer transacción a la vez
-        } catch (syntax: SQLSyntaxErrorException) {
-
+        }
+        catch (syntax: SQLSyntaxErrorException) {
             return Mensaje()
-        } catch (e: NullPointerException) {
-
-        } catch (e: SQLException) {
-
+        }
+        catch (_: NullPointerException) {}
+        catch (e: SQLException) {
             // para hacer transacción a la vez:
             try {
                 conexion!!.rollback() // si al ejecutar da error, hacemos rollback
-            } catch (e1: SQLException) {
-
             }
-        } finally {
+            catch (_: SQLException) {}
+        }
+        finally {
             try {
                 sentencia?.close()
                 resultado?.close()
-            } catch (_: SQLException) {
-
             }
+            catch (_: SQLException) {}
             desconectar()
         }
         return mensaje
@@ -109,10 +111,11 @@ class MensajeDAO : InterfaceDAO() {
     private fun getMensaje(resultado: ResultSet): Mensaje {
         val codMensaje = resultado.getInt("cod_mensaje")
         val codConversacion = resultado.getInt("cod_conversacion")
-        val senderId = resultado.getInt("senderId")
+        val senderUsername = resultado.getString("sender_username")
+        val senderCodAcademia = resultado.getInt("sender_cod_academia")
         val content = resultado.getString("contenido")
         val timestamp = resultado.getDate("timestamp")
-        return Mensaje(codMensaje, codConversacion, senderId, content, timestamp)
+        return Mensaje(codMensaje, codConversacion, senderUsername, senderCodAcademia, content, timestamp)
     }
 
     /**
@@ -120,76 +123,69 @@ class MensajeDAO : InterfaceDAO() {
      * @param context - El contexto de la aplicación.
      * @param mensaje - El curso a borrar.
      */
-    fun borrarMensaje(context: Context, mensaje: Mensaje) {
+    fun borrarMensaje(mensaje: Mensaje) {
         var sentencia: PreparedStatement? = null
-        val codCurso = mensaje.codMensaje
+        val codMensaje = mensaje.codMensaje
 
         conectar()
         try {
             val sql = "DELETE FROM Mensajes WHERE cod_mensaje = ?"
             sentencia = conexion!!.prepareStatement(sql)
-            sentencia.setInt(1, codCurso)
+            sentencia.setInt(1, codMensaje)
             sentencia.executeUpdate()
-        } catch (_: SQLException) {
-            Toast.makeText(context,"El curso no se ha encontrado", Toast.LENGTH_SHORT).show()
-        } finally {
+        }
+        catch (_: SQLException) { }
+        finally {
             try {
                 sentencia?.close()
-            } catch (_: SQLException) {
-
             }
+            catch (_: SQLException) {}
             desconectar()
         }
     }
 
     /**
      * Modifica un curso en la base de datos.
-     * @param context - El contexto de la aplicación.
-     * @param curso - El curso con los datos actualizados.
+     * @param mensaje - El mensaje con los datos actualizados.
      */
-    fun modificarCurso(context: Context, mensaje: Mensaje) {
+    fun modificarMensaje(mensaje: Mensaje) {
         var sentencia: PreparedStatement? = null
-        var senderInt = mensaje.senderId
-        var content: String = mensaje.content
-        var timestamp = mensaje.timestamp
+        val content: String = mensaje.content
+        val timestamp = mensaje.timestamp
 
         conectar()
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
-            val sql = "UPDATE cursos SET senderId = ?, contenido = ?, timestamp = ?"
+            val sql = "UPDATE Mensaje SET contenido = ?, timestamp = ?"
             sentencia = conexion!!.prepareStatement(sql)
 
-            sentencia.setInt(1, senderInt)
-            sentencia.setString(2, content)
-            sentencia.setDate(3, timestamp as Date?)
-
+            sentencia.setString(1, content)
+            sentencia.setDate(2, timestamp as Date?)
 
             sentencia.executeUpdate()
             conexion!!.commit() // para hacer transacción a la vez
-        } catch (e: SQLException) {
-            Toast.makeText(context,"Debe rellenar los campos obligatorios correctamente", Toast.LENGTH_SHORT).show()
-            // para hacer transacción a la vez:
+        }
+        catch (e: SQLException) {
             try {
                 conexion!!.rollback() // si al ejecutar da error, hacemos rollback
-            } catch (e1: SQLException) {
-                Toast.makeText(context,"Error de conexión", Toast.LENGTH_SHORT).show()
             }
-        } finally {
+            catch (_: SQLException) {}
+        }
+        finally {
             try {
                 sentencia?.close()
-            } catch (_: SQLException) {
-
             }
+            catch (_: SQLException) {}
             desconectar()
         }
     }
 
     /**
-     * Obtiene todos los cursos de una academia específica.
-     * @param codConversacion - El código de la academia.
-     * @return La lista de cursos de la academia especificada.
+     * Obtiene todos los mensajes de una conversación específica.
+     * @param codConversacion - El código de la conversación.
+     * @return La lista de mensajes de la conversación especificada.
      */
-    fun obtenerTodosLosMensajesDeUsuario(codConversacion: Int): ArrayList<Mensaje> {
+    fun obtenerTodosLosMensajesDeConversacion(codConversacion: Int): ArrayList<Mensaje> {
         val todosMensajesDeUsuario = ArrayList<Mensaje>()
         var sentencia: PreparedStatement? = null
         var resultado: ResultSet? = null
@@ -207,19 +203,20 @@ class MensajeDAO : InterfaceDAO() {
                 val mensaje = getMensaje(resultado)
                 todosMensajesDeUsuario.add(mensaje)
             }
-
-        } catch (e: SQLException) {
+        }
+        catch (e: SQLException) {
             e.printStackTrace()
-        } finally {
+        }
+        finally {
             try {
                 sentencia?.close()
                 resultado?.close()
                 desconectar()
-            } catch (e: SQLException) {
+            }
+            catch (e: SQLException) {
                 e.printStackTrace()
             }
         }
-
         return todosMensajesDeUsuario
     }
 }

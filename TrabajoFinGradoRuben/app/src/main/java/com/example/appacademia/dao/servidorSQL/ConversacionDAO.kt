@@ -12,9 +12,9 @@ class ConversacionDAO : InterfaceDAO() {
 
     /**
      * Añade una conversación en la base de datos basado en
-     * el código de los 2 usuarios que participan en la misma.
+     * el código del usuario y academia que participan en la misma.
      * El 1º usuario siempre será la academia y el código siempre será 1.
-     * @param conversacion - El código del mensaje a consultar.
+     * @param conversacion - La conversación a añadir.
      */
     fun anadirConversacion(conversacion : Conversacion) {
         var sentencia: PreparedStatement? = null
@@ -73,34 +73,31 @@ class ConversacionDAO : InterfaceDAO() {
             }
             conexion!!.commit() // para hacer transacción a la vez
         } catch (syntax: SQLSyntaxErrorException) {
-
             return Conversacion()
-        } catch (_: NullPointerException) {
-
-        } catch (e: SQLException) {
-
+        }
+        catch (_: NullPointerException) {}
+        catch (e: SQLException) {
             // para hacer transacción a la vez:
             try {
                 conexion!!.rollback() // si al ejecutar da error, hacemos rollback
-            } catch (_: SQLException) {
-
             }
-        } finally {
+            catch (_: SQLException) {}
+        }
+        finally {
             try {
                 sentencia?.close()
                 resultado?.close()
-            } catch (_: SQLException) {
-
             }
+            catch (_: SQLException) {}
             desconectar()
         }
         return conversacion
     }
 
     /**
-     * Obtiene un mensaje a partir de un ResultSet.
-     * @param resultado - El ResultSet que contiene los datos del curso.
-     * @return El mensaje obtenido.
+     * Obtiene una conversación a partir de un ResultSet.
+     * @param resultado - El ResultSet que contiene los datos de la conversación.
+     * @return La conversación obtenida.
      */
     private fun getConversacion(resultado: ResultSet): Conversacion {
         val codConversacion = resultado.getInt("cod_conversacion")
