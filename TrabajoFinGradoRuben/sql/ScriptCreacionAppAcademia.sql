@@ -91,45 +91,36 @@ insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values 
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Endika', 'Endika', 'eeguinogar@educacion.navarra.es', 'Endika', 'Eguino Garbayo', 012345678);
 
 INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia1', 'password1', 'academia1@example.com', 'Academia 1', 123456789, 'Calle Academia 1', 0.0, 0.0, "academia1.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia2', 'password2', 'academia2@example.com', 'Academia 2', 234567890, 'Calle Academia 2', 0.0, 0.0, "academia2.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia3', 'password3', 'academia3@example.com', 'Academia 3', 345678901, 'Calle Academia 3', 0.0, 0.0, "academia3.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia4', 'password4', 'academia4@example.com', 'Academia 4', 456789012, 'Calle Academia 4', 0.0, 0.0, "academia4.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia5', 'password5', 'academia5@example.com', 'Academia 5', 567890123, 'Calle Academia 5', 0.0, 0.0, "academia5.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia6', 'password6', 'academia6@example.com', 'Academia 6', 678901234, 'Calle Academia 6', 0.0, 0.0, "academia6.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia7', 'password7', 'academia7@example.com', 'Academia 7', 789012345, 'Calle Academia 7', 0.0, 0.0, "academia7.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia8', 'password8', 'academia8@example.com', 'Academia 8', 890123456, 'Calle Academia 8', 0.0, 0.0, "academia8.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia9', 'password9', 'academia9@example.com', 'Academia 9', 901234567, 'Calle Academia 9', 0.0, 0.0, "academia9.jpg");
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia10', 'password10', 'academia10@example.com', 'Academia 10', 123456780, 'Calle Academia 10', 0.0, 0.0, "academia10.jpg");
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
 VALUES ('Curso 1', '2024-03-01', '2024-04-01', 100.00, 4.5, 'Descripción del curso 1','Académico', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 2', '2024-03-15', '2024-04-15', 120.00, 4.0, 'Descripción del curso 2','Académico', 2);
+VALUES ('Curso 2', '2024-03-15', '2024-04-15', 120.00, 4.0, 'Descripción del curso 2','Académico', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 3', '2024-04-01', '2024-05-01', 80.00, 4.2, 'Descripción del curso 3','Otros', 3);
+VALUES ('Curso 3', '2024-04-01', '2024-05-01', 80.00, 4.2, 'Descripción del curso 3','Otros', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 4', '2024-04-15', '2024-05-15', 150.00, 4.8, 'Descripción del curso 4','Académico', 4);
+VALUES ('Curso 4', '2024-04-15', '2024-05-15', 150.00, 4.8, 'Descripción del curso 4','Académico', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 5', '2024-05-01', '2024-06-01', 90.00, 4.6, 'Descripción del curso 5','Otros', 5);
+VALUES ('Curso 5', '2024-05-01', '2024-06-01', 90.00, 4.6, 'Descripción del curso 5','Otros', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 6', '2024-05-15', '2024-06-15', 130.00, 4.3, 'Descripción del curso 6','Académico', 6);
+VALUES ('Curso 6', '2024-05-15', '2024-06-15', 130.00, 4.3, 'Descripción del curso 6','Académico', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 7', '2024-06-01', '2024-07-01', 85.00, 4.7, 'Descripción del curso 7','Otros', 7);
+VALUES ('Curso 7', '2024-06-01', '2024-07-01', 85.00, 4.7, 'Descripción del curso 7','Otros', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 8', '2024-06-15', '2024-07-15', 140.00, 4.1, 'Descripción del curso 8','Académico', 8);
+VALUES ('Curso 8', '2024-06-15', '2024-07-15', 140.00, 4.1, 'Descripción del curso 8','Académico', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 9', '2024-07-01', '2024-08-01', 95.00, 4.9, 'Descripción del curso 9','Otros', 9);
+VALUES ('Curso 9', '2024-07-01', '2024-08-01', 95.00, 4.9, 'Descripción del curso 9','Otros', 1);
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
-VALUES ('Curso 10', '2024-07-15', '2024-08-15', 160.00, 4.4, 'Descripción del curso 10','Académico', 10);
+VALUES ('Curso 10', '2024-07-15', '2024-08-15', 160.00, 4.4, 'Descripción del curso 10','Académico', 1);
 
 INSERT INTO Inscripciones (cod_curso, usuario, fecha_MiInicio_curso, fecha_MiFin_curso) VALUES (1, 'Mikel', '2024-03-01', '2024-04-01');
 INSERT INTO Inscripciones (cod_curso, usuario, fecha_MiInicio_curso, fecha_MiFin_curso) VALUES (2, 'LuisDorado', '2024-03-15', '2024-04-15');
