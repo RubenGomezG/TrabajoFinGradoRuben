@@ -24,7 +24,10 @@ namespace BusinessPlusData.Repository
 
         public async Task<Academia> ChangePasswordAsync(Academia academia)
         {
-            var getAcademia = _context.Academias.Where(a => a.Usuario.Equals(academia.Usuario)).Select(AcademiaMapping.MapToAcademia(_context)).FirstOrDefault();
+            var getAcademia = _context.Academias
+                .Where(a => a.Usuario.Equals(academia.Usuario))
+                .Select(AcademiaMapping.MapToAcademia(_context))
+                .FirstOrDefault();
             getAcademia.Contrasena = academia.Contrasena;
             _context.Update(getAcademia);
             await _context.SaveChangesAsync();

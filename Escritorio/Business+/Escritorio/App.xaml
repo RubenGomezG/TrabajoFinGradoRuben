@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Escritorio"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -18,6 +18,7 @@ namespace BusinessPlusData.Mapping
                 Descripcion = c.Descripcion,
                 Tipo = c.Tipo,
                 CodAcademia = c.CodAcademia,
+                CodAcademiaNavigation = c.CodAcademiaNavigation,
             };
         }
     }
