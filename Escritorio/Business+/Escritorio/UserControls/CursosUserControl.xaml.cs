@@ -31,7 +31,7 @@ namespace Escritorio.UserControls
             InitializeComponent();
             _context = new Bu5x9ctsBusinessplusContext();
             _repository = new CursoRepository(_context);
-            dataGridCursos.ItemsSource = _repository.ListarCursosDeAcademia(App.LoggedAcademia);
+            CargarDataGrid();
             dataGridCursos.AutoGeneratingColumn += (sender, e) =>
             {
                 if (e.PropertyName == "CodAcademiaNavigation")
@@ -39,6 +39,11 @@ namespace Escritorio.UserControls
                     e.Column.Visibility = Visibility.Collapsed;
                 }
             };
+        }
+
+        private async void CargarDataGrid() 
+        {
+            dataGridCursos.ItemsSource = await _repository.ListarCursosDeAcademia(App.LoggedAcademia);
         }
 
         private async void CrearCurso(object sender, RoutedEventArgs e)
@@ -103,10 +108,16 @@ namespace Escritorio.UserControls
         private async void EditarCurso(object sender, RoutedEventArgs e)
         {
             Curso curso = await _repository.GetCursoAsync(int.Parse(txtCodigoCurso.Text));
-            if (curso != null)
+            if (curso != null &&
+                !string.IsNullOrEmpty(txtNombreCurso.Text) &&
+                !string.IsNullOrEmpty(txtPrecio.Text) &&
+                !string.IsNullOrWhiteSpace(txtNombreCurso.Text) &&
+                !string.IsNullOrWhiteSpace(txtPrecio.Text) &&
+                double.TryParse(txtPrecio.Text, out double result)
+                )
             {
                 curso.NombreCurso = txtNombreCurso.Text;
-                curso.Precio = double.Parse(txtPrecio.Text);
+                curso.Precio = result;
                 if (DateTime.TryParseExact(dateFechaInicio.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaInicio))
                 {
                     curso.FechaInicioCurso = fechaInicio;
@@ -142,6 +153,18 @@ namespace Escritorio.UserControls
             
         }
 
+        private async void BuscarCursos(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscarCursos.Text) || string.IsNullOrWhiteSpace(txtBuscarCursos.Text))
+            {
+                CargarDataGrid();
+            }
+            else
+            {
+                dataGridCursos.ItemsSource = await _repository.BuscarCursosPorNombreAsync(txtBuscarCursos.Text);
+            }
+        }
+
         private void ElegirColumna(object sender, SelectionChangedEventArgs e)
         {
             var filaSeleccionada = dataGridCursos.SelectedItem as Curso;
@@ -170,5 +193,7 @@ namespace Escritorio.UserControls
             Window.GetWindow(this).Close();
             dashboard.Show();
         }
+
+        
     }
 }

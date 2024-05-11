@@ -13,12 +13,27 @@ namespace BusinessPlusData.Repository
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public List<Curso> ListarCursosDeAcademia(Academia academia)
+        public async Task<List<Curso>> ListarCursosDeAcademia(Academia academia)
         {
-            return _context.Cursos
+            using (var context = new Bu5x9ctsBusinessplusContext())
+            {
+                return await context.Cursos
                 .Where(c => c.CodAcademia == academia.CodAcademia)
-                .Select(CursoMapping.MapToCurso(_context))
-                .ToList();
+                .Select(CursoMapping.MapToCurso(context))
+                .ToListAsync();
+            }
+        }
+
+        public async Task<List<Curso>> BuscarCursosPorNombreAsync(string texto)
+        {
+            using (var context = new Bu5x9ctsBusinessplusContext())
+            {
+                return await context.Cursos
+                .Where(c => c.NombreCurso.Contains(texto))
+                .Select(CursoMapping.MapToCurso(context))
+                .ToListAsync();
+            }
+            
         }
 
         public async Task<Curso> GetCursoAsync(int id)
