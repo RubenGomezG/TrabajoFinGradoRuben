@@ -24,32 +24,15 @@ namespace BusinessPlusData.Repository
 
         public async Task<Academia> ChangePasswordAsync(Academia academia)
         {
-            var getAcademia = _context.Academias.Where(a => a.CodAcademia.Equals(academia.CodAcademia)).Select(AcademiaMapping.MapToAcademia(_context)).FirstOrDefault();
+            var getAcademia = _context.Academias.Where(a => a.Usuario.Equals(academia.Usuario)).Select(AcademiaMapping.MapToAcademia(_context)).FirstOrDefault();
             getAcademia.Contrasena = academia.Contrasena;
-            var nuevaAcademia = new Academia
-            {
-                CodAcademia = getAcademia.CodAcademia,
-                Usuario = getAcademia.Usuario,
-                Contrasena = getAcademia.Contrasena,
-                Email = getAcademia.Email,
-                Nombre = getAcademia.Nombre,
-                Telefono = getAcademia.Telefono,
-                Direccion = getAcademia.Direccion,
-                Latitud = getAcademia.Latitud,
-                Longitud = getAcademia.Longitud,
-                ImgPerfil = getAcademia.ImgPerfil,
-                Cursos = getAcademia.Cursos
-            };
-            _context.Academias.Add(nuevaAcademia);
-            _context.Update(nuevaAcademia);
+            _context.Update(getAcademia);
             await _context.SaveChangesAsync();
 
             return await _context.Academias
-                .Where(a => a.CodAcademia == academia.CodAcademia)
+                .Where(a => a.CodAcademia == getAcademia.CodAcademia)
                 .Select(AcademiaMapping.MapToAcademia(_context))
                 .FirstAsync();
         }
-
-
     }
 }

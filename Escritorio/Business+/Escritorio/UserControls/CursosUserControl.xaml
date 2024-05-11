@@ -60,13 +60,13 @@
             </DatePicker.Resources>
         </DatePicker>
 
-        <DatePicker Name="dateFechaFin" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="5,12.5,10,12.5" BorderThickness="1" BorderBrush="Black" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center">
+        <DatePicker Name="dateFechaFin" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="5,10,10,10" BorderThickness="1" BorderBrush="Black" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center">
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
-                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Height" Value="30"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalAlignment" Value="Center"/>
-                    <Setter Property="Padding" Value="0,10,0,0"/>
+                    <Setter Property="Padding" Value="0,5,0,0"/>
                 </Style>
             </DatePicker.Resources>
         </DatePicker>
@@ -74,15 +74,11 @@
         
         <!-- <TextBox x:Name="txtTipo" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="5,10,10,10" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox> -->
         <ComboBox x:Name="comboTipo" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="5,10,10,10" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center">
-            <ComboBoxItem>
-                <TextBlock Selector.IsSelected="True">
-                    <TextBlock.Text>Académico</TextBlock.Text>
-                </TextBlock>
+            <ComboBoxItem Selector.IsSelected="True">
+                Académico
             </ComboBoxItem>
             <ComboBoxItem>
-                <TextBlock>
-                    <TextBlock.Text>Otros</TextBlock.Text>
-                </TextBlock>
+                Otros
             </ComboBoxItem>
         </ComboBox>
         <ScrollViewer Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Margin="5,10,10,0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" CanContentScroll="True">
@@ -98,7 +94,15 @@
         
         <!-- DataGrid -->
         <ScrollViewer Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="6" Margin="20" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
-            <DataGrid x:Name="dataGridCursos" BorderThickness="2" BorderBrush="Black" HeadersVisibility="All" RowBackground="AntiqueWhite"></DataGrid>
+            <DataGrid x:Name="dataGridCursos"
+                      BorderThickness="2"
+                      BorderBrush="Black"
+                      HeadersVisibility="All"
+                      AutoGenerateColumns="True"
+                      RowBackground="AntiqueWhite"
+                      SelectionChanged="ElegirColumna"
+                      >
+            </DataGrid>
         </ScrollViewer>
     </Grid>
 </UserControl>

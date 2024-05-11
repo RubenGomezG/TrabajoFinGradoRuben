@@ -1,4 +1,5 @@
 ﻿using BusinessPlusData.Models;
+using BusinessPlusData.Repository;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,21 @@ namespace Escritorio.UserControls
     /// </summary>
     public partial class PerfilUserControl : UserControl
     {
-        //private readonly Bu5x9ctsBusinessplusContext _context;
+        private readonly AcademiaRepository _repository;
+        private readonly Bu5x9ctsBusinessplusContext _context;
         public PerfilUserControl()
         {
             InitializeComponent();
+            _context = new Bu5x9ctsBusinessplusContext();
+            _repository = new AcademiaRepository(_context);
+            username.Text = App.LoggedAcademia.Usuario;
+            contrasena.Text = App.LoggedAcademia.Contrasena;
+            email.Text = App.LoggedAcademia.Email;
+            nombre.Text = App.LoggedAcademia.Nombre;
+            telefono.Text = App.LoggedAcademia.Telefono.ToString();
+            calle.Text = App.LoggedAcademia.Direccion;
+            latitud.Text = App.LoggedAcademia.Latitud.ToString();
+            longitud.Text = App.LoggedAcademia.Longitud.ToString();
         }
         private void AbrirArchivo_Click(object sender, RoutedEventArgs e)
         {
@@ -86,7 +98,7 @@ namespace Escritorio.UserControls
 
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(apellidos.Text) || string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(telefono.Text))
+            if (string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(contrasena.Text) || string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(telefono.Text))
             {
                 MessageBox.Show("Los campos Nombre, Apellidos, Email y Teléfono son obligatorios.");
             }

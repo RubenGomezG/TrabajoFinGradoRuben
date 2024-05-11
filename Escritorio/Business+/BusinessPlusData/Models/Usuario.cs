@@ -21,7 +21,5 @@ public partial class Usuario
 
     public int? Edad { get; set; }
 
-    public virtual ICollection<Conversacione> ConversacioneUsuario1s { get; set; } = new List<Conversacione>();
-
     public virtual ICollection<Conversacione> ConversacioneUsuario2s { get; set; } = new List<Conversacione>();
 }

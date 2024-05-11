@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BusinessPlusData.Models;
 
@@ -25,6 +26,9 @@ public partial class Academia
 
     public string? ImgPerfil { get; set; }
 
+    [Browsable(false)]
     public virtual ICollection<Curso> Cursos { get; set; } = new List<Curso>();
-    
+
+    [Browsable(false)]
+    public virtual ICollection<Conversacione> ConversacioneUsuario1s { get; set; } = new List<Conversacione>();
 }

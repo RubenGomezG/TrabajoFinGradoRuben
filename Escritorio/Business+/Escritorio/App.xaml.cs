@@ -14,6 +14,8 @@ namespace Escritorio
     {
         private readonly IServiceProvider _serviceProvider;
 
+        public static Academia? LoggedAcademia { get; set; }
+
         public App()
         {
             ServiceCollection services = new ServiceCollection();
@@ -23,7 +25,6 @@ namespace Escritorio
 
         private void ConfigureServices(ServiceCollection services)
         {
-            // Asume que "MiDbContext" es tu clase DbContext
             services.AddDbContext<Bu5x9ctsBusinessplusContext>(options =>
             {
                 var connectionString = "server=lhcp3379.webapps.net;database=bu5x9cts_businessplus;uid=bu5x9cts_rubengomez;pwd=Clash1ng!";
@@ -32,7 +33,6 @@ namespace Escritorio
 
             // Registra tus ViewModels y servicios
             services.AddTransient<MainViewModel>();
-            // ... otros servicios y ViewModels
         }
 
         protected override void OnStartup(StartupEventArgs e)

@@ -85,11 +85,11 @@ public partial class Bu5x9ctsBusinessplusContext : DbContext
 
             entity.HasIndex(e => new { e.Usuario1Id, e.Usuario2Id }, "unica_conversacion").IsUnique();
 
+            entity.HasIndex(e => e.Usuario1Id, "usuario1_id");
             entity.HasIndex(e => e.Usuario2Id, "usuario2_id");
 
             entity.Property(e => e.CodConversacion).HasColumnName("cod_conversacion");
             entity.Property(e => e.Usuario1Id)
-                .HasMaxLength(50)
                 .HasColumnName("usuario1_id");
             entity.Property(e => e.Usuario2Id)
                 .HasMaxLength(50)

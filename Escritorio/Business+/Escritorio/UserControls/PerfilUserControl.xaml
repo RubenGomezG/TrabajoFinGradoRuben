@@ -21,6 +21,8 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Margin="225,10,0,0" FontSize="20">
@@ -35,35 +37,35 @@
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
                 <Label VerticalAlignment="Center">
-                    <Bold>Username*</Bold>
+                    <Bold>Username</Bold>
                 </Label>
                 <TextBox x:Name="username" AcceptsReturn="False" MinWidth="300" Margin="5,5,0,5" Width="361"></TextBox>
             </StackPanel>
 
             <StackPanel Grid.Row="3" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
                 <Label VerticalAlignment="Center">
-                    <Bold>Contraseña*</Bold>
+                    <Bold>Contraseña</Bold>
                 </Label>
-                <TextBox x:Name="apellidos" AcceptsReturn="False" MinWidth="300" Margin="5,5,0,5" Width="355"></TextBox>
+                <TextBox x:Name="contrasena" AcceptsReturn="False" MinWidth="300" Margin="5,5,0,5" Width="355" IsEnabled="False"></TextBox>
             </StackPanel>
 
             <StackPanel Grid.Row="4" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
                 <Label VerticalAlignment="Center">
-                    <Bold>E-mail*</Bold>
+                    <Bold>E-mail</Bold>
                 </Label>
                 <TextBox x:Name="email" AcceptsReturn="False" Width="372" Margin="5,5,0,5" HorizontalAlignment="Center"></TextBox>
             </StackPanel>
 
             <StackPanel Grid.Row="5" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
                 <Label VerticalAlignment="Center">
-                    <Bold>Nombre*</Bold>
+                    <Bold>Nombre</Bold>
                 </Label>
                 <TextBox x:Name="nombre" AcceptsReturn="False" Margin="5,5,0,5" Width="360"></TextBox>
             </StackPanel>
 
             <StackPanel Grid.Row="6" Margin="15,10,0,0" Orientation="Horizontal" Width="435" HorizontalAlignment="Left">
                 <Label VerticalAlignment="Center">
-                    <Bold>Teléfono*</Bold>
+                    <Bold>Teléfono</Bold>
                 </Label>
                 <TextBox x:Name="telefono" AcceptsReturn="False" Margin="5,5,0,5" Width="360"></TextBox>
             </StackPanel>
@@ -87,15 +89,22 @@
                     <Label VerticalAlignment="Top" DockPanel.Dock="Left">
                         <Bold>Dirección</Bold>
                     </Label>
-
                     <TextBox x:Name="calle" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Dirección" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
-                    <TextBox x:Name="ciudad" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Ciudad" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
-                    <TextBox x:Name="provincia" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Provincia" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
-                    <TextBox x:Name="codigoPostal" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="Código Postal" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
-                    <TextBox x:Name="pais" AcceptsReturn="False" Margin="5,5,0,5" Width="340" DockPanel.Dock="Top" HorizontalAlignment="Left" Text="País" GotFocus="Txt_GotFocus" LostFocus="Txt_LostFocus"></TextBox>
                 </DockPanel>
             </StackPanel>
-            <StackPanel Grid.Row="9" Margin="265,10,0,5" Orientation="Horizontal" Width="150" HorizontalAlignment="Left">
+            <StackPanel Grid.Row="9" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>Latitud</Bold>
+                </Label>
+                <TextBox x:Name="latitud" AcceptsReturn="False" Margin="5,5,0,5" Width="360"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="10" Margin="15,10,0,0" Orientation="Horizontal" Width="429" HorizontalAlignment="Left">
+                <Label VerticalAlignment="Center">
+                    <Bold>Longitud</Bold>
+                </Label>
+                <TextBox x:Name="longitud" AcceptsReturn="False" Margin="5,5,0,5" Width="360"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="11" Margin="265,10,0,5" Orientation="Horizontal" Width="150" HorizontalAlignment="Left">
                 <Button
                     Content="Guardar"
                     Click="Guardar_Click"

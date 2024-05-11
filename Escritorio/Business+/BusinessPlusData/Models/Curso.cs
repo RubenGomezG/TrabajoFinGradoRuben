@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BusinessPlusData.Models;
 
@@ -23,5 +24,6 @@ public partial class Curso
 
     public int CodAcademia { get; set; }
 
+    [Browsable(false)]
     public virtual Academia CodAcademiaNavigation { get; set; } = null!;
 }

@@ -44,9 +44,11 @@ namespace Escritorio
             var resultado = await _repository.LoginAsync(academia);
             if (resultado != null)
             {
+                App.LoggedAcademia = resultado;
                 Dashboard dashboard = new Dashboard();
                 this.Close();
                 dashboard.Show();
+                
             }
         }
     }

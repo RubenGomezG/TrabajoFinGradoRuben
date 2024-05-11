@@ -15,26 +15,29 @@ namespace BusinessPlusData.Mapping
                 Email = a.Email,
                 Nombre = a.Nombre,
                 Telefono = a.Telefono,
+                Direccion = a.Direccion,
                 Latitud = a.Latitud,
                 Longitud = a.Longitud,
                 ImgPerfil = a.ImgPerfil,
-                Cursos = (from ca in a.Cursos
-                           join c in dbContext.Cursos
-                           on ca.CodAcademia equals c.CodAcademia
-                           select new Curso
-                           {
-                               CodCurso = c.CodCurso,
-                               NombreCurso = c.NombreCurso,
-                               FechaInicioCurso = c.FechaInicioCurso,
-                               FechaFinCurso = c.FechaFinCurso,
-                               Precio = c.Precio,
-                               Valoracion = c.Valoracion,
-                               Descripcion = c.Descripcion,
-                               Tipo = c.Tipo,
-                               CodAcademia = c.CodAcademia
-                           }).ToList()
+                Cursos = a.Cursos.Select(ca => new Curso
+                {
+                    CodCurso = ca.CodCurso,
+                    NombreCurso = ca.NombreCurso,
+                    FechaInicioCurso = ca.FechaInicioCurso,
+                    FechaFinCurso = ca.FechaFinCurso,
+                    Precio = ca.Precio,
+                    Valoracion = ca.Valoracion,
+                    Descripcion = ca.Descripcion,
+                    Tipo = ca.Tipo,
+                    CodAcademia = ca.CodAcademia,
+                }).ToList(),
+                ConversacioneUsuario1s = a.ConversacioneUsuario1s.Select(ca => new Conversacione
+                {
+                    CodConversacion = ca.CodConversacion,
+                    Usuario1Id = ca.Usuario1Id,
+                    Usuario2Id = ca.Usuario2Id,
+                }).ToList(),
             };
         }
-
     }
 }

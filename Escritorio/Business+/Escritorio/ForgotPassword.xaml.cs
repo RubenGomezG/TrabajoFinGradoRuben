@@ -1,4 +1,6 @@
 ﻿using BusinessPlusData.Models;
+using BusinessPlusData.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,22 +22,29 @@ namespace Escritorio
     /// </summary>
     public partial class ForgotPassword : Window
     {
+
+        private readonly AcademiaRepository _repository;
+        private readonly Bu5x9ctsBusinessplusContext _context;
         public ForgotPassword()
         {
             InitializeComponent();
+            _context = new Bu5x9ctsBusinessplusContext();
+            _repository = new AcademiaRepository(_context);
         }
 
-        private void Cambiar_Contrasena(object sender, RoutedEventArgs e)
+        private async void Cambiar_Contrasena(object sender, RoutedEventArgs e)
         {
             Academia academia = new Academia
             {
                 Usuario = username.Text,
                 Contrasena = password.Text,
             };
-            Academia getAcademia = academia;
-            if (getAcademia != null && password.Text.Equals(confirmarPassword.Text))
+            var resultado = await _repository.ChangePasswordAsync(academia);
+            if (resultado != null && password.Text.Equals(confirmarPassword.Text))
             {
-                
+                MainWindow mainWindow = new MainWindow();
+                this.Close();
+                mainWindow.Show();
             }
         }
     }
