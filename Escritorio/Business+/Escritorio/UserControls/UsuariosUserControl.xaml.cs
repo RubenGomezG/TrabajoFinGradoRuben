@@ -59,7 +59,7 @@ namespace Escritorio.UserControls
 
         private void ElegirColumna(object sender, SelectionChangedEventArgs e)
         {
-            listaClientes.Items.Clear();
+            listaCursos.Items.Clear();
             var filaSeleccionada = dataGridUsuarios.SelectedItem as Usuario;
             if (filaSeleccionada != null)
             {
@@ -72,7 +72,7 @@ namespace Escritorio.UserControls
                 //TODO imagenes
                 foreach (var item in _inscripcionesRepository.ListarCursosDeUsuario(filaSeleccionada))
                 {
-                    listaClientes.Items.Add(item);
+                    listaCursos.Items.Add(item);
                 }
             }
         }

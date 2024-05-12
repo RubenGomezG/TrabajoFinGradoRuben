@@ -92,7 +92,17 @@
         
         <!-- Grid.Column = 5 -->
         <Label Grid.Column="5" Grid.Row="0" Margin="5,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="bold" FontSize="16">Usuarios inscritos al curso</Label>
-        <ListBox x:Name="listaClientes" Grid.Column="5" Grid.Row="1" Grid.RowSpan="6" Margin="20,5,20,0"></ListBox>
+
+        <ScrollViewer Grid.Column="5"
+              Grid.Row="1"
+              Grid.RowSpan="6"
+              Margin="20,5,20,0"
+              VerticalScrollBarVisibility="Auto"
+              HorizontalScrollBarVisibility="Auto"
+              CanContentScroll="True">
+            <ListBox x:Name="listaClientes"></ListBox>
+        </ScrollViewer>
+        
         
         <!-- DataGrid -->
         <ScrollViewer Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="6" Margin="20" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">

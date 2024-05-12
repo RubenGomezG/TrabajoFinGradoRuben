@@ -28,7 +28,7 @@ namespace BusinessPlusData.Repository
                 var query = from inscripcion in context.Inscripciones
                             join usuario in context.Usuarios on inscripcion.Usuario equals usuario.Usuario1
                             where inscripcion.CodCurso == curso.CodCurso
-                            select usuario.Nombre;
+                            select usuario.Nombre + " " + usuario.Apellidos;
 
                 return query.ToList();
             }
