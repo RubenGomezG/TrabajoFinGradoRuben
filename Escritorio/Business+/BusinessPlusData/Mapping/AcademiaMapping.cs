@@ -31,6 +31,15 @@ namespace BusinessPlusData.Mapping
                     Tipo = ca.Tipo,
                     CodAcademia = ca.CodAcademia,
                 }).ToList(),
+                Mensajes = a.Mensajes.Select(ma => new Mensaje
+                {
+                    CodMensaje = ma.CodMensaje,
+                    CodConversacion = ma.CodConversacion,
+                    SenderUsername = ma.SenderUsername,
+                    SenderCodAcademia = ma.SenderCodAcademia,
+                    Contenido = ma.Contenido,
+                    Timestamp = ma.Timestamp,
+                }).ToList(),
                 ConversacioneUsuario1s = a.ConversacioneUsuario1s.Select(ca => new Conversacione
                 {
                     CodConversacion = ca.CodConversacion,

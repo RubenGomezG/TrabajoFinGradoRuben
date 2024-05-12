@@ -14,4 +14,6 @@ public partial class Conversacione
     public virtual Academia Usuario1 { get; set; } = null!;
 
     public virtual Usuario Usuario2 { get; set; } = null!;
+
+    public virtual ICollection<Mensaje> Mensajes { get; set; } = new List<Mensaje>();
 }

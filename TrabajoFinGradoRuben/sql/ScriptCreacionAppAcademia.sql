@@ -43,16 +43,15 @@ create table Cursos(
 create table Inscripciones(
 	cod_curso integer not null,
     usuario varchar(50) not null,
-    fecha_MiInicio_curso datetime not null,
-    fecha_MiFin_curso datetime not null,
+    constraint inscripcion_fk PRIMARY KEY (cod_curso, usuario),
     constraint curso_fk foreign key(cod_curso) references Cursos(cod_curso) on update cascade on delete cascade,
-    constraint usuario_fk foreign key(usuario) references Usuarios(usuario) on update cascade on delete cascade,
-    constraint chk_Fechas_Inscripciones check (fecha_MiFin_curso > fecha_MiInicio_curso)
+    constraint usuario_fk foreign key(usuario) references Usuarios(usuario) on update cascade on delete cascade
 );
 
 create table Favoritos(
 	cod_curso integer not null,
     usuario varchar(50) not null,
+    constraint favorito_fk PRIMARY KEY (cod_curso, usuario)
     constraint cursoFavoritos_fk foreign key(cod_curso) references Cursos(cod_curso) on update cascade on delete cascade,
     constraint usuarioFavoritos_fk foreign key(usuario) references Usuarios(usuario) on update cascade on delete cascade
 );
@@ -66,7 +65,7 @@ create table Conversaciones (
     constraint unica_conversacion unique (usuario1_id, usuario2_id)
 );
 
-create table Mensaje(
+create table Mensajes(
     cod_mensaje integer not null,
     cod_conversacion integer not null,
     sender_username varchar(50),
@@ -79,16 +78,16 @@ create table Mensaje(
 );
 
 
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Mikel', 'Mikel', 'mjorgesote@educacion.navarra.es', 'Mikel Aingeru', 'Jorge Soteras', 123456789);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('LuisDorado', 'LuisDorado', 'ldoradogar@educacion.navarra.es', 'Luis', 'Dorado Garcés', 234567891);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Pablo', 'Pablo', 'pablomontero@educacion.navarra.es', 'Pablo', 'Montero Quevedo', 345678912);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Javi', 'Javi', 'jjorgesote@educacion.navarra.es', 'Javier', 'Jorge Soteras', 456789123);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('David', 'David', 'dguruchazc@educacion.navarra.es', 'David', 'Gurutxarri Azcona', 567891234);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Pedro', 'Pedro', 'pvelasczuf@educacion.navarra.es', 'Pedro José', 'Velasco Zufia', 678912345);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('RubenG', 'RubenG', 'rgomezgarc@educacion.navarra.es', 'Rubén', 'Gómez García', 789123456);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('RubenL', 'RubenL', 'rlopezdled@educacion.navarra.es', 'Rubén', 'López-Davalillo Ledesma', 891234567);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Cris', 'Cris', 'clopezlusa1@educacion.navarra.es', 'Cristina', 'López Lusarreta', 912345678);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono) values ('Endika', 'Endika', 'eeguinogar@educacion.navarra.es', 'Endika', 'Eguino Garbayo', 012345678);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Mikel', 'Mikel', 'mjorgesote@educacion.navarra.es', 'Mikel Aingeru', 'Jorge Soteras', 123456789,33);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('LuisDorado', 'LuisDorado', 'ldoradogar@educacion.navarra.es', 'Luis', 'Dorado Garcés', 234567891,40);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Pablo', 'Pablo', 'pablomontero@educacion.navarra.es', 'Pablo', 'Montero Quevedo', 345678912,55);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Javi', 'Javi', 'jjorgesote@educacion.navarra.es', 'Javier', 'Jorge Soteras', 456789123,35);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('David', 'David', 'dguruchazc@educacion.navarra.es', 'David', 'Gurutxarri Azcona', 567891234,42);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Pedro', 'Pedro', 'pvelasczuf@educacion.navarra.es', 'Pedro José', 'Velasco Zufia', 678912345,34);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('RubenG', 'RubenG', 'rgomezgarc@educacion.navarra.es', 'Rubén', 'Gómez García', 789123456,30);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('RubenL', 'RubenL', 'rlopezdled@educacion.navarra.es', 'Rubén', 'López-Davalillo Ledesma', 891234567,20);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Cris', 'Cris', 'clopezlusa1@educacion.navarra.es', 'Cristina', 'López Lusarreta', 912345678,19);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Endika', 'Endika', 'eeguinogar@educacion.navarra.es', 'Endika', 'Eguino Garbayo', 012345678,20);
 
 INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia1', 'password1', 'academia1@example.com', 'Academia 1', 123456789, 'Calle Academia 1', 0.0, 0.0, "academia1.jpg");
 

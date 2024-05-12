@@ -32,8 +32,7 @@ namespace BusinessPlusData.Repository
                 .Where(c => c.NombreCurso.Contains(texto))
                 .Select(CursoMapping.MapToCurso(context))
                 .ToListAsync();
-            }
-            
+            } 
         }
 
         public async Task<Curso> GetCursoAsync(int id)

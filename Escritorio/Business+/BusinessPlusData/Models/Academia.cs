@@ -31,4 +31,7 @@ public partial class Academia
 
     [Browsable(false)]
     public virtual ICollection<Conversacione> ConversacioneUsuario1s { get; set; } = new List<Conversacione>();
+
+    [Browsable(false)]
+    public virtual ICollection<Mensaje> Mensajes { get; set; } = new List<Mensaje>();
 }

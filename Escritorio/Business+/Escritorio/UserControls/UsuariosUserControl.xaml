@@ -43,13 +43,13 @@
 
         <!-- Grid.Column = 2 -->
 
-        <TextBox x:Name="txtBuscarUsuarios" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3" Margin="5,20,20,0" BorderThickness="2" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
-        <TextBox x:Name="txtUsername" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
-        <TextBox x:Name="txtNombreUsuario" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
-        <TextBox x:Name="txtApellidos" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
-        <TextBox x:Name="txtEmail" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
-        <TextBox x:Name="txtTelefono" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
-        <TextBox x:Name="txtEdad" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox>
+        <TextBox x:Name="txtBuscarUsuarios" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3" Margin="5,20,20,0" BorderThickness="2" BorderBrush="Black" VerticalContentAlignment="Center" TextChanged="BuscarUsuarios"></TextBox>
+        <TextBox x:Name="txtUsername" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
+        <TextBox x:Name="txtNombreUsuario" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
+        <TextBox x:Name="txtApellidos" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
+        <TextBox x:Name="txtEmail" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
+        <TextBox x:Name="txtTelefono" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
+        <TextBox x:Name="txtEdad" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Margin="5,7.5,10,7.5" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center" IsEnabled="False"></TextBox>
 
         <!-- Grid.Column = 4 -->
         <Image x:Name="imgCurso" Source="/Images/logo.png" Grid.Column="4" Grid.Row="3" Grid.RowSpan="4" Margin="20,20,20,35"></Image>
@@ -60,7 +60,12 @@
 
         <!-- DataGrid -->
         <ScrollViewer Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="6" Margin="20" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
-            <DataGrid x:Name="dataGridCursos" BorderThickness="2" BorderBrush="Black" HeadersVisibility="All" RowBackground="AntiqueWhite"></DataGrid>
+            <DataGrid x:Name="dataGridUsuarios"
+                      BorderThickness="2"
+                      BorderBrush="Black"
+                      HeadersVisibility="All"
+                      RowBackground="AliceBlue"
+                      SelectionChanged="ElegirColumna"></DataGrid>
         </ScrollViewer>
     </Grid>
 </UserControl>

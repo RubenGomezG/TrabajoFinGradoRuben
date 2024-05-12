@@ -3,32 +3,48 @@
   "WorkspaceRootPath": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\cursorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\cursorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\usuariosusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\usuariosusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\cursosusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\cursosusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\cursosusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\cursosusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\usuariosusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\usuariosusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\mapping\\cursomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\mapping\\cursomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\models\\bu5x9ctsbusinesspluscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\models\\bu5x9ctsbusinesspluscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\perfilusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\perfilusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\models\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\models\\curso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\academiarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\academiarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\models\\mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\models\\mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\models\\conversacione.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\models\\conversacione.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\models\\academia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\models\\academia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\mapping\\academiamapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\mapping\\academiamapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\mapping\\usuariomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\mapping\\usuariomapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,111 +58,168 @@
       "DocumentGroups": [
         {
           "DockedWidth": 296,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AcademiaRepository.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "RelativeToolTip": "BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwB8AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T17:08:19.667Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CursosUserControl.xaml.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\CursosUserControl.xaml.cs",
-              "RelativeDocumentMoniker": "Escritorio\\UserControls\\CursosUserControl.xaml.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\CursosUserControl.xaml.cs",
-              "RelativeToolTip": "Escritorio\\UserControls\\CursosUserControl.xaml.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAJwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T16:52:56.838Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\App.xaml",
-              "RelativeDocumentMoniker": "Escritorio\\App.xaml",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\App.xaml",
-              "RelativeToolTip": "Escritorio\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-11T11:47:18.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CursosUserControl.xaml",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\CursosUserControl.xaml",
-              "RelativeDocumentMoniker": "Escritorio\\UserControls\\CursosUserControl.xaml",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\CursosUserControl.xaml",
-              "RelativeToolTip": "Escritorio\\UserControls\\CursosUserControl.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-11T10:44:50.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PerfilUserControl.xaml.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "RelativeDocumentMoniker": "Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "RelativeToolTip": "Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAIwB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T10:41:32.814Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Usuario.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Usuario.cs",
-              "RelativeToolTip": "BusinessPlusData\\Models\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Title": "Conversacione.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Conversacione.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Conversacione.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Conversacione.cs",
+              "RelativeToolTip": "BusinessPlusData\\Models\\Conversacione.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T10:18:20.357Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 296,
-          "SelectedChildIndex": 0,
-          "Children": [
+              "WhenOpened": "2024-05-12T10:31:07.142Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CursoRepository.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\CursoRepository.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\CursoRepository.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\CursoRepository.cs",
-              "RelativeToolTip": "BusinessPlusData\\Repository\\CursoRepository.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAJAAAA",
+              "DocumentIndex": 8,
+              "Title": "Academia.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Academia.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Academia.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Academia.cs",
+              "RelativeToolTip": "BusinessPlusData\\Models\\Academia.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAowCMAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T19:16:29.552Z",
+              "WhenOpened": "2024-05-12T10:19:37.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AcademiaMapping.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\AcademiaMapping.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Mapping\\AcademiaMapping.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\AcademiaMapping.cs",
+              "RelativeToolTip": "BusinessPlusData\\Mapping\\AcademiaMapping.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA1wCUAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T10:18:19.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CursoMapping.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\CursoMapping.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Mapping\\CursoMapping.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\CursoMapping.cs",
-              "RelativeToolTip": "BusinessPlusData\\Mapping\\CursoMapping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABAAAAA",
+              "Title": "UsuariosUserControl.xaml",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\UsuariosUserControl.xaml",
+              "RelativeDocumentMoniker": "Escritorio\\UserControls\\UsuariosUserControl.xaml",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\UsuariosUserControl.xaml",
+              "RelativeToolTip": "Escritorio\\UserControls\\UsuariosUserControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-12T10:17:02.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuariosUserControl.xaml.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\UsuariosUserControl.xaml.cs",
+              "RelativeDocumentMoniker": "Escritorio\\UserControls\\UsuariosUserControl.xaml.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\UsuariosUserControl.xaml.cs",
+              "RelativeToolTip": "Escritorio\\UserControls\\UsuariosUserControl.xaml.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAqwEUAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T10:33:32.769Z"
+              "WhenOpened": "2024-05-12T10:15:50.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Usuario.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Usuario.cs",
+              "RelativeToolTip": "BusinessPlusData\\Models\\Usuario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T10:15:07.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Curso.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Curso.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Curso.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Curso.cs",
+              "RelativeToolTip": "BusinessPlusData\\Models\\Curso.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA2wB4AAABkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T08:40:00.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Bu5x9ctsBusinessplusContext.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
+              "RelativeToolTip": "BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAAAKQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T08:07:10.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CursosUserControl.xaml.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\CursosUserControl.xaml.cs",
+              "RelativeDocumentMoniker": "Escritorio\\UserControls\\CursosUserControl.xaml.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\CursosUserControl.xaml.cs",
+              "RelativeToolTip": "Escritorio\\UserControls\\CursosUserControl.xaml.cs",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAIwKEAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T16:52:56.838Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 296,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UsuarioMapping.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\UsuarioMapping.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Mapping\\UsuarioMapping.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\UsuarioMapping.cs",
+              "RelativeToolTip": "BusinessPlusData\\Mapping\\UsuarioMapping.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAuwBkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T08:44:18.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\UsuarioRepository.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\UsuarioRepository.cs*",
+              "RelativeToolTip": "BusinessPlusData\\Repository\\UsuarioRepository.cs*",
+              "ViewState": "AQIAACwAAAAAAAAAAAAwwEYAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T08:19:16.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Mensaje.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Mensaje.cs",
+              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Mensaje.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Mensaje.cs",
+              "RelativeToolTip": "BusinessPlusData\\Models\\Mensaje.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wAkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T10:21:07.127Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -163,39 +163,33 @@ public partial class Bu5x9ctsBusinessplusContext : DbContext
 
         modelBuilder.Entity<Inscripcione>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("inscripciones");
+            entity.HasKey(e => new { e.CodCurso, e.Usuario }).HasName("PRIMARY");
+
+            entity.ToTable("inscripciones");
 
             entity.HasIndex(e => e.CodCurso, "curso_fk");
 
             entity.HasIndex(e => e.Usuario, "usuario_fk");
 
             entity.Property(e => e.CodCurso).HasColumnName("cod_curso");
-            entity.Property(e => e.FechaMiFinCurso)
-                .HasColumnType("datetime")
-                .HasColumnName("fecha_MiFin_curso");
-            entity.Property(e => e.FechaMiInicioCurso)
-                .HasColumnType("datetime")
-                .HasColumnName("fecha_MiInicio_curso");
+
             entity.Property(e => e.Usuario)
                 .HasMaxLength(50)
                 .HasColumnName("usuario");
 
-            entity.HasOne(d => d.CodCursoNavigation).WithMany()
+            entity.HasOne(d => d.CodCursoNavigation).WithMany(c => c.Inscripciones)
                 .HasForeignKey(d => d.CodCurso)
                 .HasConstraintName("curso_fk");
 
-            entity.HasOne(d => d.UsuarioNavigation).WithMany()
+            entity.HasOne(d => d.UsuarioNavigation).WithMany(u => u.Inscripciones)
                 .HasForeignKey(d => d.Usuario)
                 .HasConstraintName("usuario_fk");
         });
 
         modelBuilder.Entity<Mensaje>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("mensaje");
+            entity.HasKey(e => e.CodMensaje).HasName("PRIMARY");
+            entity.ToTable("mensajes");
 
             entity.HasIndex(e => e.CodConversacion, "conversacion_fk");
 
@@ -219,15 +213,15 @@ public partial class Bu5x9ctsBusinessplusContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("timestamp");
 
-            entity.HasOne(d => d.CodConversacionNavigation).WithMany()
+            entity.HasOne(d => d.CodConversacionNavigation).WithMany(c => c.Mensajes)
                 .HasForeignKey(d => d.CodConversacion)
                 .HasConstraintName("conversacion_fk");
 
-            entity.HasOne(d => d.Sender).WithMany()
+            entity.HasOne(d => d.Sender).WithMany(u => u.Mensajes)
                 .HasForeignKey(d => d.SenderUsername)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("mensaje_ibfk_1");
-            entity.HasOne(d => d.SenderAcademia).WithMany()
+            entity.HasOne(d => d.SenderAcademia).WithMany(a => a.Mensajes)
                 .HasForeignKey(d => d.SenderCodAcademia)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("mensaje_ibfk_2");

@@ -38,6 +38,10 @@ namespace Escritorio.UserControls
                 {
                     e.Column.Visibility = Visibility.Collapsed;
                 }
+                if (e.PropertyName == "Inscripciones")
+                {
+                    e.Column.Visibility = Visibility.Collapsed;
+                }
             };
         }
 

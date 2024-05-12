@@ -19,6 +19,13 @@ namespace BusinessPlusData.Mapping
                 Tipo = c.Tipo,
                 CodAcademia = c.CodAcademia,
                 CodAcademiaNavigation = c.CodAcademiaNavigation,
+                Inscripciones = c.Inscripciones.Select(ic => new Inscripcione
+                {
+                    CodCurso = ic.CodCurso,
+                    Usuario = ic.Usuario,
+                    CodCursoNavigation = ic.CodCursoNavigation,
+                    UsuarioNavigation = ic.UsuarioNavigation,
+                }).ToList(),
             };
         }
     }

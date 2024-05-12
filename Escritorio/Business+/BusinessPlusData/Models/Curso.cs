@@ -26,4 +26,7 @@ public partial class Curso
 
     [Browsable(false)]
     public virtual Academia CodAcademiaNavigation { get; set; } = null!;
+
+    [Browsable(false)]
+    public virtual ICollection<Inscripcione> Inscripciones { get; set; } = new List<Inscripcione>();
 }
