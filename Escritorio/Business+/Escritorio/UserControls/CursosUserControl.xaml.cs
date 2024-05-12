@@ -56,10 +56,7 @@ namespace Escritorio.UserControls
         {
             if (string.IsNullOrEmpty(txtCodigoCurso.Text))
             {
-                if (!string.IsNullOrEmpty(txtNombreCurso.Text) &&
-                !string.IsNullOrEmpty(txtPrecio.Text) &&
-                !string.IsNullOrWhiteSpace(txtNombreCurso.Text) &&
-                !string.IsNullOrWhiteSpace(txtPrecio.Text))
+                if (!string.IsNullOrWhiteSpace(txtNombreCurso.Text) && !string.IsNullOrWhiteSpace(txtPrecio.Text))
                 {
                     if (double.TryParse(txtPrecio.Text, out double result))
                     {

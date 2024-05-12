@@ -59,7 +59,7 @@ namespace Escritorio.UserControls
 
             if (sender is TextBox textBox)
             {
-                if (textBox.Text == "Dirección" || textBox.Text == "Ciudad" || textBox.Text == "Provincia" || textBox.Text == "Código Postal" || textBox.Text == "País")
+                if (textBox.Text == "Dirección")
                 {
                     textBox.Text = "";
                 }
@@ -76,31 +76,28 @@ namespace Escritorio.UserControls
                     {
                         textBox.Text = "Dirección";
                     }
-                    else if (textBox.Name == "ciudad")
-                    {
-                        textBox.Text = "Ciudad";
-                    }
-                    else if (textBox.Name == "provincia")
-                    {
-                        textBox.Text = "Provincia";
-                    }
-                    else if (textBox.Name == "codigoPostal")
-                    {
-                        textBox.Text = "Código Postal";
-                    }
-                    else if (textBox.Name == "pais")
-                    {
-                        textBox.Text = "País";
-                    }
                 }
             }
         }
 
-        private void Guardar_Click(object sender, RoutedEventArgs e)
+        private async void Guardar_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(contrasena.Text) || string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(telefono.Text))
+            if (string.IsNullOrWhiteSpace(username.Text) ||
+                string.IsNullOrWhiteSpace(nombre.Text) ||
+                string.IsNullOrWhiteSpace(email.Text) ||
+                string.IsNullOrWhiteSpace(telefono.Text) ||
+                string.IsNullOrWhiteSpace(latitud.Text) ||
+                string.IsNullOrWhiteSpace(longitud.Text))
             {
-                MessageBox.Show("Los campos Nombre, Apellidos, Email y Teléfono son obligatorios.");
+                MessageBox.Show("Los campos Nombre, Apellidos, Email, Teléfono," +
+                    "Latitud y Longitud son obligatorios.");
+            }
+            else if (!int.TryParse(telefono.Text, out int telefonoInt) ||
+                    !Double.TryParse(latitud.Text, out double latitudDouble) ||
+                    !Double.TryParse(longitud.Text, out double longitudDouble))
+            {
+                MessageBox.Show("Los campos Telefono, Latitud y Longitud" +
+                    "deben ser numéricos");
             }
             else
             {
@@ -111,21 +108,39 @@ namespace Escritorio.UserControls
                         Usuario = username.Text,
                         Nombre = nombre.Text,
                         Email = email.Text,
-                        Telefono = int.Parse(telefono.Text),
-                        Direccion = calle.Text,
+                        Telefono = telefonoInt,
+                        Latitud = latitudDouble,
+                        Longitud = longitudDouble,
                     };
-                    if (imagenSalida.Source != new BitmapImage(new Uri("/Images/logo.png")) && imagenSalida.Source != null)
+
+                    if (imagenSalida.Source != null)
                     {
                         academia.ImgPerfil = username.Text + ".jpg";
                     }
-                    //List<User> users = new List<User>();
-                    //users.Add(new User() { nombre = nombre.Text, apellidos = apellidos.Text, email = apellidos.Text, telefono = int.Parse(telefono.Text) });
+                    if (!string.IsNullOrWhiteSpace(calle.Text))
+                    {
+                        academia.Direccion = calle.Text;
+                    }
+                    var resultado = await _repository.EditAcademiaAsync(academia);
+                    if (resultado != null)
+                    {
+                        MessageBox.Show("La academia ha sido actualizada correctamente");
+                        App.LoggedAcademia = resultado;
+                        AbrirDashboard();
+                    }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.StackTrace);
                 }
             }
+        }
+
+        private void AbrirDashboard()
+        {
+            Dashboard dashboard = new Dashboard();
+            Window.GetWindow(this).Close();
+            dashboard.Show();
         }
 
         private void CerrarSesion(object sender, RoutedEventArgs e)
