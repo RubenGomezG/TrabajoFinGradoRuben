@@ -4,21 +4,46 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BusinessPlusData.Repository
 {
-    public class UsuarioRepository
+    public class InscripcionesRepository
     {
-        private readonly Bu5x9ctsBusinessplusContext _context;
 
-        public UsuarioRepository(Bu5x9ctsBusinessplusContext context)
+        private readonly Bu5x9ctsBusinessplusContext _context;
+        public InscripcionesRepository(Bu5x9ctsBusinessplusContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-
-        public async Task<List<Usuario>> ListarUsuarios()
+        public async Task<List<Inscripcione>> ListarInscripciones()
         {
             using (var context = new Bu5x9ctsBusinessplusContext())
             {
-                return await context.Usuarios
-                .Select(UsuarioMapping.MapToUsuario(context)).ToListAsync();
+                return await context.Inscripciones
+                .Select(InscripcionesMapping.MapToInscripcione(context)).ToListAsync();
+            }
+        }
+
+        public List<string> ListarUsuariosDeCurso(Curso curso)
+        {
+            using (var context = new Bu5x9ctsBusinessplusContext())
+            {
+                var query = from inscripcion in context.Inscripciones
+                            join usuario in context.Usuarios on inscripcion.Usuario equals usuario.Usuario1
+                            where inscripcion.CodCurso == curso.CodCurso
+                            select usuario.Nombre;
+
+                return query.ToList();
+            }
+        }
+
+        public List<string> ListarCursosDeUsuario(Usuario usuario)
+        {
+            using (var context = new Bu5x9ctsBusinessplusContext())
+            {
+                var query = from inscripcion in context.Inscripciones
+                            join curso in context.Cursos on inscripcion.CodCurso equals curso.CodCurso
+                            where inscripcion.Usuario == usuario.Usuario1
+                            select curso.NombreCurso;
+
+                return query.ToList();
             }
         }
 
@@ -34,10 +59,10 @@ namespace BusinessPlusData.Repository
                 {
                     switch (i)
                     {
-                        case 0: 
+                        case 0:
                             textoNombre = textos[i];
                             break;
-                        case 1: 
+                        case 1:
                             textoApellido1 = textos[i];
                             break;
                         case 2:
@@ -54,7 +79,7 @@ namespace BusinessPlusData.Repository
 
                 if (usuariosPorNombreExacto.Count > 0)
                 {
-                    List<Usuario> usuariosCorrectos = new List<Usuario> ();
+                    List<Usuario> usuariosCorrectos = new List<Usuario>();
                     foreach (var usuario in usuariosPorNombreExacto)
                     {
                         string[] cadenaApellidos = usuario.Apellidos.Split(" ");
@@ -78,7 +103,7 @@ namespace BusinessPlusData.Repository
                         if (usuario2 != null)
                         {
                             usuariosCorrectos.Add(usuario2);
-                        }    
+                        }
                     }
                     return usuariosCorrectos;
                 }

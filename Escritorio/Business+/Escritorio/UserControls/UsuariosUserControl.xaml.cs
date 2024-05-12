@@ -22,14 +22,19 @@ namespace Escritorio.UserControls
     /// </summary>
     public partial class UsuariosUserControl : UserControl
     {
-        private readonly UsuarioRepository _repository;
+        private readonly UsuarioRepository _usuarioRepository;
+        private readonly InscripcionesRepository _inscripcionesRepository;
+
         private readonly Bu5x9ctsBusinessplusContext _context;
         public UsuariosUserControl()
         {
             InitializeComponent();
+
             _context = new Bu5x9ctsBusinessplusContext();
-            _repository = new UsuarioRepository(_context);
+            _usuarioRepository = new UsuarioRepository(_context);
+            _inscripcionesRepository = new InscripcionesRepository(_context);
             CargarDataGrid();
+
             dataGridUsuarios.AutoGeneratingColumn += (sender, e) =>
             {
                 if (e.PropertyName == "ConversacioneUsuario2s")
@@ -49,11 +54,12 @@ namespace Escritorio.UserControls
 
         private async void CargarDataGrid()
         {
-            dataGridUsuarios.ItemsSource = await _repository.ListarUsuarios();
+            dataGridUsuarios.ItemsSource = await _usuarioRepository.ListarUsuarios();
         }
 
         private void ElegirColumna(object sender, SelectionChangedEventArgs e)
         {
+            listaClientes.Items.Clear();
             var filaSeleccionada = dataGridUsuarios.SelectedItem as Usuario;
             if (filaSeleccionada != null)
             {
@@ -63,7 +69,11 @@ namespace Escritorio.UserControls
                 txtEmail.Text = filaSeleccionada.Email;
                 txtTelefono.Text = filaSeleccionada.Telefono.ToString();
                 txtEdad.Text = filaSeleccionada.Edad.ToString();
-                //TODO imagenes y listview de Usuarios inscritos
+                //TODO imagenes
+                foreach (var item in _inscripcionesRepository.ListarCursosDeUsuario(filaSeleccionada))
+                {
+                    listaClientes.Items.Add(item);
+                }
             }
         }
 
@@ -75,7 +85,7 @@ namespace Escritorio.UserControls
             }
             else
             {
-                dataGridUsuarios.ItemsSource = await _repository.BuscarUsuariosPorNombreAsync(txtBuscarUsuarios.Text);
+                dataGridUsuarios.ItemsSource = await _usuarioRepository.BuscarUsuariosPorNombreAsync(txtBuscarUsuarios.Text);
             }
         }
     }

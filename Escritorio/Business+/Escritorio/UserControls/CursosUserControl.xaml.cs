@@ -24,13 +24,15 @@ namespace Escritorio.UserControls
     /// </summary>
     public partial class CursosUserControl : UserControl
     {
-        private readonly CursoRepository _repository;
+        private readonly CursoRepository _cursoRepository;
+        private readonly InscripcionesRepository _inscripcionesRepository;
         private readonly Bu5x9ctsBusinessplusContext _context;
         public CursosUserControl()
         {
             InitializeComponent();
             _context = new Bu5x9ctsBusinessplusContext();
-            _repository = new CursoRepository(_context);
+            _cursoRepository = new CursoRepository(_context);
+            _inscripcionesRepository = new InscripcionesRepository(_context);
             CargarDataGrid();
             dataGridCursos.AutoGeneratingColumn += (sender, e) =>
             {
@@ -47,7 +49,7 @@ namespace Escritorio.UserControls
 
         private async void CargarDataGrid() 
         {
-            dataGridCursos.ItemsSource = await _repository.ListarCursosDeAcademia(App.LoggedAcademia);
+            dataGridCursos.ItemsSource = await _cursoRepository.ListarCursosDeAcademia(App.LoggedAcademia);
         }
 
         private async void CrearCurso(object sender, RoutedEventArgs e)
@@ -77,7 +79,7 @@ namespace Escritorio.UserControls
                                 curso.FechaInicioCurso = fechaInicio;
                                 curso.FechaFinCurso = fechaFin;
 
-                                await _repository.CreateCursoAsync(curso);
+                                await _cursoRepository.CreateCursoAsync(curso);
 
                                 MessageBox.Show("El curso creado correctamente");
                                 AbrirDashboard();
@@ -111,7 +113,7 @@ namespace Escritorio.UserControls
 
         private async void EditarCurso(object sender, RoutedEventArgs e)
         {
-            Curso curso = await _repository.GetCursoAsync(int.Parse(txtCodigoCurso.Text));
+            Curso curso = await _cursoRepository.GetCursoAsync(int.Parse(txtCodigoCurso.Text));
             if (curso != null &&
                 !string.IsNullOrEmpty(txtNombreCurso.Text) &&
                 !string.IsNullOrEmpty(txtPrecio.Text) &&
@@ -132,7 +134,7 @@ namespace Escritorio.UserControls
                 }
                 curso.Tipo = comboTipo.Text;
                 curso.Descripcion = txtDescripcion.Text;
-                var resultado = await _repository.UpdateCursoAsync(curso);
+                var resultado = await _cursoRepository.UpdateCursoAsync(curso);
 
                 if (resultado != null)
                 {
@@ -150,28 +152,18 @@ namespace Escritorio.UserControls
         {
             if (!string.IsNullOrEmpty(txtCodigoCurso.Text))
             {
-                await _repository.DeleteCursoAsync(int.Parse(txtCodigoCurso.Text));
+                await _cursoRepository.DeleteCursoAsync(int.Parse(txtCodigoCurso.Text));
                 MessageBox.Show($"El curso {txtCodigoCurso.Text} fue eliminado correctamente");
                 AbrirDashboard();
             }
             
         }
 
-        private async void BuscarCursos(object sender, TextChangedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtBuscarCursos.Text) || string.IsNullOrWhiteSpace(txtBuscarCursos.Text))
-            {
-                CargarDataGrid();
-            }
-            else
-            {
-                dataGridCursos.ItemsSource = await _repository.BuscarCursosPorNombreAsync(txtBuscarCursos.Text);
-            }
-        }
-
         private void ElegirColumna(object sender, SelectionChangedEventArgs e)
         {
+            listaClientes.Items.Clear();
             var filaSeleccionada = dataGridCursos.SelectedItem as Curso;
+
             if (filaSeleccionada != null)
             {
                 txtCodigoCurso.Text = filaSeleccionada.CodCurso.ToString();
@@ -187,7 +179,23 @@ namespace Escritorio.UserControls
                 }
 
                 txtDescripcion.Text = filaSeleccionada.Descripcion;
-                //TODO imagenes y listview de Usuarios inscritos
+                foreach (var item in _inscripcionesRepository.ListarUsuariosDeCurso(filaSeleccionada))
+                {
+                    listaClientes.Items.Add(item);
+                }
+                //TODO imagenes
+            }
+        }
+
+        private async void BuscarCursos(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscarCursos.Text) || string.IsNullOrWhiteSpace(txtBuscarCursos.Text))
+            {
+                CargarDataGrid();
+            }
+            else
+            {
+                dataGridCursos.ItemsSource = await _cursoRepository.BuscarCursosPorNombreAsync(txtBuscarCursos.Text);
             }
         }
 

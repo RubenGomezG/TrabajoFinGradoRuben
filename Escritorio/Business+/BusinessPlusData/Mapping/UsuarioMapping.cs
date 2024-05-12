@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace BusinessPlusData.Mapping
 {
-    public class UsuarioMapping
+    public static class UsuarioMapping
     {
         public static Expression<Func<Usuario, Usuario>> MapToUsuario(Bu5x9ctsBusinessplusContext dbContext)
         {
