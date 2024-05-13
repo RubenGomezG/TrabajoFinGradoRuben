@@ -3,7 +3,9 @@ using BusinessPlusData.Repository;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +27,7 @@ namespace Escritorio.UserControls
     {
         private readonly AcademiaRepository _repository;
         private readonly Bu5x9ctsBusinessplusContext _context;
+        public string? rutaArchivo;
         public PerfilUserControl()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace Escritorio.UserControls
 
             if (openFileDialog.ShowDialog() == true)
             {
-                string rutaArchivo = openFileDialog.FileName;
+                rutaArchivo = openFileDialog.FileName;
                 // Aquí puedes usar la variable 'rutaArchivo' para trabajar con el archivo seleccionado.
                 BitmapImage bitmap = new BitmapImage(new Uri(rutaArchivo));
                 imagenSalida.Source = bitmap;
@@ -116,6 +119,18 @@ namespace Escritorio.UserControls
                     if (imagenSalida.Source != null)
                     {
                         academia.ImgPerfil = username.Text + ".jpg";
+                        try
+                        {
+                            using (var client = new WebClient())
+                            {
+                                client.Credentials = new NetworkCredential("admin_images@businesstfg.info", "Clash1ng;");
+                                client.UploadFile($"ftp://81.88.53.129/{username.Text}.jpg", rutaArchivo);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Diagnostics.Debug.WriteLine(ex.Message);
+                        }
                     }
                     if (!string.IsNullOrWhiteSpace(calle.Text))
                     {
@@ -124,6 +139,7 @@ namespace Escritorio.UserControls
                     var resultado = await _repository.EditAcademiaAsync(academia);
                     if (resultado != null)
                     {
+                        File.Copy(rutaArchivo, $"{App.rutaRaiz}\\Escritorio\\Images\\{username.Text}.jpg", true);
                         MessageBox.Show("La academia ha sido actualizada correctamente");
                         App.LoggedAcademia = resultado;
                         AbrirDashboard();

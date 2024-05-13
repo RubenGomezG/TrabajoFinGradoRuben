@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Globalization;
+using System.Net;
 
 namespace Escritorio.UserControls
 {
@@ -45,6 +46,22 @@ namespace Escritorio.UserControls
                     e.Column.Visibility = Visibility.Collapsed;
                 }
             };
+
+            try
+            {
+                using (var client = new WebClient())
+                {
+                    client.Credentials = new NetworkCredential("admin_images@businesstfg.info", "Clash1ng;");
+                    client.DownloadFile($"ftp://81.88.53.129/{App.LoggedAcademia.ImgPerfil}", $"{App.rutaRaiz}\\Escritorio\\Images\\{App.LoggedAcademia.ImgPerfil}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se cargará su imagen local. Espere unos segundos para poder actualizarla");
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            BitmapImage img = new BitmapImage(new Uri($"{App.rutaRaiz}\\Escritorio\\Images\\{App.LoggedAcademia.ImgPerfil}"));
+            imgCurso.Source = img;
         }
 
         private async void CargarDataGrid() 

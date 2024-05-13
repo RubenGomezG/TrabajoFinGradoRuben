@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Windows;
 
 namespace Escritorio
@@ -15,12 +16,17 @@ namespace Escritorio
         private readonly IServiceProvider _serviceProvider;
 
         public static Academia? LoggedAcademia { get; set; }
-
+        public static string rutaDebug = "";
+        public static string rutaBin = "";
+        public static string rutaRaiz = "";
         public App()
         {
             ServiceCollection services = new ServiceCollection();
             ConfigureServices(services);
             _serviceProvider = services.BuildServiceProvider();
+            rutaDebug = Directory.GetCurrentDirectory();
+            rutaBin = Directory.GetParent(rutaDebug).Parent.FullName;
+            rutaRaiz = Directory.GetParent(rutaBin).Parent.FullName;
         }
 
         private void ConfigureServices(ServiceCollection services)

@@ -2,7 +2,11 @@
 using BusinessPlusData.Repository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.WebRequestMethods;
 
 namespace Escritorio.UserControls
 {
@@ -26,6 +31,7 @@ namespace Escritorio.UserControls
         private readonly InscripcionesRepository _inscripcionesRepository;
 
         private readonly Bu5x9ctsBusinessplusContext _context;
+        
         public UsuariosUserControl()
         {
             InitializeComponent();
@@ -34,6 +40,8 @@ namespace Escritorio.UserControls
             _usuarioRepository = new UsuarioRepository(_context);
             _inscripcionesRepository = new InscripcionesRepository(_context);
             CargarDataGrid();
+            
+            
 
             dataGridUsuarios.AutoGeneratingColumn += (sender, e) =>
             {
@@ -63,13 +71,28 @@ namespace Escritorio.UserControls
             var filaSeleccionada = dataGridUsuarios.SelectedItem as Usuario;
             if (filaSeleccionada != null)
             {
-                txtUsername.Text = filaSeleccionada.Usuario1.ToString();
+                txtUsername.Text = filaSeleccionada.Usuario1;
                 txtNombreUsuario.Text = filaSeleccionada.Nombre;
                 txtApellidos.Text = filaSeleccionada.Apellidos;
                 txtEmail.Text = filaSeleccionada.Email;
                 txtTelefono.Text = filaSeleccionada.Telefono.ToString();
                 txtEdad.Text = filaSeleccionada.Edad.ToString();
-                //TODO imagenes
+                try
+                {
+                    using (var client = new WebClient())
+                    {
+                        client.Credentials = new NetworkCredential("admin_images@businesstfg.info", "Clash1ng;");
+                        client.DownloadFile($"ftp://81.88.53.129/{filaSeleccionada.ImgPerfil}", $"{App.rutaRaiz}\\Escritorio\\Images\\{filaSeleccionada.ImgPerfil}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se cargará su imagen local. Espere unos segundos para poder actualizarla");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+                BitmapImage img = new BitmapImage(new Uri($"{App.rutaRaiz}\\Escritorio\\Images\\{filaSeleccionada.ImgPerfil}"));
+                imgCurso.Source = img;
+
                 foreach (var item in _inscripcionesRepository.ListarCursosDeUsuario(filaSeleccionada))
                 {
                     listaCursos.Items.Add(item);

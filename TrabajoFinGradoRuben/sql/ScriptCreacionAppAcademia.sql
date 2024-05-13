@@ -78,16 +78,16 @@ create table Mensajes(
 );
 
 
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Mikel', 'Mikel', 'mjorgesote@educacion.navarra.es', 'Mikel Aingeru', 'Jorge Soteras', 123456789,33);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('LuisDorado', 'LuisDorado', 'ldoradogar@educacion.navarra.es', 'Luis', 'Dorado Garcés', 234567891,40);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Pablo', 'Pablo', 'pablomontero@educacion.navarra.es', 'Pablo', 'Montero Quevedo', 345678912,55);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Javi', 'Javi', 'jjorgesote@educacion.navarra.es', 'Javier', 'Jorge Soteras', 456789123,35);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('David', 'David', 'dguruchazc@educacion.navarra.es', 'David', 'Gurutxarri Azcona', 567891234,42);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Pedro', 'Pedro', 'pvelasczuf@educacion.navarra.es', 'Pedro José', 'Velasco Zufia', 678912345,34);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('RubenG', 'RubenG', 'rgomezgarc@educacion.navarra.es', 'Rubén', 'Gómez García', 789123456,30);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('RubenL', 'RubenL', 'rlopezdled@educacion.navarra.es', 'Rubén', 'López-Davalillo Ledesma', 891234567,20);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Cris', 'Cris', 'clopezlusa1@educacion.navarra.es', 'Cristina', 'López Lusarreta', 912345678,19);
-insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,edad) values ('Endika', 'Endika', 'eeguinogar@educacion.navarra.es', 'Endika', 'Eguino Garbayo', 012345678,20);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Mikel', 'Mikel', 'mjorgesote@educacion.navarra.es', 'Mikel Aingeru', 'Jorge Soteras', 123456789, 'Mikel.jpg', 33);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('LuisDorado', 'LuisDorado', 'ldoradogar@educacion.navarra.es', 'Luis', 'Dorado Garcés', 234567891, 'LuisDorado.jpg', 40);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Pablo', 'Pablo', 'pablomontero@educacion.navarra.es', 'Pablo', 'Montero Quevedo', 345678912, 'Pablo.jpg', 55);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Javi', 'Javi', 'jjorgesote@educacion.navarra.es', 'Javier', 'Jorge Soteras', 456789123, 'Javi.jpg', 35);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('David', 'David', 'dguruchazc@educacion.navarra.es', 'David', 'Gurutxarri Azcona', 567891234, 'David.jpg', 42);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Pedro', 'Pedro', 'pvelasczuf@educacion.navarra.es', 'Pedro José', 'Velasco Zufia', 678912345, 'Pedro.jpg', 34);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('RubenG', 'RubenG', 'rgomezgarc@educacion.navarra.es', 'Rubén', 'Gómez García', 789123456, 'RubenG.jpg', 30);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('RubenL', 'RubenL', 'rlopezdled@educacion.navarra.es', 'Rubén', 'López-Davalillo Ledesma', 891234567 'RubenL.jpg', ,20);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Cris', 'Cris', 'clopezlusa1@educacion.navarra.es', 'Cristina', 'López Lusarreta', 912345678, 'Cris.jpg', 19);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Endika', 'Endika', 'eeguinogar@educacion.navarra.es', 'Endika', 'Eguino Garbayo', 012345678, 'Endika.jpg', 20);
 
 INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia1', 'password1', 'academia1@example.com', 'Academia 1', 123456789, 'Calle Academia 1', 0.0, 0.0, "academia1.jpg");
 
