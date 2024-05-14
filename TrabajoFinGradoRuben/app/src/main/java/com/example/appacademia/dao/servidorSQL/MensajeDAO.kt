@@ -114,13 +114,12 @@ class MensajeDAO : InterfaceDAO() {
         val senderUsername = resultado.getString("sender_username")
         val senderCodAcademia = resultado.getInt("sender_cod_academia")
         val content = resultado.getString("contenido")
-        val timestamp = resultado.getDate("timestamp")
+        val timestamp = resultado.getTimestamp("timestamp")
         return Mensaje(codMensaje, codConversacion, senderUsername, senderCodAcademia, content, timestamp)
     }
 
     /**
      * Borra un mensaje de la base de datos.
-     * @param context - El contexto de la aplicación.
      * @param mensaje - El curso a borrar.
      */
     fun borrarMensaje(mensaje: Mensaje) {

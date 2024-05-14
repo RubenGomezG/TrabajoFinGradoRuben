@@ -1,5 +1,7 @@
 package com.example.appacademia.model
 
+import com.google.type.DateTime
+import java.sql.Timestamp
 import java.util.Date
 
 class Mensaje {
@@ -8,11 +10,11 @@ class Mensaje {
     var senderUsername: String? = ""
     var senderCodAcademia: Int? = 0
     var content: String = ""
-    var timestamp: Date? = null
+    var timestamp: Timestamp? = null
 
 
 
-    constructor(codMensaje: Int, codConversacion: Int, senderUsername: String, senderCodAcademia: Int, content: String, timestamp: Date?) {
+    constructor(codMensaje: Int, codConversacion: Int, senderUsername: String?, senderCodAcademia: Int?, content: String, timestamp: Timestamp?) {
         this.codMensaje = codMensaje
         this.codConversacion = codConversacion
         this.senderUsername = senderUsername

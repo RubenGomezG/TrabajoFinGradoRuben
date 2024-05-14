@@ -29,18 +29,16 @@ class ChatAdapter(private val messages: List<Mensaje>) : RecyclerView.Adapter<Ch
 
         fun bind(message: Mensaje) {
             if (message.senderUsername == null){
-                senderTextView.text = message.senderCodAcademia.toString()
+                senderTextView.text = message.senderCodAcademia.toString() + " " + message.timestamp
                 senderTextView.textAlignment = TEXT_ALIGNMENT_VIEW_START
                 contentTextView.textAlignment = TEXT_ALIGNMENT_VIEW_START
-
             }
             else{
+                senderTextView.text = message.senderUsername + " " + message.timestamp + message.timestamp
                 senderTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
                 contentTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
-                contentTextView.text = message.content
             }
             contentTextView.text = message.content
-
         }
     }
 }

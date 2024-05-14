@@ -16,6 +16,7 @@ import com.example.appacademia.R
 import com.example.appacademia.dao.servidorSQL.ConversacionDAO
 import com.example.appacademia.dao.servidorSQL.CursoDAO
 import com.example.appacademia.dao.servidorSQL.MensajeDAO
+import com.example.appacademia.model.Conversacion
 import com.example.appacademia.model.Mensaje
 import com.example.appacademia.ui.activities.MainActivity
 import com.example.appacademia.ui.fragments.buscar.RecyclerBuscar
@@ -30,7 +31,7 @@ class ChatFragment : Fragment() {
     private lateinit var btnSendMessage: ImageButton
 
     private lateinit var messagesAdapter: ChatAdapter
-    private val messagesList = mutableListOf<Mensaje>()
+    private var messagesList = mutableListOf<Mensaje>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,22 +71,19 @@ class ChatFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.IO) {
             val mensajeDAO = MensajeDAO()
             val conversacionDAO = ConversacionDAO()
+            var conversacion : Conversacion = conversacionDAO.consultarConversacion((requireActivity() as MainActivity).username)
             val listaDeMensajes = mensajeDAO.obtenerTodosLosMensajesDeConversacion(
-                                    conversacionDAO.consultarConversacion(
-                                        (requireActivity() as MainActivity).username).codConversacion)
-        }
-        messagesList.clear()
-        /*val md = MessageDatabase()
-        md.loadMessagesByTime { messages ->
-            for (message in messages) {
-                println("Message in messages ForumFragment")
-                messagesList.add(message)
-            }
-            messagesAdapter.notifyDataSetChanged()
-            messageRecyclerView.scrollToPosition(messagesList.size - 1)
-        }
-        */
+                                    conversacion.codConversacion)
 
+            withContext(Dispatchers.Main) {
+                val adaptador = ChatAdapter(listaDeMensajes)
+                messagesList = listaDeMensajes
+                messageRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+                messageRecyclerView.adapter = adaptador
+                messagesAdapter.notifyDataSetChanged()
+                messageRecyclerView.scrollToPosition(messagesList.size - 1)
+            }
+        }
     }
 
 
