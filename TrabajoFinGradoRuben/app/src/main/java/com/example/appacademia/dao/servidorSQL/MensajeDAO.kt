@@ -33,7 +33,7 @@ class MensajeDAO : InterfaceDAO() {
 
             sentencia.setInt(1, codConversacion)
             sentencia.setString(2, senderUsername)
-            sentencia.setInt(3, senderCodAcademia)
+            sentencia.setInt(3, senderCodAcademia as Int)
             sentencia.setString(4, content)
             sentencia.setTimestamp(5, fechaSqlTimestamp1)
 
@@ -152,15 +152,17 @@ class MensajeDAO : InterfaceDAO() {
         var sentencia: PreparedStatement? = null
         val content: String = mensaje.content
         val timestamp = mensaje.timestamp
+        val codMensaje = mensaje.codMensaje
 
         conectar()
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
-            val sql = "UPDATE Mensaje SET contenido = ?, timestamp = ?"
+            val sql = "UPDATE Mensaje SET contenido = ?, timestamp = ? WHERE cod_mensaje = ?"
             sentencia = conexion!!.prepareStatement(sql)
 
             sentencia.setString(1, content)
             sentencia.setDate(2, timestamp as Date?)
+            sentencia.setInt(3, codMensaje)
 
             sentencia.executeUpdate()
             conexion!!.commit() // para hacer transacción a la vez

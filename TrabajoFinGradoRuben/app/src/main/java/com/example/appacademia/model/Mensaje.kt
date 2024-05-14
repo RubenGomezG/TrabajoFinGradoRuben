@@ -5,8 +5,8 @@ import java.util.Date
 class Mensaje {
     var codMensaje: Int = 0
     var codConversacion: Int = 0
-    var senderUsername: String = ""
-    var senderCodAcademia: Int = 0
+    var senderUsername: String? = ""
+    var senderCodAcademia: Int? = 0
     var content: String = ""
     var timestamp: Date? = null
 

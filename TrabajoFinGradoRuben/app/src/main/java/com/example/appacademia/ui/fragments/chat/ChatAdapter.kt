@@ -2,6 +2,8 @@ package com.example.appacademia.ui.fragments.chat
 
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.TEXT_ALIGNMENT_VIEW_END
+import android.view.View.TEXT_ALIGNMENT_VIEW_START
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -26,8 +28,19 @@ class ChatAdapter(private val messages: List<Mensaje>) : RecyclerView.Adapter<Ch
         private val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)
 
         fun bind(message: Mensaje) {
-            senderTextView.text = message.senderId.toString()
+            if (message.senderUsername == null){
+                senderTextView.text = message.senderCodAcademia.toString()
+                senderTextView.textAlignment = TEXT_ALIGNMENT_VIEW_START
+                contentTextView.textAlignment = TEXT_ALIGNMENT_VIEW_START
+
+            }
+            else{
+                senderTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
+                contentTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
+                contentTextView.text = message.content
+            }
             contentTextView.text = message.content
+
         }
     }
 }

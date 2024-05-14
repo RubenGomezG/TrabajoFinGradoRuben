@@ -51,10 +51,10 @@ class ConversacionDAO : InterfaceDAO() {
 
     /**
      * Consulta una Conversación en la base de datos basado en el código del usuario.
-     * @param codigoUsuario - El código del usuario a consultar.
+     * @param username - El código del usuario a consultar.
      * @return La conversación entre el usuario y la academia 1.
      */
-    fun consultarConversacion(codigoUsuario : Int): Conversacion {
+    fun consultarConversacion(username : String): Conversacion {
         var sentencia: Statement? = null
         var resultado: ResultSet? = null
         conectar()
@@ -64,7 +64,7 @@ class ConversacionDAO : InterfaceDAO() {
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
 
-            val sql = "SELECT * FROM Conversaciones WHERE usuario1_id = 1 AND usuario2_id = '$codigoUsuario';"
+            val sql = "SELECT * FROM Conversaciones WHERE usuario1_id = 1 AND usuario2_id = '$username';"
             sentencia = conexion!!.createStatement()
             resultado = sentencia.executeQuery(sql)
 

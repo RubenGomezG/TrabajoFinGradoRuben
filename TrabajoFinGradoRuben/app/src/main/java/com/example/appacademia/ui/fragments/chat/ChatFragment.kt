@@ -1,6 +1,7 @@
 package com.example.appacademia.ui.fragments.chat
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,11 +13,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appacademia.R
+import com.example.appacademia.dao.servidorSQL.ConversacionDAO
+import com.example.appacademia.dao.servidorSQL.CursoDAO
 import com.example.appacademia.dao.servidorSQL.MensajeDAO
 import com.example.appacademia.model.Mensaje
 import com.example.appacademia.ui.activities.MainActivity
+import com.example.appacademia.ui.fragments.buscar.RecyclerBuscar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ChatFragment : Fragment() {
 
@@ -64,7 +69,10 @@ class ChatFragment : Fragment() {
     private fun loadMessages() {
         lifecycleScope.launch(Dispatchers.IO) {
             val mensajeDAO = MensajeDAO()
-            //val listaDeMensajes = mensajeDAO.obtenerTodosLosMensajesDeUsuario()
+            val conversacionDAO = ConversacionDAO()
+            val listaDeMensajes = mensajeDAO.obtenerTodosLosMensajesDeConversacion(
+                                    conversacionDAO.consultarConversacion(
+                                        (requireActivity() as MainActivity).username).codConversacion)
         }
         messagesList.clear()
         /*val md = MessageDatabase()
@@ -79,6 +87,7 @@ class ChatFragment : Fragment() {
         */
 
     }
+
 
     private fun sendMessage(messageText: String) {
         //val md = MessageDatabase()
