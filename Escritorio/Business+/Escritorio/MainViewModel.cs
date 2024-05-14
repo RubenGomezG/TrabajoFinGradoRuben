@@ -11,6 +11,7 @@ namespace Escritorio
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+
         private ObservableCollection<string> _yourCollection;
         public ObservableCollection<string> YourCollection
         {

@@ -125,6 +125,7 @@ namespace Escritorio.UserControls
                             {
                                 client.Credentials = new NetworkCredential("admin_images@businesstfg.info", "Clash1ng;");
                                 client.UploadFile($"ftp://81.88.53.129/{username.Text}.jpg", rutaArchivo);
+                                File.Copy(rutaArchivo, $"{App.rutaRaiz}\\Escritorio\\Images\\{username.Text}.jpg", true);
                             }
                         }
                         catch (Exception ex)
@@ -138,8 +139,7 @@ namespace Escritorio.UserControls
                     }
                     var resultado = await _repository.EditAcademiaAsync(academia);
                     if (resultado != null)
-                    {
-                        File.Copy(rutaArchivo, $"{App.rutaRaiz}\\Escritorio\\Images\\{username.Text}.jpg", true);
+                    {                        
                         MessageBox.Show("La academia ha sido actualizada correctamente");
                         App.LoggedAcademia = resultado;
                         AbrirDashboard();

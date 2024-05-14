@@ -22,6 +22,14 @@ namespace BusinessPlusData.Repository
                 .FirstAsync();
         }
 
+        public Academia GetAcademia()
+        {
+            return _context.Academias
+                .Where(a => a.CodAcademia == 1)
+                .Select(AcademiaMapping.MapToAcademia(_context))
+                .First();
+        }
+
         public async Task<Academia> ChangePasswordAsync(Academia academia)
         {
             var getAcademia = _context.Academias

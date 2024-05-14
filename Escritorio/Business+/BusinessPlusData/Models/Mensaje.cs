@@ -12,8 +12,8 @@ public partial class Mensaje
 
     public int CodConversacion { get; set; }
 
-    public string SenderUsername { get; set; } = null!;
-    public int SenderCodAcademia { get; set; }
+    public string? SenderUsername { get; set; } = null!;
+    public int? SenderCodAcademia { get; set; }
 
     public string Contenido { get; set; } = null!;
 

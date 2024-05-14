@@ -8,20 +8,11 @@
              d:DesignHeight="600" d:DesignWidth="1000"
              MinHeight="450" MaxHeight="1080" MinWidth="800" MaxWidth="1920"
              ClipToBounds="True">
-    <Grid Background="#FFE5E5E5">
-        <ItemsControl ItemsSource="{Binding YourCollection}">
+    <Grid x:Name="tablero" Background="#FFE5E5E5">
+        <ItemsControl ItemsSource="{Binding Conversaciones}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1" Margin="5">
-                        <StackPanel Orientation="Vertical" MouseDown="AbrirChat">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding}" Padding="5" FontWeight="Bold"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding}" Padding="5" FontWeight="Normal" FontStyle="Italic"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
+                    <local:TarjetaConversacion Nombre="{}"></local:TarjetaConversacion>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

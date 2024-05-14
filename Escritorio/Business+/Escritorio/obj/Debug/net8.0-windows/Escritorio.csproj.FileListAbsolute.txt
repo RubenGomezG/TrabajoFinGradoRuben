@@ -53,3 +53,4 @@ D:\DAM2\TrabajoFinGradoRuben\Escritorio\Business+\Escritorio\obj\Debug\net8.0-wi
 D:\DAM2\TrabajoFinGradoRuben\Escritorio\Business+\Escritorio\obj\Debug\net8.0-windows\Escritorio.genruntimeconfig.cache
 D:\DAM2\TrabajoFinGradoRuben\Escritorio\Business+\Escritorio\obj\Debug\net8.0-windows\ref\Escritorio.dll
 D:\DAM2\TrabajoFinGradoRuben\Escritorio\Business+\Escritorio\obj\Debug\net8.0-windows\App.baml
+D:\DAM2\TrabajoFinGradoRuben\Escritorio\Business+\Escritorio\obj\Debug\net8.0-windows\UserControls\TarjetaConversacion.g.cs

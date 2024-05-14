@@ -92,12 +92,12 @@ namespace BusinessPlusData.Repository
             }
         }
 
-        public async Task<Usuario> GetUsuarioAsync(string username)
+        public Usuario GetUsuarioAsync(string username)
         {
-            return await _context.Usuarios
+            return _context.Usuarios
                 .Where(u => u.Usuario1 == username)
                 .Select(UsuarioMapping.MapToUsuario(_context))
-                .FirstAsync();
+                .First();
         }
     }
 }
