@@ -1,8 +1,10 @@
 package com.example.appacademia.ui.fragments.chat
 
+import android.content.Context
 import android.graphics.Color.BLUE
 import android.graphics.Color.LTGRAY
 import android.graphics.Color.RED
+import android.os.Looper
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -12,10 +14,13 @@ import android.view.View.TEXT_ALIGNMENT_VIEW_START
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appacademia.R
 import com.example.appacademia.dao.servidorSQL.AcademiaDAO
+import com.example.appacademia.dao.servidorSQL.MensajeDAO
 import com.example.appacademia.dao.servidorSQL.UsuarioDAO
 import com.example.appacademia.ftp.InterfaceFTP
 import com.example.appacademia.model.Mensaje
@@ -25,8 +30,9 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ChatAdapter(private val messages: List<Mensaje>,
-                  private val listener: OnItemClickListener) : RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
+class ChatAdapter(private val messages: MutableList<Mensaje>,
+                  private val listener: OnItemClickListener,
+                  private val context : Context) : RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
 
     interface OnItemClickListener {
         /**
@@ -36,6 +42,7 @@ class ChatAdapter(private val messages: List<Mensaje>,
          */
         fun onUsuarioClick()
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.tarjeta_mensaje, parent, false)
@@ -120,8 +127,26 @@ class ChatAdapter(private val messages: List<Mensaje>,
                         linearLayout.background.setTintList(null)
                         linearLayout.layoutParams = layoutParamsTexto
                         fotoUsuario.setOnClickListener{listener.onUsuarioClick()}
+
                     }
                 }
+            }
+            linearLayout.isLongClickable = true
+            linearLayout.setOnLongClickListener{f ->
+                val mensajeDAO = MensajeDAO()
+                val codMensaje = message.codMensaje
+                var exito : Boolean = false
+                GlobalScope.launch(Dispatchers.IO) {
+                    val mensajeABorrar = mensajeDAO.consultarMensaje(codMensaje)
+                    withContext(Dispatchers.Main){
+                        Toast.makeText(context, "Mensaje eliminado correctamente", Toast.LENGTH_SHORT).show()
+                    }
+                    if (mensajeABorrar != Mensaje() && mensajeABorrar.senderCodAcademia == null){
+                        mensajeDAO.borrarMensaje(mensajeABorrar)
+                        exito = true
+                    }
+                }
+                exito
             }
             senderTextView.text = "Yo"
             fechaTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END

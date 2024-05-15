@@ -79,7 +79,7 @@ class ChatFragment : Fragment() {
                                     conversacion.codConversacion)
 
             withContext(Dispatchers.Main) {
-                messagesAdapter = ChatAdapter(listaDeMensajes, requireActivity() as ChatAdapter.OnItemClickListener)
+                messagesAdapter = ChatAdapter(listaDeMensajes, requireActivity() as ChatAdapter.OnItemClickListener,requireActivity() as MainActivity)
                 messageRecyclerView.apply {
                     layoutManager = LinearLayoutManager(context)
                     adapter = messagesAdapter

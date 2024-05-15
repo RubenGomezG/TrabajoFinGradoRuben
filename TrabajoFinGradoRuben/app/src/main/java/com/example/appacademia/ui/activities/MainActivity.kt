@@ -8,11 +8,13 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.Toast
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,15 +32,18 @@ import com.example.appacademia.RecyclerCursosAcademia
 import com.example.appacademia.dao.local.database.LocalDatabase
 import com.example.appacademia.dao.servidorSQL.FavoritoDAO
 import com.example.appacademia.dao.servidorSQL.InscripcionesDAO
+import com.example.appacademia.dao.servidorSQL.MensajeDAO
 import com.example.appacademia.dao.servidorSQL.UsuarioDAO
 import com.example.appacademia.databinding.ActivityMainBinding
 import com.example.appacademia.ftp.InterfaceFTP
 import com.example.appacademia.model.Curso
 import com.example.appacademia.model.Favorito
 import com.example.appacademia.model.Inscripcion
+import com.example.appacademia.model.Mensaje
 import com.example.appacademia.ui.fragments.OpsToolbarFragment
 import com.example.appacademia.ui.fragments.buscar.RecyclerBuscar
 import com.example.appacademia.ui.fragments.chat.ChatAdapter
+import com.example.appacademia.ui.fragments.chat.ChatFragment
 import com.example.appacademia.ui.fragments.cursos.RecyclerCursos
 import com.example.appacademia.ui.fragments.favoritos.RecyclerFavoritos
 import com.example.appacademia.ui.fragments.perfil.PerfilFragment
@@ -46,6 +51,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
@@ -116,9 +122,6 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
         //Eliminar toolbar por defecto:
         supportActionBar?.hide()
 
-        //Comprobar si hace falta mostrar opcion iniciar sesion o ya está iniciada
-        handleIntentData()
-
         //inicializar el botón de back
         btnBack = binding.btnBack
         btnBack.setOnClickListener {
@@ -126,25 +129,6 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
         }
     }
 
-    /**
-     * Comprueba si la sesión está iniciada
-     */
-    private fun handleIntentData() {
-        val extras = intent.extras
-        if (extras != null) {
-            val dato = extras.getString("username")
-            if (dato != null) {
-                username = dato
-            }
-            val dato2 = extras.getBoolean("isLogged")
-            if (dato2) {
-                loggedIn = true
-            } else {
-                goToRegistro()
-            }
-
-        }
-    }
 
     /**
      * Registra la sesión activa en la base de datos local
@@ -400,7 +384,6 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
                     val favorito2 = favoritoDAO.consultarFavorito(username, codCurso)
                     if (favorito.username != "" && favorito2.username == favorito.username && favorito2.codCurso == codCurso)
                         favoritoDAO.borrarFavorito(favorito)
-                    Log.i("TAG", username)
                 }
             }
         }
@@ -465,5 +448,7 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
     override fun onUsuarioClick() {
         navController.navigate(R.id.navigation_perfil)
     }
+
+
 
 }
