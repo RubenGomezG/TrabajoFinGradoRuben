@@ -1,9 +1,5 @@
 package com.example.appacademia.dao.servidorSQL
 
-import android.content.Context
-import android.util.Log
-import android.widget.Toast
-import com.example.appacademia.model.Conversacion
 import com.example.appacademia.model.Mensaje
 import java.sql.Date
 import java.sql.PreparedStatement
@@ -17,25 +13,22 @@ class MensajeDAO : InterfaceDAO() {
         var sentencia: PreparedStatement? = null
         var codConversacion = mensaje.codConversacion
         var senderUsername = mensaje.senderUsername
-        var senderCodAcademia = mensaje.senderCodAcademia
         var content = mensaje.content
         val timestamp = mensaje.timestamp
-        val fechaUtil1: java.util.Date = java.util.Date()
-        val fechaSqlTimestamp1: java.sql.Timestamp = java.sql.Timestamp(fechaUtil1.time)
+        val fechaSqlTimestamp1: java.sql.Timestamp = java.sql.Timestamp(timestamp!!.time)
 
         conectar()
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
 
-            val sql = "INSERT INTO Mensajes (cod_conversacion, sender_username, sender_cod_academia, contenido, timestamp) VALUES (?,?,?,?,?)"
+            val sql = "INSERT INTO Mensajes (cod_conversacion, sender_username, contenido, timestamp) VALUES (?,?,?,?)"
 
             sentencia = conexion!!.prepareStatement(sql)
 
             sentencia.setInt(1, codConversacion)
             sentencia.setString(2, senderUsername)
-            sentencia.setInt(3, senderCodAcademia as Int)
-            sentencia.setString(4, content)
-            sentencia.setTimestamp(5, fechaSqlTimestamp1)
+            sentencia.setString(3, content)
+            sentencia.setTimestamp(4, fechaSqlTimestamp1)
 
 
             sentencia.executeUpdate()

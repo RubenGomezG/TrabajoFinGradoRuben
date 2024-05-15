@@ -38,6 +38,7 @@ import com.example.appacademia.model.Favorito
 import com.example.appacademia.model.Inscripcion
 import com.example.appacademia.ui.fragments.OpsToolbarFragment
 import com.example.appacademia.ui.fragments.buscar.RecyclerBuscar
+import com.example.appacademia.ui.fragments.chat.ChatAdapter
 import com.example.appacademia.ui.fragments.cursos.RecyclerCursos
 import com.example.appacademia.ui.fragments.favoritos.RecyclerFavoritos
 import com.example.appacademia.ui.fragments.perfil.PerfilFragment
@@ -51,7 +52,8 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
     RecyclerBuscar.OnItemCheckedChangeListener, RecyclerCursosAcademia.OnItemClickListener,
     RecyclerCursosAcademia.OnItemCheckedChangeListener, RecyclerCursos.OnItemClickListener,
     RecyclerCursos.OnItemCheckedChangeListener, RecyclerFavoritos.OnItemClickListener,
-    RecyclerFavoritos.OnItemCheckedChangeListener {
+    RecyclerFavoritos.OnItemCheckedChangeListener,
+    ChatAdapter.OnItemClickListener{
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
@@ -459,4 +461,9 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
 
         }
     }
+
+    override fun onUsuarioClick() {
+        navController.navigate(R.id.navigation_perfil)
+    }
+
 }

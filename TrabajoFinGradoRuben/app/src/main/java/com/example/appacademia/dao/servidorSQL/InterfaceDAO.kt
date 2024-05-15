@@ -42,28 +42,30 @@ abstract class InterfaceDAO{
                 try {
                     sentencia = conexion!!.createStatement()
                     sentencia.execute(linea)
-                } catch (e: SQLException) {
                 }
+                catch (_: SQLException) {}
             }
             conexion!!.commit() // para hacer transacción a la vez
-        } catch (e: SQLException) {
+        }
+        catch (e: SQLException) {
             // para hacer transacción a la vez:
             try {
                 conexion!!.rollback() // si al ejecutar da error, hacemos rollback
-            } catch (e1: SQLException) {
             }
-        } catch (e: IOException) {
-        } finally {
+            catch (_: SQLException) {}
+        }
+        catch (_: IOException) {}
+        finally {
             try {
                 if (entrada != null) {
                     try {
                         entrada.close()
-                    } catch (e: NullPointerException) {
-                    } catch (e: IOException) {
+                    } catch (_: NullPointerException) {
+                    } catch (_: IOException) {
                     }
                 }
                 sentencia?.close()
-            } catch (e: SQLException) {
+            } catch (_: SQLException) {
             }
             desconectar()
         }

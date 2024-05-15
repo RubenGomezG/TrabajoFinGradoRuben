@@ -62,8 +62,8 @@ import java.sql.Statement
         } finally {
             try {
                 sentencia?.close()
-            } catch (_: SQLException) {
             }
+            catch (_: SQLException) {}
             desconectar()
         }
     }
@@ -91,26 +91,24 @@ import java.sql.Statement
                 curso = getCurso(resultado)
             }
             conexion!!.commit() // para hacer transacción a la vez
-        } catch (syntax: SQLSyntaxErrorException) {
-
+        }
+        catch (syntax: SQLSyntaxErrorException) {
             return Curso()
-        } catch (e: NullPointerException) {
-
-        } catch (e: SQLException) {
-
+        }
+        catch (_: NullPointerException) {}
+        catch (e: SQLException) {
             // para hacer transacción a la vez:
             try {
                 conexion!!.rollback() // si al ejecutar da error, hacemos rollback
-            } catch (e1: SQLException) {
-
             }
-        } finally {
+            catch (_: SQLException) {}
+        }
+        finally {
             try {
                 sentencia?.close()
                 resultado?.close()
-            } catch (_: SQLException) {
-
             }
+            catch (_: SQLException) {}
             desconectar()
         }
         return curso

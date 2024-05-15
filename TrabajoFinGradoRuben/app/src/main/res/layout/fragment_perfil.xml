@@ -46,6 +46,7 @@
                     android:scaleType="fitCenter"
                     android:paddingVertical="10dp"
                     android:src="@drawable/baseline_account_circle_24" />
+
             </FrameLayout>
 
             <!-- contenedor campos info usuario -->

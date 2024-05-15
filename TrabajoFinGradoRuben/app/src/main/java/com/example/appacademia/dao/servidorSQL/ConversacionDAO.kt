@@ -57,6 +57,7 @@ class ConversacionDAO : InterfaceDAO() {
     fun consultarConversacion(username : String): Conversacion {
         var sentencia: Statement? = null
         var resultado: ResultSet? = null
+        var codAcademia: Int = 1
         conectar()
 
         var conversacion = Conversacion()
@@ -64,7 +65,7 @@ class ConversacionDAO : InterfaceDAO() {
         try {
             conexion!!.autoCommit = false // para hacer transacción a la vez
 
-            val sql = "SELECT * FROM Conversaciones WHERE usuario1_id = 1 AND usuario2_id = '$username';"
+            val sql = "SELECT * FROM Conversaciones WHERE usuario1_id = '$codAcademia' AND usuario2_id = '$username';"
             sentencia = conexion!!.createStatement()
             resultado = sentencia.executeQuery(sql)
 

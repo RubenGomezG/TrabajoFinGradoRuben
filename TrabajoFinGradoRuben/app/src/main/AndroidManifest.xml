@@ -14,7 +14,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_appacademia_logo"
-        android:label="@string/app_name"
+        android:label="@string/business"
         android:roundIcon="@mipmap/ic_appacademia_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAcademia"
@@ -25,11 +25,11 @@
             android:value="@string/google_maps_key"  />
         <activity
             android:name=".ui.activities.MainActivity"
+            android:configChanges="orientation"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/business">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

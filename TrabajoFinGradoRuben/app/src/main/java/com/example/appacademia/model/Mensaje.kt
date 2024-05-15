@@ -10,15 +10,20 @@ class Mensaje {
     var senderUsername: String? = ""
     var senderCodAcademia: Int? = 0
     var content: String = ""
-    var timestamp: Timestamp? = null
+    var timestamp: Date? = null
 
 
 
-    constructor(codMensaje: Int, codConversacion: Int, senderUsername: String?, senderCodAcademia: Int?, content: String, timestamp: Timestamp?) {
+    constructor(codMensaje: Int, codConversacion: Int, senderUsername: String?, senderCodAcademia: Int?, content: String, timestamp: Date?) {
         this.codMensaje = codMensaje
         this.codConversacion = codConversacion
         this.senderUsername = senderUsername
-        this.senderCodAcademia = senderCodAcademia
+        if (senderCodAcademia == 0){
+            this.senderCodAcademia = null
+        }
+        else{
+            this.senderCodAcademia = senderCodAcademia
+        }
         this.content = content
         this.timestamp = timestamp
     }

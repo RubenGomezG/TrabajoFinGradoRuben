@@ -94,4 +94,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="telefono">Teléfono</string>
     <string name="direccion">Dirección</string>
+    <string name="imagen_de_usuario">Imagen de Usuario</string>
+    <string name="business">Business+</string>
 </resources>
