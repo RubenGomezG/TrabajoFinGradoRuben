@@ -75,15 +75,24 @@ class ChatAdapter(private val messages: List<Mensaje>,
                         }
                         senderTextView.text = academia.nombre
                         linearLayout.background.setTint(LTGRAY)
+                        val layoutParamsFoto = fotoUsuario.layoutParams as ConstraintLayout.LayoutParams
+                        layoutParamsFoto.startToEnd = ConstraintLayout.LayoutParams.UNSET
+                        layoutParamsFoto.startToStart = R.id.tarjetaMensaje
+                        layoutParamsFoto.endToEnd = ConstraintLayout.LayoutParams.UNSET
+                        fotoUsuario.layoutParams = layoutParamsFoto
 
+                        val layoutParamsTexto = linearLayout.layoutParams as ConstraintLayout.LayoutParams
+                        layoutParamsTexto.startToEnd = R.id.fotoUsuario
+                        layoutParamsTexto.startToStart = ConstraintLayout.LayoutParams.UNSET
+                        layoutParamsTexto.endToEnd = R.id.tarjetaMensaje
+                        layoutParamsTexto.endToStart = ConstraintLayout.LayoutParams.UNSET
+
+                        linearLayout.layoutParams = layoutParamsTexto
                     }
                 }
             }
             else{
-                senderTextView.text = "Yo"
-                fechaTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
-                senderTextView.gravity = Gravity.END
-                contentTextView.gravity = Gravity.END
+
                 GlobalScope.launch {
                     val usuariodao = UsuarioDAO()
                     val usuario = usuariodao.consultarUsuario(message.senderUsername as String)
@@ -114,6 +123,10 @@ class ChatAdapter(private val messages: List<Mensaje>,
                     }
                 }
             }
+            senderTextView.text = "Yo"
+            fechaTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
+            senderTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
+            contentTextView.textAlignment = TEXT_ALIGNMENT_VIEW_END
             fechaTextView.text = message.timestamp.toString().split(".")[0]
             contentTextView.text = message.content
         }

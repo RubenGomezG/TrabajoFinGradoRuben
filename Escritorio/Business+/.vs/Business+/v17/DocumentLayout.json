@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\conversacionesusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\conversacionesusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\conversacionesusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\conversacionesusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\tarjetaconversacion.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\tarjetaconversacion.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\tarjetaconversacion.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\tarjetaconversacion.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -11,64 +23,12 @@
       "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\perfilusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\conversacionesusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\conversacionesusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\conversacionesusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\conversacionesusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\conversacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\conversacionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\academiarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\academiarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\usercontrols\\perfilusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\usercontrols\\perfilusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\mensajerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\mensajerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\dashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\mapping\\mensajemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\mapping\\mensajemapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\mapping\\conversacionmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\mapping\\conversacionmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\escritorio\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E90F378-4AA6-47C2-A04B-6BC856C547CA}|Escritorio\\Escritorio.csproj|solutionrelative:escritorio\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\repository\\cursorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\repository\\cursorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|d:\\dam2\\trabajofingradoruben\\escritorio\\business\u002B\\businessplusdata\\models\\bu5x9ctsbusinesspluscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F960AE7-6F95-45B0-80FE-2FF08619D273}|BusinessPlusData\\BusinessPlusData.csproj|solutionrelative:businessplusdata\\models\\bu5x9ctsbusinesspluscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 296,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "TarjetaConversacion.xaml.cs",
+              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\TarjetaConversacion.xaml.cs",
+              "RelativeDocumentMoniker": "Escritorio\\UserControls\\TarjetaConversacion.xaml.cs",
+              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\TarjetaConversacion.xaml.cs",
+              "RelativeToolTip": "Escritorio\\UserControls\\TarjetaConversacion.xaml.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAmwDcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T20:48:30.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ConversacionesUserControl.xaml",
               "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\ConversacionesUserControl.xaml",
               "RelativeDocumentMoniker": "Escritorio\\UserControls\\ConversacionesUserControl.xaml",
@@ -94,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "TarjetaConversacion.xaml",
               "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\TarjetaConversacion.xaml",
               "RelativeDocumentMoniker": "Escritorio\\UserControls\\TarjetaConversacion.xaml",
@@ -106,33 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AcademiaRepository.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "RelativeToolTip": "BusinessPlusData\\Repository\\AcademiaRepository.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T20:24:38.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PerfilUserControl.xaml.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "RelativeDocumentMoniker": "Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "RelativeToolTip": "Escritorio\\UserControls\\PerfilUserControl.xaml.cs",
-              "ViewState": "AQIAAHAAAAAAAAAAAAAcwH8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T20:17:47.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "PerfilUserControl.xaml",
               "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\PerfilUserControl.xaml",
               "RelativeDocumentMoniker": "Escritorio\\UserControls\\PerfilUserControl.xaml",
@@ -144,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "Dashboard.xaml.cs",
               "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\Dashboard.xaml.cs",
               "RelativeDocumentMoniker": "Escritorio\\Dashboard.xaml.cs",
@@ -157,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 6,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\MainViewModel.cs",
               "RelativeDocumentMoniker": "Escritorio\\MainViewModel.cs",
@@ -170,136 +117,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Escritorio\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Escritorio\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAwwC8AAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T19:16:44.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ConversacionesUserControl.xaml.cs",
               "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\ConversacionesUserControl.xaml.cs",
               "RelativeDocumentMoniker": "Escritorio\\UserControls\\ConversacionesUserControl.xaml.cs",
               "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\UserControls\\ConversacionesUserControl.xaml.cs",
               "RelativeToolTip": "Escritorio\\UserControls\\ConversacionesUserControl.xaml.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAgwFYAAABHAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAtwEUAAABoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-14T17:30:14.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CursoRepository.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\CursoRepository.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\CursoRepository.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\CursoRepository.cs",
-              "RelativeToolTip": "BusinessPlusData\\Repository\\CursoRepository.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:21:30.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MensajeRepository.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\MensajeRepository.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\MensajeRepository.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\MensajeRepository.cs",
-              "RelativeToolTip": "BusinessPlusData\\Repository\\MensajeRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T16:56:50.974Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ConversacionRepository.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\ConversacionRepository.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\ConversacionRepository.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\ConversacionRepository.cs",
-              "RelativeToolTip": "BusinessPlusData\\Repository\\ConversacionRepository.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAuwA8AAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T16:56:41.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MensajeMapping.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\MensajeMapping.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Mapping\\MensajeMapping.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\MensajeMapping.cs",
-              "RelativeToolTip": "BusinessPlusData\\Mapping\\MensajeMapping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T16:56:21.697Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ConversacionMapping.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\ConversacionMapping.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Mapping\\ConversacionMapping.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Mapping\\ConversacionMapping.cs",
-              "RelativeToolTip": "BusinessPlusData\\Mapping\\ConversacionMapping.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T16:56:08.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Repository\\UsuarioRepository.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Repository\\UsuarioRepository.cs",
-              "RelativeToolTip": "BusinessPlusData\\Repository\\UsuarioRepository.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAmwGMAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T15:56:17.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Bu5x9ctsBusinessplusContext.cs",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
-              "RelativeDocumentMoniker": "BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
-              "RelativeToolTip": "BusinessPlusData\\Models\\Bu5x9ctsBusinessplusContext.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAswLAAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T08:07:10.514Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 296,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Dashboard.xaml",
-              "DocumentMoniker": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\Dashboard.xaml",
-              "RelativeDocumentMoniker": "Escritorio\\Dashboard.xaml",
-              "ToolTip": "D:\\DAM2\\TrabajoFinGradoRuben\\Escritorio\\Business\u002B\\Escritorio\\Dashboard.xaml",
-              "RelativeToolTip": "Escritorio\\Dashboard.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-14T20:16:37.87Z",
               "EditorCaption": ""
             }
           ]

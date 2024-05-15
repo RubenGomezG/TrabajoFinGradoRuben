@@ -37,9 +37,7 @@ class ChatFragment : Fragment() {
     private lateinit var btnSendMessage: ImageButton
     private lateinit var progressBar: ProgressBar
     private lateinit var contentLayout: LinearLayout
-
     private lateinit var messagesAdapter: ChatAdapter
-    private var messagesList = mutableListOf<Mensaje>()
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -53,27 +51,23 @@ class ChatFragment : Fragment() {
         editTextMessage = view.findViewById(R.id.editTxtMessage)
         btnSendMessage = view.findViewById(R.id.btnSendMessage)
 
-        messagesAdapter = ChatAdapter(messagesList, requireActivity() as ChatAdapter.OnItemClickListener)
-        messageRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = messagesAdapter
-        }
-
         btnSendMessage.setOnClickListener {
             val messageText = editTextMessage.text.toString().trim()
             if (messageText.isNotEmpty()) {
                 sendMessage(messageText)
             }
         }
-
+        loadMessages()
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadMessages()
+
         progressBar = view.findViewById(R.id.progressBar)
         contentLayout = view.findViewById(R.id.chatContentLayout)
+        progressBar.visibility = View.GONE
+        contentLayout.visibility = View.VISIBLE
     }
 
     private fun loadMessages() {
@@ -85,15 +79,13 @@ class ChatFragment : Fragment() {
                                     conversacion.codConversacion)
 
             withContext(Dispatchers.Main) {
-                val adaptador = ChatAdapter(listaDeMensajes,requireActivity() as ChatAdapter.OnItemClickListener)
-                messagesList = listaDeMensajes
-                messageRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-                messageRecyclerView.adapter = adaptador
+                messagesAdapter = ChatAdapter(listaDeMensajes, requireActivity() as ChatAdapter.OnItemClickListener)
+                messageRecyclerView.apply {
+                    layoutManager = LinearLayoutManager(context)
+                    adapter = messagesAdapter
+                }
                 messagesAdapter.notifyDataSetChanged()
-                messageRecyclerView.scrollToPosition(messagesList.size - 1)
-
-                progressBar.visibility = View.GONE
-                contentLayout.visibility = View.VISIBLE
+                messageRecyclerView.scrollToPosition(listaDeMensajes.size - 1)
             }
         }
     }
@@ -111,11 +103,9 @@ class ChatFragment : Fragment() {
                 val date : Date = cal.time
                 val mensaje = Mensaje(0, codConversacion, usuario,0, messageText, date as Date?)
                 mensajeDAO.anadirMensaje(mensaje)
+                loadMessages()
             }
-            loadMessages()
         }
-        messagesAdapter.notifyItemInserted(messagesList.size - 1)
-        messageRecyclerView.scrollToPosition(messagesList.size - 1)
         editTextMessage.setText("")
     }
 }
