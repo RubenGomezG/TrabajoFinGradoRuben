@@ -16,18 +16,26 @@ namespace BusinessPlusData.Repository
 
         public List<ConversacionesViewModel> GetAllConversaciones()
         {
-            return _context.Conversaciones
+            var conversaciones = _context.Conversaciones
                 .Include(c => c.Usuario1)
-                .Include(c => c.Mensajes)
                 .Include(c => c.Usuario2)
-                .Select(c => new ConversacionesViewModel
-                {
-                    NombreUsuario = c.Usuario2.Nombre,
-                    NombreAcademia = c.Usuario1.Nombre,
-                    FotoUsuario = c.Usuario2.ImgPerfil,
-                    UltimoMensaje = ":  " + c.Mensajes.OrderByDescending(m => m.Timestamp).First().Contenido,
-                })
+                .Include(c => c.Mensajes)
+                    .ThenInclude(m => m.Sender)
+                .Include(c => c.Mensajes)
+                    .ThenInclude(m => m.SenderAcademia)
                 .ToList();
+            return conversaciones.Select(c =>
+            {
+                var ultimoMensaje = c.Mensajes.OrderByDescending(m => m.Timestamp).First();
+                var nombreRemitente = ultimoMensaje.Sender != null ? ultimoMensaje.Sender.Nombre : "Yo";
+                return new ConversacionesViewModel
+                {
+                    NombreUsuario = c.Usuario2.Nombre + " " + c.Usuario2.Apellidos,
+                    NombreRemitente = nombreRemitente,
+                    UltimoMensaje = ultimoMensaje.Contenido,
+                };
+            })
+            .ToList();
         }
 
         public List<Conversacione> ListarConversacionesDeAcademia()
