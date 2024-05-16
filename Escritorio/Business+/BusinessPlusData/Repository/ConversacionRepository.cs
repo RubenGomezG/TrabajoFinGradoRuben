@@ -1,5 +1,6 @@
 ﻿using BusinessPlusData.Mapping;
 using BusinessPlusData.Models;
+using BusinessPlusData.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace BusinessPlusData.Repository
@@ -11,6 +12,22 @@ namespace BusinessPlusData.Repository
         public ConversacionRepository(Bu5x9ctsBusinessplusContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
+        }
+
+        public List<ConversacionesViewModel> GetAllConversaciones()
+        {
+            return _context.Conversaciones
+                .Include(c => c.Usuario1)
+                .Include(c => c.Mensajes)
+                .Include(c => c.Usuario2)
+                .Select(c => new ConversacionesViewModel
+                {
+                    NombreUsuario = c.Usuario2.Nombre,
+                    NombreAcademia = c.Usuario1.Nombre,
+                    FotoUsuario = c.Usuario2.ImgPerfil,
+                    UltimoMensaje = ":  " + c.Mensajes.OrderByDescending(m => m.Timestamp).First().Contenido,
+                })
+                .ToList();
         }
 
         public List<Conversacione> ListarConversacionesDeAcademia()

@@ -1,4 +1,5 @@
 ﻿using BusinessPlusData.Models;
+using BusinessPlusData.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
@@ -39,6 +40,7 @@ namespace Escritorio
 
             // Registra tus ViewModels y servicios
             services.AddTransient<MainViewModel>();
+            services.AddTransient<ConversacionesViewModel>();
         }
 
         protected override void OnStartup(StartupEventArgs e)

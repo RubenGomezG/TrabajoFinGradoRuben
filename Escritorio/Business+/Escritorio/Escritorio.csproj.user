@@ -7,11 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="UserControls\TarjetaConversacion.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Page Update="Dashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -31,9 +26,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\PerfilUserControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControls\TarjetaConversacion.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\UsuariosUserControl.xaml">

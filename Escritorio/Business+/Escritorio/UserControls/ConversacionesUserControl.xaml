@@ -9,10 +9,23 @@
              MinHeight="450" MaxHeight="1080" MinWidth="800" MaxWidth="1920"
              ClipToBounds="True">
     <Grid x:Name="tablero" Background="#FFE5E5E5">
-        <ItemsControl ItemsSource="{Binding Conversaciones}">
+        <ItemsControl ItemsSource="{Binding}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <local:TarjetaConversacion Nombre="{}"></local:TarjetaConversacion>
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+                        <StackPanel Orientation="Horizontal" MouseDown="AbrirChat">
+                            <Image Source="{Binding FotoUsuario}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <StackPanel Orientation="Vertical" >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding NombreUsuario}" Padding="5" FontWeight="Bold"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding NombreAcademia}" Padding="5" FontWeight="Normal" FontStyle="Italic"/>
+                                    <TextBlock Text="{Binding UltimoMensaje}" Padding="5" FontWeight="Normal" FontStyle="Italic"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
