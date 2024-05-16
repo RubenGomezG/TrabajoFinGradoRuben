@@ -1,0 +1,82 @@
+﻿<Window x:Class="Escritorio.Chat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Escritorio"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        Title="Chat"
+        Icon="/Images/chat.png"
+        Height="450" Width="800"
+        MinHeight="450" MaxHeight="1080" MinWidth="800" MaxWidth="1920"
+        >
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" CanContentScroll="True">
+        <Grid Background="#FFE5E5E5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+
+            <ItemsControl ItemsSource="{Binding Mensajes}" Grid.Row="0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="5">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" MouseLeftButtonDown="EliminarMensaje" Tag="{Binding CodMensaje}">
+                                <StackPanel.Style>
+                                    <Style TargetType="StackPanel">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding NombreRemitente}" Value="Yo">
+                                                <Setter Property="Background" Value="LightGreen"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
+                                <Grid HorizontalAlignment="Stretch">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel.Style>
+                                            <Style TargetType="StackPanel">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding NombreRemitente}" Value="Yo">
+                                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </StackPanel.Style>
+                                        <TextBlock Text="{Binding NombreRemitente}" Padding="5" FontSize="13" FontWeight="Bold" Foreground="BlueViolet"/>
+                                        <TextBlock Text=" "/>
+                                        <TextBlock Text="{Binding FechaMensaje}" Padding="5" FontStyle="Italic"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid HorizontalAlignment="Stretch">
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel.Style>
+                                            <Style TargetType="StackPanel">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding NombreRemitente}" Value="Yo">
+                                                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </StackPanel.Style>
+                                        <TextBlock Text="{Binding Contenido}" Padding="5"/>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <DockPanel Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Height="40">
+                <Button Content="Enviar Mensaje" Click="EnviarMensaje" DockPanel.Dock="Right" HorizontalAlignment="Right" Width="150"/>
+                <TextBox x:Name="MensajeText"
+                         FontSize="15"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         VerticalContentAlignment="Center"
+                         Margin="0,0,10,0"/>
+            </DockPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

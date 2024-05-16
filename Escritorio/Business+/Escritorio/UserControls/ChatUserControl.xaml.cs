@@ -26,5 +26,10 @@ namespace Escritorio.UserControls
             InitializeComponent();
             //DataContext = new MainViewModel();
         }
+
+        private void EnviarMensaje(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Escritorio"
         mc:Ignorable="d"
+        Icon="/Images/academia.png"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Title="Business+" Height="430" Width="400">

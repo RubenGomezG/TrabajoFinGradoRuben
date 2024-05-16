@@ -41,6 +41,7 @@ namespace Escritorio
             // Registra tus ViewModels y servicios
             services.AddTransient<MainViewModel>();
             services.AddTransient<ConversacionesViewModel>();
+            services.AddTransient<ChatViewModel>();
         }
 
         protected override void OnStartup(StartupEventArgs e)

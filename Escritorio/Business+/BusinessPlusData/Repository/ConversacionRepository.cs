@@ -2,6 +2,7 @@
 using BusinessPlusData.Models;
 using BusinessPlusData.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 
 namespace BusinessPlusData.Repository
 {
@@ -30,6 +31,7 @@ namespace BusinessPlusData.Repository
                 var nombreRemitente = ultimoMensaje.Sender != null ? ultimoMensaje.Sender.Nombre : "Yo";
                 return new ConversacionesViewModel
                 {
+                    CodConversacion = c.CodConversacion,
                     NombreUsuario = c.Usuario2.Nombre + " " + c.Usuario2.Apellidos,
                     NombreRemitente = nombreRemitente,
                     UltimoMensaje = ultimoMensaje.Contenido,
@@ -65,6 +67,22 @@ namespace BusinessPlusData.Repository
                             select mensaje;
 
                 return query.ToList();
+        }
+
+        public ObservableCollection<ChatViewModel> ListarMensajeViewModelDeConversacion(int codConversacion)
+        {
+            var query = from conversacion in _context.Conversaciones
+                        join mensaje in _context.Mensajes on conversacion.CodConversacion equals mensaje.CodConversacion
+                        where mensaje.CodConversacion == codConversacion
+                        select new ChatViewModel
+                        {
+                            CodMensaje = mensaje.CodMensaje,
+                            NombreRemitente = mensaje.Sender != null ? mensaje.Sender.Nombre : "Yo",
+                            FechaMensaje = mensaje.Timestamp.ToString(),
+                            Contenido = mensaje.Contenido,
+                        };
+
+            return new ObservableCollection<ChatViewModel>(query.ToList());
         }
 
         public Mensaje UltimoMensajeDeConversacion(Conversacione conversacione)

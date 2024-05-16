@@ -1,6 +1,7 @@
 ﻿using BusinessPlusData.Mapping;
 using BusinessPlusData.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BusinessPlusData.Repository
 {
@@ -11,6 +12,14 @@ namespace BusinessPlusData.Repository
         public MensajeRepository(Bu5x9ctsBusinessplusContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
+        }
+
+        public async Task<Mensaje> ConsultarMensajeAsync(int codMensaje)
+        {
+            return await _context.Mensajes
+                .Where(c => c.CodMensaje == codMensaje)
+                .Select(MensajeMapping.MapToMensaje(_context))
+                .FirstAsync();
         }
 
         public async Task CreateMensajeAsync(Mensaje mensaje)

@@ -9,14 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UserControls\ChatUserControl.xaml.cs" />
     <Compile Remove="UserControls\TarjetaConversacion.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Images\logo.png" />
+    <None Remove="Images\academia.png" />
+    <None Remove="Images\chat.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="UserControls\ChatUserControl.xaml" />
     <Page Remove="UserControls\TarjetaConversacion.xaml" />
   </ItemGroup>
 
@@ -26,6 +30,8 @@
 
   <ItemGroup>
     <Resource Include="Images\logo.png" />
+    <Resource Include="Images\academia.png" />
+    <Resource Include="Images\chat.png" />
   </ItemGroup>
 
 </Project>

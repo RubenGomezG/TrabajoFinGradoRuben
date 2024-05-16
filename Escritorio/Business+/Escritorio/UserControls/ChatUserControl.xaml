@@ -9,21 +9,25 @@
              MinHeight="450" MaxHeight="1080" MinWidth="800" MaxWidth="1920"
              ClipToBounds="True">
     <Grid Background="#FFE5E5E5">
-        <ItemsControl ItemsSource="{Binding YourCollection}">
+        <ItemsControl ItemsSource="{Binding Mensajes}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1" Margin="5">
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding}" Padding="5"/>
+                                <TextBlock Text="{Binding NombreRemitente}" Padding="5"/>
+                                <TextBlock Text="  " Padding="5"/>
+                                <TextBlock Text="{Binding FechaMensaje}" Padding="5"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding}" Padding="5"/>
+                                <TextBlock Text="{Binding Contenido}" Padding="5"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <TextBox x:Name="MensajeTextBox" />
+        <Button Content="Enviar" Click="EnviarMensaje" />
     </Grid>
 </UserControl>

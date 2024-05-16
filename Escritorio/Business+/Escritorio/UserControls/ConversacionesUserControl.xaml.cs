@@ -40,7 +40,11 @@ namespace Escritorio.UserControls
 
         private void AbrirChat(object sender, MouseButtonEventArgs e)
         {
-
+            var panel = (StackPanel)sender;
+            var codConversacion = (int)panel.Tag;
+            var chat = new Chat();
+            chat.CargarMensajes(codConversacion);
+            chat.Show();
         }
 
     }

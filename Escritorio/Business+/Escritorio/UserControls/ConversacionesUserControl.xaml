@@ -14,7 +14,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="Black" BorderThickness="1" Margin="5">
-                            <StackPanel Orientation="Vertical" MouseDown="AbrirChat">
+                            <StackPanel Orientation="Vertical" MouseDown="AbrirChat" Tag="{Binding CodConversacion}">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding NombreUsuario}" Padding="5" FontSize="15" FontWeight="UltraBold" Foreground="BlueViolet"/>
                                 </StackPanel>
