@@ -40,9 +40,8 @@ namespace Escritorio.UserControls
             _usuarioRepository = new UsuarioRepository(_context);
             _inscripcionesRepository = new InscripcionesRepository(_context);
             CargarDataGrid();
-            
-            
 
+            //Se ocultan las propiedades que enlazan las tablas
             dataGridUsuarios.AutoGeneratingColumn += (sender, e) =>
             {
                 if (e.PropertyName == "ConversacioneUsuario2s")
@@ -60,11 +59,18 @@ namespace Escritorio.UserControls
             };
         }
 
+        /*
+         * Método que carga la tabla desde la base de datos
+         */
         private async void CargarDataGrid()
         {
             dataGridUsuarios.ItemsSource = await _usuarioRepository.ListarUsuarios();
         }
 
+        /*
+         * Método que maneja la carga de datos según el objeto elegido en el dataGridUsuarios. Asigna a cada elemento de la interfaz sus valores correspondientes
+         * y rellena el ListView con los Cursos a los que está inscrito el Usuario elegido
+         */
         private void ElegirColumna(object sender, SelectionChangedEventArgs e)
         {
             listaCursos.Items.Clear();
@@ -77,6 +83,9 @@ namespace Escritorio.UserControls
                 txtEmail.Text = filaSeleccionada.Email;
                 txtTelefono.Text = filaSeleccionada.Telefono.ToString();
                 txtEdad.Text = filaSeleccionada.Edad.ToString();
+
+                //Se descarga la imagen de la academia desde la Web a nuestra carpeta de imágenes, en caso de carga rápida o de recarga de la pestaña, carga la versión local
+                //e indicará al usuario que espere unos segundos antes de volver a realizar esa acción.
                 try
                 {
                     using (var client = new WebClient())
@@ -88,8 +97,9 @@ namespace Escritorio.UserControls
                 catch (Exception ex)
                 {
                     MessageBox.Show("Se cargará su imagen local. Espere unos segundos para poder actualizarla");
-                    System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
+
+                //Se pinta la imagen desde la url de nuestra aplicación
                 BitmapImage img = new BitmapImage(new Uri($"{App.rutaRaiz}\\Escritorio\\Images\\{filaSeleccionada.ImgPerfil}"));
                 imgCurso.Source = img;
 
@@ -100,6 +110,9 @@ namespace Escritorio.UserControls
             }
         }
 
+        /*
+         * Método que carga nuevos Usuarios en el dataGridUsuarios según el nombre y apellidos buscado en el buscador. Se ejecuta cuando cambia el valor del textbox
+         */
         private async void BuscarUsuarios(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscarUsuarios.Text) || string.IsNullOrWhiteSpace(txtBuscarUsuarios.Text))

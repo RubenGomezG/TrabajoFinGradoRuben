@@ -17,7 +17,7 @@
                 <RowDefinition Height="10*"/>
                 <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-
+            <!-- Control para mostrar los ChatViewModel, por cada Mensaje me creará una instancia de esta plantilla-->
             <ItemsControl ItemsSource="{Binding Mensajes}" Grid.Row="0">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -67,7 +67,7 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-
+            <!-- Caja de texto y botón para enviar-->
             <DockPanel Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Height="40">
                 <Button Content="Enviar Mensaje" Click="EnviarMensaje" DockPanel.Dock="Right" HorizontalAlignment="Right" Width="150"/>
                 <TextBox x:Name="MensajeText"

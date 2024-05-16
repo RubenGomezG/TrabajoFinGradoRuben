@@ -35,8 +35,11 @@ namespace Escritorio.UserControls
             _cursoRepository = new CursoRepository(_context);
             _inscripcionesRepository = new InscripcionesRepository(_context);
             CargarDataGrid();
+
+            //Se ocultan las propiedades que enlazan las tablas
             dataGridCursos.AutoGeneratingColumn += (sender, e) =>
             {
+                
                 if (e.PropertyName == "CodAcademiaNavigation")
                 {
                     e.Column.Visibility = Visibility.Collapsed;
@@ -47,6 +50,8 @@ namespace Escritorio.UserControls
                 }
             };
 
+            //Se descarga la imagen de la academia desde la Web a nuestra carpeta de imágenes, en caso de carga rápida o de recarga de la pestaña, carga la versión local
+            //e indicará al usuario que espere unos segundos antes de volver a realizar esa acción.
             try
             {
                 using (var client = new WebClient())
@@ -58,17 +63,24 @@ namespace Escritorio.UserControls
             catch (Exception ex)
             {
                 MessageBox.Show("Se cargará su imagen local. Espere unos segundos para poder actualizarla");
-                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
+
+            //Se pinta la imagen desde la url de nuestra aplicación
             BitmapImage img = new BitmapImage(new Uri($"{App.rutaRaiz}\\Escritorio\\Images\\{App.LoggedAcademia.ImgPerfil}"));
             imgCurso.Source = img;
         }
 
+        /*
+         * Método que carga la tabla desde la base de datos
+         */
         private async void CargarDataGrid() 
         {
             dataGridCursos.ItemsSource = await _cursoRepository.ListarCursosDeAcademia(App.LoggedAcademia);
         }
 
+        /*
+         * Método de evento del botón de Crear Curso, valida que todos los campos estén introducidos correctamente.
+         */
         private async void CrearCurso(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(txtCodigoCurso.Text))
@@ -125,6 +137,9 @@ namespace Escritorio.UserControls
             }
         }
 
+        /*
+         * Método de evento del botón de Editar Curso, valida que todos los campos estén introducidos correctamente.
+         */
         private async void EditarCurso(object sender, RoutedEventArgs e)
         {
             Curso curso = await _cursoRepository.GetCursoAsync(int.Parse(txtCodigoCurso.Text));
@@ -162,9 +177,12 @@ namespace Escritorio.UserControls
             }
         }
 
+        /*
+         * Método de evento del botón de Borrar curso, valida que el campo de código de curso no esté vacío o nulo.
+         */
         private async void BorrarCurso(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtCodigoCurso.Text))
+            if (!string.IsNullOrWhiteSpace(txtCodigoCurso.Text))
             {
                 await _cursoRepository.DeleteCursoAsync(int.Parse(txtCodigoCurso.Text));
                 MessageBox.Show($"El curso {txtCodigoCurso.Text} fue eliminado correctamente");
@@ -173,6 +191,10 @@ namespace Escritorio.UserControls
             
         }
 
+        /*
+         * Método que maneja la carga de datos según el objeto elegido en el dataGridCursos. Asigna a cada elemento de la interfaz sus valores correspondientes
+         * y rellena el ListView con los Usuarios inscritos al Curso elegido
+         */
         private void ElegirColumna(object sender, SelectionChangedEventArgs e)
         {
             listaClientes.Items.Clear();
@@ -197,10 +219,12 @@ namespace Escritorio.UserControls
                 {
                     listaClientes.Items.Add(item);
                 }
-                //TODO imagenes
             }
         }
 
+        /*
+         * Método que carga nuevos Cursos en el dataGridCursos según el nombre buscado en el buscador. Se ejecuta cuando cambia el valor del textbox
+         */
         private async void BuscarCursos(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscarCursos.Text) || string.IsNullOrWhiteSpace(txtBuscarCursos.Text))

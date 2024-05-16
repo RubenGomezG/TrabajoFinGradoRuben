@@ -10,6 +10,7 @@
              ClipToBounds="True">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
         <Grid x:Name="tablero" Background="#FFE5E5E5">
+            <!-- Control para mostrar los ConversacionViewModel, por cada Conversacion me creará una instancia de esta plantilla-->
             <ItemsControl ItemsSource="{Binding}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

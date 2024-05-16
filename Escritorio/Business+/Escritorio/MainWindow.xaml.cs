@@ -34,6 +34,13 @@ namespace Escritorio
             forgotPassword.Show();
         }
 
+        /*
+         * Método de conexión a la aplicación. Comprueba que los datos de la academia sean correctos,
+         * comprobando en el back si la contraseña en texto securizada a SHA256 es la misma que la
+         * guardada en la base de datos. En caso positivo, se conecta a la aplicación y guarda el valor
+         * de la academia en la variable de aplicación "LoggedAcademia" para utilizar durante el ciclo
+         * de vida de la aplicación.
+         */
         private async void Login(object sender, RoutedEventArgs e)
         {
             Academia academia = new Academia

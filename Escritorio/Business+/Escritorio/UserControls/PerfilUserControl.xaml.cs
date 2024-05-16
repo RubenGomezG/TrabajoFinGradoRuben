@@ -42,6 +42,11 @@ namespace Escritorio.UserControls
             latitud.Text = App.LoggedAcademia.Latitud.ToString();
             longitud.Text = App.LoggedAcademia.Longitud.ToString();
         }
+
+        /*
+         * Método del botón de AbrirArchivo con el que se abrirá un Dialog que filtrará los archivos de imagen y podremos elegir uno para
+         * actualizar la imagen de nuestra Academia
+         */
         private void AbrirArchivo_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -83,6 +88,10 @@ namespace Escritorio.UserControls
             }
         }
 
+        /*
+         * Método del botón de Guardar que validará que todos los campos estén introducidos correctamente y
+         * actualizará nuestra Academia
+         */
         private async void Guardar_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(username.Text) ||

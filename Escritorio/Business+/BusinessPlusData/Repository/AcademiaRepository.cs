@@ -2,6 +2,8 @@
 using BusinessPlusData.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace BusinessPlusData.Repository
 {
@@ -16,8 +18,9 @@ namespace BusinessPlusData.Repository
 
         public async Task<Academia> LoginAsync(Academia academia)
         {
+            var hashedPassword = HashPassword(academia.Contrasena);
             return await _context.Academias
-                .Where(a => a.Usuario == academia.Usuario && a.Contrasena == academia.Contrasena)
+                .Where(a => a.Usuario == academia.Usuario && a.Contrasena == hashedPassword)
                 .Select(AcademiaMapping.MapToAcademia(_context))
                 .FirstAsync();
         }
@@ -36,7 +39,9 @@ namespace BusinessPlusData.Repository
                 .Where(a => a.Usuario.Equals(academia.Usuario))
                 .Select(AcademiaMapping.MapToAcademia(_context))
                 .FirstOrDefault();
-            getAcademia.Contrasena = academia.Contrasena;
+
+            var hashedPassword = HashPassword(academia.Contrasena);
+            getAcademia.Contrasena = hashedPassword;
             _context.Update(getAcademia);
             await _context.SaveChangesAsync();
 
@@ -71,6 +76,21 @@ namespace BusinessPlusData.Repository
                 .Where(a => a.CodAcademia == getAcademia.CodAcademia)
                 .Select(AcademiaMapping.MapToAcademia(_context))
                 .FirstAsync();
+        }
+
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }

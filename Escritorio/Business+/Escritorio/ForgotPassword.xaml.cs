@@ -32,6 +32,12 @@ namespace Escritorio
             _repository = new AcademiaRepository(_context);
         }
 
+        /*
+         * Método que actualiza la contraseña de la academia. Recoje el valor de los campos de texto de la vista
+         * comprueba que el SHA256 de la contraseña coincide con el guardado en la base de datos y en caso positivo
+         * comprueba que el campo de contraseña y el de confirmar sean iguales, en caso positivo, lanza un mensaje
+         * que indica al usuario que su contraseña se ha actualizado y vuelve a la pestaña de "Login"
+         */
         private async void Cambiar_Contrasena(object sender, RoutedEventArgs e)
         {
             Academia academia = new Academia
@@ -42,6 +48,7 @@ namespace Escritorio
             var resultado = await _repository.ChangePasswordAsync(academia);
             if (resultado != null && password.Text.Equals(confirmarPassword.Text))
             {
+                MessageBox.Show("La contraseña fue actualizada correctamente");
                 MainWindow mainWindow = new MainWindow();
                 this.Close();
                 mainWindow.Show();

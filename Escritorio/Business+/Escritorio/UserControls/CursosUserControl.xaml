@@ -72,9 +72,6 @@
                 </Style>
             </DatePicker.Resources>
         </DatePicker>
-        <!-- <TextBox x:Name="txtFechaFin" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="5,10,10,10" BorderThickness="1" BorderBrush="Black"></TextBox> -->
-        
-        <!-- <TextBox x:Name="txtTipo" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="5,10,10,10" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center"></TextBox> -->
         <ComboBox x:Name="comboTipo" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Margin="5,10,10,10" BorderThickness="1" BorderBrush="Black" VerticalContentAlignment="Center">
             <ComboBoxItem Selector.IsSelected="True">
                 Académico
@@ -104,7 +101,7 @@
         </ScrollViewer>
         
         
-        <!-- DataGrid -->
+        <!-- DataGrid que muestra todos los Cursos de la Academia -->
         <ScrollViewer Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="6" Margin="20" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
             <DataGrid x:Name="dataGridCursos"
                       BorderThickness="2"

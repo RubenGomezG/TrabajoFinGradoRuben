@@ -42,12 +42,20 @@ namespace Escritorio
             DataContext = this;
         }
 
+        /*
+         * Método que carga los ChatViewModel por cada Mensaje de una Conversación en la Vista.
+         */
         public void CargarMensajes(int codConversacion)
         {
             CodConversacion = codConversacion;
             Mensajes = _conversacionRepository.ListarMensajeViewModelDeConversacion(codConversacion);
         }
 
+        /*
+         * Método del botón de enviar mensaje que maneja el evento del botón. Cuando se hace click controla que el texto sea correcto
+         * y no esté vacío, en caso positivo, crea las instancias de Mensaje y ChatViewModel para subir a la base de datos y a la 
+         * vista respectivamente, y se ejecutan las llamadas. Después, vacía la caja de texto
+         */
         private async void EnviarMensaje(object sender, RoutedEventArgs e)
         {
             var textoMensaje = MensajeText.Text;
@@ -80,6 +88,14 @@ namespace Escritorio
             MensajeText.Text = string.Empty;
         }
 
+        /*
+         * Método que manejará el evento de MouseLeftButtonDown de cada mensaje en particular. Comprueba quién es el elemento que ha lanzado el evento,
+         * recoje su código y guarda en una variable la instancia de su DataContext(Su ChatViewModel). Después de esto, comprueba que el mensaje haya
+         * sido mandado por una Academia(sólo hay una) y en caso positivo, lanza un MessageBox para evitar que el usuario borre mensajes accidentalmente.
+         * En caso de que el resultado del MessageBox sea "Yes" se borra el mensaje de la base de datos y de vista y se vuelve a cargar la vista. En caso de "No"
+         * volverá a la vista. En caso de que el usuario elija un mensaje que no fue escrito por la academia, lanzará un MessageBox de aviso que indicará que no
+         * se pueden borrar mensajes de otro usuario
+         */
         private async void EliminarMensaje(object sender, MouseButtonEventArgs e)
         {
             var panel = (StackPanel)sender;
@@ -91,7 +107,6 @@ namespace Escritorio
                 var result = MessageBox.Show("¿Estás seguro de que quieres eliminar este mensaje?", "Confirmar eliminación", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    // Asegúrate de reemplazar 'viewModel' con la instancia de tu ViewModel
                     await _mensajeRepository.DeleteMensajeAsync(codMensaje);
                     Mensajes.Remove(mensajeViewModel);
                 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BusinessPlusData")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25863ae8dcdf4547e50b8fa648043d5fe3f9654b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e56873f171e71bc3a6631ec508e910e969f5e9ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("BusinessPlusData")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BusinessPlusData")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
