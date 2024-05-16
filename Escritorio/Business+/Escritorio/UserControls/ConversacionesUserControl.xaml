@@ -10,8 +10,13 @@
              ClipToBounds="True">
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
         <Grid x:Name="tablero" Background="#FFE5E5E5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Content="Nueva Conversación" Click="CrearConversacion_Click" FontSize="20" FontWeight="Bold"/>
             <!-- Control para mostrar los ConversacionViewModel, por cada Conversacion me creará una instancia de esta plantilla-->
-            <ItemsControl ItemsSource="{Binding}">
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="Black" BorderThickness="1" Margin="5">

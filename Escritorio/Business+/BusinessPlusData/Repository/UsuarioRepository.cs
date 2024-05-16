@@ -1,5 +1,6 @@
 ﻿using BusinessPlusData.Mapping;
 using BusinessPlusData.Models;
+using BusinessPlusData.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace BusinessPlusData.Repository
@@ -20,6 +21,18 @@ namespace BusinessPlusData.Repository
                 return await context.Usuarios
                 .Select(UsuarioMapping.MapToUsuario(context)).ToListAsync();
             }
+        }
+
+        public List<UsuarioViewModel> ListarNombresDeUsuario()
+        {
+            var query = from usuario in _context.Usuarios
+                        select new UsuarioViewModel
+                        {
+                            Username = usuario.Usuario1,
+                            Nombre = usuario.Nombre + " " + usuario.Apellidos,
+                        };
+
+            return query.ToList();
         }
 
         public async Task<List<Usuario>> BuscarUsuariosPorNombreAsync(string texto)

@@ -18,5 +18,6 @@ public partial class Conversacione
     [Browsable(false)]
     public virtual Usuario Usuario2 { get; set; } = null!;
 
+    [Browsable(false)]
     public virtual ICollection<Mensaje> Mensajes { get; set; } = new List<Mensaje>();
 }

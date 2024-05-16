@@ -42,6 +42,7 @@ namespace Escritorio
             services.AddTransient<MainViewModel>();
             services.AddTransient<ConversacionesViewModel>();
             services.AddTransient<ChatViewModel>();
+            services.AddTransient<UsuarioViewModel>();
         }
 
         protected override void OnStartup(StartupEventArgs e)

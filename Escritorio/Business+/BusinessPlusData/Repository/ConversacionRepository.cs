@@ -58,15 +58,22 @@ namespace BusinessPlusData.Repository
                 .FirstAsync();
         }
 
+        public async Task<Conversacione> GetConversacionByUsernameAsync(string username)
+        {
+            return await _context.Conversaciones
+                .Where(c => c.Usuario2Id == username)
+                .Select(ConversacionMapping.MapToConversacion(_context))
+                .FirstOrDefaultAsync();
+        }
+
         public List<Mensaje> ListarMensajesDeConversacion(Conversacione conversacione)
         {
+            var query = from conversacion in _context.Conversaciones
+                        join mensaje in _context.Mensajes on conversacion.CodConversacion equals mensaje.CodConversacion
+                        where mensaje.CodConversacion == conversacione.CodConversacion
+                        select mensaje;
 
-                var query = from conversacion in _context.Conversaciones
-                            join mensaje in _context.Mensajes on conversacion.CodConversacion equals mensaje.CodConversacion
-                            where mensaje.CodConversacion == conversacione.CodConversacion
-                            select mensaje;
-
-                return query.ToList();
+            return query.ToList();
         }
 
         public ObservableCollection<ChatViewModel> ListarMensajeViewModelDeConversacion(int codConversacion)
@@ -96,10 +103,10 @@ namespace BusinessPlusData.Repository
                 return query.First();
         }
 
-        public async Task CreateConversacionAsync(Conversacione conversacione)
+        public void CreateConversacion(Conversacione conversacione)
         {
-            await _context.Conversaciones.AddAsync(conversacione);
-            await _context.SaveChangesAsync();
+            _context.Conversaciones.Add(conversacione);
+            _context.SaveChanges();
         }
 
         public async Task DeleteConversacionAsync(int id)

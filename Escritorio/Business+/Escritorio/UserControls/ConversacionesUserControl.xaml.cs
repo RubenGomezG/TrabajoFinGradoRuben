@@ -47,5 +47,10 @@ namespace Escritorio.UserControls
             chat.Show();
         }
 
+        private void CrearConversacion_Click(object sender, RoutedEventArgs e)
+        {
+            var listaClientes = new ListaClientes();
+            listaClientes.Show();
+        }
     }
 }

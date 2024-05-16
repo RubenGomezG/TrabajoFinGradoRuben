@@ -60,7 +60,7 @@ create table Conversaciones (
     cod_conversacion INT AUTO_INCREMENT PRIMARY KEY,
     usuario1_id integer not null,
     usuario2_id varchar(50) not null,
-    foreign key (usuario1_id) references Academia(cod_academia) on update cascade on delete cascade,
+    foreign key (usuario1_id) references Academias(cod_academia) on update cascade on delete cascade,
     foreign key (usuario2_id) references Usuarios(usuario) on update cascade on delete cascade,
     constraint unica_conversacion unique (usuario1_id, usuario2_id)
 );
@@ -77,7 +77,7 @@ create table Mensajes(
     constraint conversacion_fk foreign key(cod_conversacion) references Conversaciones(cod_conversacion) on update cascade on delete cascade
 );
 
--- Contrasenas de ejemplo: Mikeljorg3@, Luisgold3n@, Pablomonter0@, Javijorg3@, Dguruch4zc@, Velasco9!, Rubengom3z@, Rubenlop3z@, Endika1@, Almudena1@, Rosiros1@
+-- Contrasenas de ejemplo: Mikeljorg3@, Luisgold3n@, Pablomonter0@, Javijorg3@, Dguruch4zc@, Velasco9!, Rubengom3z@, Rubenlop3z@, Endika1@, Almudena1@, Rosiros1@, Alvaro1@
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Mikel', 'BA3C9ED3FD0BF7CCBAB132F8AC388DBF2A1B6095BD0CBEC94C83FE3538368AFE', 'mjorgesote@educacion.navarra.es', 'Mikel Aingeru', 'Jorge Soteras', 123456789, 'Mikel.jpg', 33);
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('LuisDorado', '09908D0D1D5A937C4B9027D90BC806DEBD45A152300D75E664DEDD132A8114BF', 'ldoradogar@educacion.navarra.es', 'Luis', 'Dorado Garcés', 234567891, 'LuisDorado.jpg', 40);
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Pablo', 'EECBA7E8EE9991E845862D29A9299339D02B563837E3E9233E2103652459A42A', 'pablomontero@educacion.navarra.es', 'Pablo', 'Montero Quevedo', 345678912, 'Pablo.jpg', 55);
@@ -90,6 +90,7 @@ insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perf
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Endika', 'C8ECCA19CACA694E980BCA38F60FA2B9B2FDA615DD06408401884D47308DCAD4', 'eeguinogar@educacion.navarra.es', 'Endika', 'Eguino Garbayo', 012345678, 'Endika.jpg', 20);
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Almudena', '7DD36242A3437E327718A0619C336425ACC2A94E527DE474B3AE8EC804C0698D', 'aiparracas1@educacion.navarra.es', 'Almudena', 'Iparraguirre Castillo', 629736136, 'Almudena.jpg', 19);
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Rosi', 'F7018F16C5B4557C780716A6183050DCEC55630365FB36485E1A97646C5CC5FA', 'rosirosi@educacion.navarra.es', 'Rosi', 'Rosi Rosi', 012345678, 'Endika.jpg', 10);
+insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Alvaro', '3db66a99f4103a606213d4faeb398e62a19282ead2a3fe6940046014e2bee92f', 'asantafemar@educacion.navarra.es', 'Álvaro Marcelo', 'Santafé Martón', 123456789, 'Alvaro.jpg', 32);
 
 INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia1', 'password1', 'academia1@example.com', 'Academia 1', 123456789, 'Calle Academia 1', 0.0, 0.0, "academia1.jpg");
 
