@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Escritorio"
         mc:Ignorable="d"
-        Title="ListaClientes" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="ListaClientes" Height="450" Width="300">
     <Grid>
         <ListBox ItemsSource="{Binding}">
             <ListBox.ItemTemplate>

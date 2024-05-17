@@ -92,7 +92,7 @@ insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perf
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Rosi', 'F7018F16C5B4557C780716A6183050DCEC55630365FB36485E1A97646C5CC5FA', 'rosirosi@educacion.navarra.es', 'Rosi', 'Rosi Rosi', 012345678, 'Endika.jpg', 10);
 insert into Usuarios(usuario,contrasena,email,nombre,apellidos,telefono,img_perfil,edad) values ('Alvaro', '3db66a99f4103a606213d4faeb398e62a19282ead2a3fe6940046014e2bee92f', 'asantafemar@educacion.navarra.es', 'Álvaro Marcelo', 'Santafé Martón', 123456789, 'Alvaro.jpg', 32);
 
-INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia1', 'password1', 'academia1@example.com', 'Academia 1', 123456789, 'Calle Academia 1', 0.0, 0.0, "academia1.jpg");
+INSERT INTO Academias (usuario, contrasena, email, nombre, telefono, direccion, latitud, longitud, img_perfil) VALUES ('academia1', '0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 'academiasanfermin@gmail.com', 'Academia San Fermin', 948245800, 'Kalea, C. del Padre Calatayud, 21, Bajo, 31003 Pamplona, Navarra', 42.810147618877146, -1.641117274534249, "academia1.jpg");
 
 INSERT INTO Cursos (nombre_curso, fecha_inicio_curso, fecha_fin_curso, precio, valoracion, descripcion, tipo, cod_academia)
 VALUES ('Curso 1', '2024-03-01', '2024-04-01', 100.00, 4.5, 'Descripción del curso 1','Académico', 1);
@@ -165,7 +165,7 @@ INSERT INTO Conversaciones (usuario1_id, usuario2_id) VALUES (1, 'Rosi');
 
 -- Conversación entre Academia1 y 'Mikel'
 INSERT INTO Mensajes (cod_mensaje, cod_conversacion, sender_username, sender_cod_academia, contenido, timestamp) VALUES
-(1, 1, 'Mikel', NULL, 'Hola, ¿cómo estás?', '2024-05-14 10:00:00'),
+(1, 1, 'Mikel', NULL, 'Hola, ¿cómo estás?', '2024-05-14 10:00:00');
 INSERT INTO Mensajes (cod_conversacion, sender_username, sender_cod_academia, contenido, timestamp) VALUES
 (1, NULL, 1, 'Muy bien, ¿y tú?', '2024-05-14 10:01:00'),
 (1, 'Mikel', NULL, 'Estoy bien, gracias.', '2024-05-14 10:02:00'),
