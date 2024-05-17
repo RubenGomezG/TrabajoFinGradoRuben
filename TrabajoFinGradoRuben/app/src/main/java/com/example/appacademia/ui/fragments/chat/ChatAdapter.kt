@@ -32,30 +32,65 @@ import kotlinx.coroutines.withContext
 
 class ChatAdapter(private val messages: MutableList<Mensaje>,
                   private val listener: OnItemClickListener,
-                  private val context : Context) : RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
+                  private val context : Context)
+                  : RecyclerView.Adapter<ChatAdapter.MessageViewHolder>() {
 
+    /***
+     * Crear la interfaz del evento OnClick
+     * para navegar al perfil de usuario desde
+     * la foto del usuario. Sólo funcionará en el
+     * usuario, no en la academia
+     */
     interface OnItemClickListener {
         /**
-         * Ocurrirá al hacer click sobre el área superior de la tarjeta informativa
-         *
-         *
+         * Ocurrirá al hacer click en la imagen del usuario
          */
         fun onUsuarioClick()
     }
 
-
+    /**
+     * Al crear el viewholder de un nuevo item del recycler,
+     * inflya el layout y le asigna un recycler contenedor
+     *
+     * @param parent -  contenedor
+     * @param viewType
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.tarjeta_mensaje, parent, false)
         return MessageViewHolder(view)
     }
 
+    /**
+     * Asigna la posición de cada mensaje dentro del recycler
+     *
+     * @param holder - la tarjeta de un curso
+     * @param position - posición en el recycler
+     */
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         val message = messages[position]
         holder.bind(message)
     }
 
+    /**
+     * Obtener la cantidad de mensajes existentes
+     *
+     * @return Int
+     */
     override fun getItemCount(): Int = messages.size
 
+    /**
+     * Rellenar cada tarjeta de mensaje con sus datos correspondientes
+     * para crear su viewHolder.
+     * Tendrá que descargar los mensajes de la base de datos y cargar las imágenes
+     * vía FTP.
+     * Por cada item, asignará según quien lo haya enviado una posición relativa
+     * al layout, y en caso de ser enviado por el usuario, la posibilidad de borrarlo.
+     * También asignará un color según quien sea el remitente.
+     *
+     * @param itemView - vista actual
+     *
+     * @return devuelve un viewHolder
+     */
     inner class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val senderTextView: TextView = itemView.findViewById(R.id.senderTextView)
         private val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)

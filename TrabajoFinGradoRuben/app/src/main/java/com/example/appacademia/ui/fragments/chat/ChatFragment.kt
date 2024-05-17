@@ -45,6 +45,17 @@ class ChatFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var contenedorTexto: TextView
 
+    /**
+     * Método que crea la vista del Fragment Chat. Recoge y lanza el layout correspondiente,
+     * y asigna el valor a cada objeto interno. También crea el listeners y los asigna para
+     * del botón de enviar.
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     *
+     * @return View
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -82,6 +93,12 @@ class ChatFragment : Fragment() {
         return view
     }
 
+    /**
+     * Método que después de haberse creado la vista, lanza un spinner de carga
+     * asigna el valor de algún otro item y se encarga de asignar el texto por
+     * defecto si el usuario no está conectado. En caso de estarlo después de esto,
+     * rellena el RecyclerView de la vista.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if ((activity as MainActivity).loggedIn) {
@@ -112,6 +129,11 @@ class ChatFragment : Fragment() {
         contentLayout.visibility = View.VISIBLE
     }
 
+    /**
+     * Método que realiza la carga del RecyclerView sobre el ChatFragment. Lanzará una consulta
+     * a la base de datos para obtener una List<Mensaje>. Después, llamará al controlador del
+     * RecyclerView para asignar a cada item del mismo, el valor de un Mensaje.
+     */
     private fun loadMessages() {
         lifecycleScope.launch(Dispatchers.IO) {
             val mensajeDAO = MensajeDAO()
@@ -132,6 +154,12 @@ class ChatFragment : Fragment() {
         }
     }
 
+    /**
+     * Método que realiza el envío de mensajes. Recoge el valor del campo de texto y carga
+     * la fecha y hora actuales, junto al remitente y el código de la conversación en una
+     * instancia de Mensaje. Después de eso, hará una llamada a la base de datos, y recargará
+     * la vista.
+     */
     private fun sendMessage(messageText: String) {
         val mensajeDAO = MensajeDAO()
         val conversacionDAO = ConversacionDAO()
