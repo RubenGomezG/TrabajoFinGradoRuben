@@ -44,6 +44,10 @@ namespace Escritorio.UserControls
             //Se ocultan las propiedades que enlazan las tablas
             dataGridUsuarios.AutoGeneratingColumn += (sender, e) =>
             {
+                if (e.PropertyName == "Contrasena")
+                {
+                    e.Column.Visibility = Visibility.Collapsed;
+                }
                 if (e.PropertyName == "ConversacioneUsuario2s")
                 {
                     e.Column.Visibility = Visibility.Collapsed;

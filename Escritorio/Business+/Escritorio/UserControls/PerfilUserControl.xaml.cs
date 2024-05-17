@@ -34,7 +34,7 @@ namespace Escritorio.UserControls
             _context = new Bu5x9ctsBusinessplusContext();
             _repository = new AcademiaRepository(_context);
             username.Text = App.LoggedAcademia.Usuario;
-            contrasena.Text = App.LoggedAcademia.Contrasena;
+            contrasena.Text = "***********";
             email.Text = App.LoggedAcademia.Email;
             nombre.Text = App.LoggedAcademia.Nombre;
             telefono.Text = App.LoggedAcademia.Telefono.ToString();
