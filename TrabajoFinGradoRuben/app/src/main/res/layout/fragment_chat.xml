@@ -17,6 +17,24 @@
         android:visibility="visible" />
 
     <LinearLayout
+        android:id="@+id/contenedorTexto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textoCentrado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/conectate"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/chatContentLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

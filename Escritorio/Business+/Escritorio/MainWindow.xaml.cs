@@ -52,7 +52,6 @@ namespace Escritorio
             if (resultado != null)
             {
                 App.LoggedAcademia = resultado;
-                System.Diagnostics.Debug.WriteLine("La conexión se realizó correctamente, se ha conectado la Academia");
                 Dashboard dashboard = new Dashboard();
                 this.Close();
                 dashboard.Show();

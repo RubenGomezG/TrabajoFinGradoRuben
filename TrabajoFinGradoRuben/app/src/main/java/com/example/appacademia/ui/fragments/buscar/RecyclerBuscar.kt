@@ -128,7 +128,7 @@ class RecyclerBuscar(private val cursos: List<Curso>, private val listener: OnIt
 
                     val interfaceFTP = InterfaceFTP()
                     val bitmap = interfaceFTP.downloadFileFromFTP(academia.imgPerfil)
-                    Log.i("imag", "bindRow: RECYCLER CURSOS -\n FILENAME: " + academia.imgPerfil + "\nCOD ACADEMIA:" + academia.codAcademia + "\nNOM ACADEMIA:" + academia.nombre)
+
                     // Haz algo con el bitmap, por ejemplo, mostrarlo en la imagen de la academia
                     if (bitmap != null) {
                         interfaceFTP.colocarImage(bitmap, imagenAcademia)

@@ -16,7 +16,7 @@
     <string name="filtrar">Filtrar</string>
     <string name="ordenar_por">Ordenar por</string>
     <string name="title_favoritos">Favoritos</string>
-    <string name="academias_Cerca">Buscar academias cercanas</string>
+    <string name="academias_Cerca">Ubicación de Academia</string>
 
     <string name="desc_fotoPerfil">Foto de perfil</string>
     <string name="lbl_inicioSesion">Inicio de sesión</string>
@@ -96,4 +96,6 @@
     <string name="direccion">Dirección</string>
     <string name="imagen_de_usuario">Imagen de Usuario</string>
     <string name="business">Business+</string>
+    <string name="conectate">¡Inicia sesión para ver los cursos en los que te has inscrito!</string>
+    <string name="conectateMensajes">¡Inicia sesión para ver tus mensajes</string>
 </resources>

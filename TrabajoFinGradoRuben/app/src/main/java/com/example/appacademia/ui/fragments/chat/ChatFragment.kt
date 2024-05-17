@@ -2,6 +2,7 @@ package com.example.appacademia.ui.fragments.chat
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,9 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +23,7 @@ import com.example.appacademia.dao.servidorSQL.MensajeDAO
 import com.example.appacademia.model.Conversacion
 import com.example.appacademia.model.Mensaje
 import com.example.appacademia.ui.activities.MainActivity
+import com.example.appacademia.ui.fragments.cursos.CursosViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -39,6 +43,7 @@ class ChatFragment : Fragment() {
     private lateinit var contentLayout: LinearLayout
     private lateinit var messagesAdapter: ChatAdapter
     private lateinit var navController: NavController
+    private lateinit var contenedorTexto: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,25 +52,62 @@ class ChatFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_chat, container, false)
 
         navController = (activity as MainActivity).getNavController()
-        messageRecyclerView = view.findViewById(R.id.messageRecyclerView)
         editTextMessage = view.findViewById(R.id.editTxtMessage)
         btnSendMessage = view.findViewById(R.id.btnSendMessage)
+        progressBar = view.findViewById(R.id.progressBar)
+        contentLayout = view.findViewById(R.id.chatContentLayout)
 
-        btnSendMessage.setOnClickListener {
-            val messageText = editTextMessage.text.toString().trim()
-            if (messageText.isNotEmpty()) {
-                sendMessage(messageText)
+        if ((activity as MainActivity).loggedIn) {
+            val cursosViewModel =
+                ViewModelProvider(this).get(CursosViewModel::class.java)
+
+            cursosViewModel.text.observe(viewLifecycleOwner) {
+                messageRecyclerView = view.findViewById(R.id.messageRecyclerView)
+                btnSendMessage.setOnClickListener {
+                    val messageText = editTextMessage.text.toString().trim()
+                    if (messageText.isNotEmpty()) {
+                        sendMessage(messageText)
+                    }
+                }
+                loadMessages()
             }
+        } else {
+            btnSendMessage.visibility = View.GONE
+            editTextMessage.visibility = View.GONE
+            contenedorTexto = view.findViewById(R.id.textoCentrado)
+            // Muestra el contenedor del texto
+            contenedorTexto.visibility = View.VISIBLE
         }
-        loadMessages()
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if ((activity as MainActivity).loggedIn) {
+            // Si el usuario está logeado, llenar el RecyclerView
+            messageRecyclerView = view.findViewById(R.id.messageRecyclerView)
+            progressBar = view.findViewById(R.id.progressBar)
+            progressBar.visibility = View.VISIBLE
 
-        progressBar = view.findViewById(R.id.progressBar)
-        contentLayout = view.findViewById(R.id.chatContentLayout)
+            loadMessages()
+        } else {
+            // Si el usuario no está logeado muestra un mensaje
+            // Obtén el contenedor y el TextView
+            val contenedorTexto = (activity as MainActivity).findViewById<ViewGroup>(R.id.contenedorTexto)
+
+            // Oculta el RecyclerView y muestra el contenedor del texto
+            contenedorTexto.visibility = View.VISIBLE
+
+            // Crea el TextView dinámicamente
+            val textoCentrado = TextView(requireContext())
+            textoCentrado.text = getString(R.string.conectateMensajes)
+            textoCentrado.textSize = 24f
+            textoCentrado.gravity = Gravity.CENTER
+
+            // Agrega el TextView al contenedor
+            contenedorTexto.addView(textoCentrado)
+        }
         progressBar.visibility = View.GONE
         contentLayout.visibility = View.VISIBLE
     }

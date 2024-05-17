@@ -143,7 +143,7 @@ class LoginFragment : Fragment() {
                                 Toast.LENGTH_LONG
                             ).show()
                         } else {
-                            Log.i("Ha llegado", "Ha llegado")
+                            Log.i("conexion 2", "No necesitará conectarse la próxima vez")
                             if (recordarme.isChecked) {
                                 withContext(Dispatchers.IO) {
                                     val userDao =
@@ -160,10 +160,16 @@ class LoginFragment : Fragment() {
                                                 null
                                             )
                                         userDao.insertAll(newUser)
+                                        Log.i("Usuario Correcto", "No necesitará conectarse la próxima vez")
                                     }
                                 }
                             }
-
+                            Toast.makeText(
+                                context,
+                                "Conexión a la base de datos correcta",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            Thread.sleep(3000)
                             navController.navigate(R.id.navigation_buscar)
                             (activity as MainActivity).loggedIn = true
                             (activity as MainActivity).username = editUsername.text.toString()
