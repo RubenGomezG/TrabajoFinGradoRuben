@@ -104,17 +104,6 @@
             tools:ignore="TouchTargetSizeCheck"
             android:textSize="16sp"/>
 
-        <!-- ir a registro academia -->
-        <TextView
-            android:id="@+id/txt_registroAcademia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/lbl_registroAcademia"
-            android:textAlignment="center"
-            android:textColor="@color/azulLinks1"
-            tools:ignore="TouchTargetSizeCheck"
-            android:textSize="16sp"/>
 
     </LinearLayout>
 

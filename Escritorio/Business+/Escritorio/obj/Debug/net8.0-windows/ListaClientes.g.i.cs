@@ -53,7 +53,7 @@ namespace Escritorio {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Escritorio;component/listaclientes.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Escritorio;V1.0.0.0;component/listaclientes.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ListaClientes.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

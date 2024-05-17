@@ -35,7 +35,6 @@ class LoginFragment : Fragment() {
     private lateinit var btnLogin: Button
     private lateinit var txtForgotPass: TextView
     private lateinit var txtSignUpUsuario: TextView
-    private lateinit var txtSignUpAcademia: TextView
     private lateinit var editUsername: EditText
     private lateinit var editPassword: EditText
     private lateinit var recordarme: CheckBox
@@ -73,11 +72,6 @@ class LoginFragment : Fragment() {
         txtSignUpUsuario = binding.txtRegistroUsuario
         txtSignUpUsuario.setOnClickListener {
             gotoRegistroUsuario()
-        }
-
-        txtSignUpAcademia = binding.txtRegistroAcademia
-        txtSignUpAcademia.setOnClickListener {
-            gotoRegistroAcademia()
         }
 
         editUsername = binding.campoUsername

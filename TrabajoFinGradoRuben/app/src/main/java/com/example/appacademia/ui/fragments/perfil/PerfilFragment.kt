@@ -46,7 +46,6 @@ class PerfilFragment : Fragment() {
     private lateinit var btnLogin: Button
     private lateinit var txtForgotPass: TextView
     private lateinit var txtSignUpUsuario: TextView
-    private lateinit var txtSignUpAcademia: TextView
     private lateinit var editUsername: EditText
     private lateinit var editPassword: EditText
     private lateinit var imgPerfil: ImageView
@@ -242,10 +241,6 @@ class PerfilFragment : Fragment() {
                 gotoRegistroUsuario()
             }
 
-            txtSignUpAcademia = binding2.txtRegistroAcademia
-            txtSignUpAcademia.setOnClickListener {
-                gotoRegistroAcademia()
-            }
 
             editUsername = binding2.campoUsername
             editPassword = binding2.campoContrasena

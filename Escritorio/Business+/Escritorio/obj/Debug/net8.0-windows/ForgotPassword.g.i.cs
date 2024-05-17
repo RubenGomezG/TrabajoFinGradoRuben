@@ -77,7 +77,7 @@ namespace Escritorio {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Escritorio;component/forgotpassword.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Escritorio;V1.0.0.0;component/forgotpassword.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ForgotPassword.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
