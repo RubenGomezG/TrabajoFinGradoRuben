@@ -440,7 +440,7 @@ class PerfilFragment : Fragment() {
     fun iniciarSesion(view: View) : Boolean {
         //al hacer click en iniciar, regresar a buscar
         var usuario: Usuario? = null
-        var academia: Academia? = null
+        //var academia: Academia? = null
         var resultado = false
         if (editUsername.text.isNullOrEmpty() || editPassword.text.isNullOrEmpty()) {
             Toast.makeText(
@@ -455,20 +455,20 @@ class PerfilFragment : Fragment() {
                 lifecycleScope.launch(Dispatchers.IO) {
 
                     val usuariodao = UsuarioDAO()
-                    val academiadao = AcademiaDAO()
+                    //val academiadao = AcademiaDAO()
                     val contrasenaCodificada = HashUtils.sha256(editPassword.text.toString())
                     Log.i("contraseñas", contrasenaCodificada)
                     usuario = usuariodao.consultarUsuarioContrasena(
                         editUsername.text.toString(),
                         contrasenaCodificada
                     )
-                    academia = academiadao.consultarUsuarioContrasena(
-                        editUsername.text.toString(),
-                        contrasenaCodificada
-                    )
+                    //academia = academiadao.consultarUsuarioContrasena(
+                    //    editUsername.text.toString(),
+                    //    contrasenaCodificada
+                    //)
 
                     withContext(Dispatchers.Main) {
-                        if (usuario?.username.isNullOrEmpty() && academia?.username.isNullOrEmpty()) {
+                        if (usuario?.username.isNullOrEmpty() /*&& academia?.username.isNullOrEmpty()*/) {
                             Toast.makeText(
                                 context,
                                 "Usuario o contraseña incorrectas",

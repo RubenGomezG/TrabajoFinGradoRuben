@@ -167,7 +167,7 @@ class RegistroUsuarioFragment : Fragment() {
             }
 
             if (contrasena.compareTo(contrasenaConfirm) == 0) {
-                val persona = Usuario(nomUsuario, contrasena, email, nombre, apellidos, telefono, edad)
+                val persona = Usuario(nomUsuario, contrasena, email, nombre.replace("\\s".toRegex(), ""), apellidos, telefono, edad)
 
                 if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
                     lifecycleScope.launch(Dispatchers.IO) {
