@@ -307,7 +307,7 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
                         NotificationCompat.Builder(this@MainActivity, "com.example.notificacion")
                             .setSmallIcon(R.drawable.baseline_school_24)
                             .setContentTitle("Inscripción de curso")
-                            .setContentText("Enhorabuena! te has inscrito al curso correctamente.")
+                            .setContentText("Enhorabuena! te has inscrito al " + curso.nombre + " correctamente.")
                             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                             .setAutoCancel(true)
 
@@ -321,6 +321,23 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
                         Log.i("abuela", resultado.toString())
                         if (resultado.username == "" && resultado.codCurso == 0) {
                             inscripcionesDAO.inscribir(inscripcion)
+
+                            withContext(Dispatchers.Main){
+                                Toast.makeText(
+                                    this@MainActivity,
+                                    "Te has inscrito al " + curso.nombre,
+                                    Toast.LENGTH_SHORT).show()
+                            }
+
+                        }
+                        else{
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    this@MainActivity,
+                                    "Ya estás inscrito al " + curso.nombre,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
                         }
 
                         with(NotificationManagerCompat.from(this@MainActivity)) {
@@ -341,6 +358,13 @@ class MainActivity : AppCompatActivity(), RecyclerBuscar.OnItemClickListener,
                     }
                 }
             }
+        }
+        else{
+                Toast.makeText(
+                    this@MainActivity,
+                    "Debes estar conectado para inscribirte a un curso",
+                    Toast.LENGTH_SHORT
+                ).show()
         }
     }
 
